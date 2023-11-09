@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="545" viewBox="0 0 600 545">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #c69c6d;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect width="600" height="545" fill="black"/>
+<!--   Indus -->
+  <g>
+    <circle fill="white" r="1" cx="544" cy="475"/>
+    <circle fill="white" r="1" cx="539" cy="488"/>
+    <circle fill="white" r="1" cx="535" cy="480"/>
+    <circle fill="white" r="1" cx="524" cy="471"/>
+    <path d="m539 488 L 535 480 L 524 471 M 535 480 L 544 475 " stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Coma Berencis -->
+  <g>  
+    <circle fill="white" r="1" cx="84.000" cy="400.000"/>
+    <circle fill="white" r="1" cx="69.000" cy="412.000"/>
+    <circle fill="white" r="1" cx="46.000" cy="403.000"/>
+    <path d="m84 400 L 46 403 L 69 412" stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Cygnus -->
+  <g>
+    <circle fill="white" r="1" cx="87.000" cy="476.000"/>
+    <circle fill="white" r="1" cx="72.000" cy="476.000"/>
+    <circle fill="white" r="1" cx="62.000" cy="493.000"/>
+    <circle fill="white" r="1" cx="61.000" cy="464.000"/>
+    <circle fill="white" r="1" cx="59.000" cy="480.000"/>
+    <circle fill="white" r="1" cx="49.000" cy="479.000"/>
+    <path d="m87 476 L 72 476 L 59 480 L 49 479 M 62 493 L 59 480 L 61 464 " stroke="#fff" opacity=".8"/>
+  </g>
+
+
+  <!-- HERE -->
+<!--   Vela -->
+  <g>
+    <circle fill="white" r="1" cx="474.000" cy="420.000"/>
+    <circle fill="white" r="1" cx="470.000" cy="411.000"/>
+    <circle fill="white" r="1" cx="469.000" cy="399.000"/>
+    <circle fill="white" r="1" cx="468.000" cy="389.000"/>
+    <circle fill="white" r="1" cx="459.000" cy="419.000"/>
+    <circle fill="white" r="1" cx="454.000" cy="412.000"/>
+    <circle fill="white" r="1" cx="447.000" cy="404.000"/>
+    <circle fill="white" r="1" cx="440.000" cy="389.000"/>
+    <path d="m 474 420 L 470 411 L 469 399 L 468 389 L 440 389 L 447 404 L 454 412 L 459 419 L 474 420 " stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Serpens Cauda -->
+  <g>
+    <circle fill="white" r="1" cx="237.000" cy="330.000"/>
+    <circle fill="white" r="1" cx="236.000" cy="321.000"/>
+    <circle fill="white" r="1" cx="231.000" cy="327.000"/>
+    <circle fill="white" r="1" cx="208.000" cy="334.000"/>
+    <path d="m 236 321 L 237 330 L 231 327 L 208 334" stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Ophiacus -->
+  <g>
+    <circle fill="white" r="1" cx="168.000" cy="334.000"/>
+    <circle fill="white" r="1" cx="168.000" cy="316.000"/>
+    <circle fill="white" r="1" cx="163.000" cy="303.000"/>
+    <circle fill="white" r="1" cx="151.000" cy="350.000"/>
+    <circle fill="white" r="1" cx="150.000" cy="304.000"/>
+    <circle fill="white" r="1" cx="131.000" cy="310.000"/>
+    <circle fill="white" r="1" cx="131.000" cy="334.000"/>
+    <circle fill="white" r="1" cx="118.000" cy="324.000"/>
+    <path d="m168 334 L 168 316 L 163 303 L150 304 L 131 310 L  118 324 L 131 334 L 151 350 L 168 334" stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Serpens Caput -->
+  <g>
+    <circle fill="white" r="1" cx="83.000" cy="340.000"/>
+    <circle fill="white" r="1" cx="71.000" cy="333.000"/>
+    <circle fill="white" r="1" cx="70.000" cy="328.000"/>
+    <circle fill="white" r="1" cx="69.000" cy="320.000"/>
+    <circle fill="white" r="1" cx="57.000" cy="321.000"/>
+    <circle fill="white" r="1" cx="53.000" cy="325.000"/>
+    <circle fill="white" r="1" cx="51.000" cy="319.000"/>
+    <path d="m 83, 340 L 71 333 L 70 328 L 69 320 L 57 321 L 53 325 L 51 319 L 57 321" stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Cassiopiala -->
+  <g>
+    <circle fill="white" r="1" cx="545.000" cy="259.000"/>
+    <circle fill="white" r="1" cx="538.000" cy="264.000"/>
+    <circle fill="white" r="1" cx="535.000" cy="254.000"/>
+    <circle fill="white" r="1" cx="529.000" cy="256.000"/>
+    <circle fill="white" r="1" cx="525.000" cy="247.000"/>
+    <path d="m545 259 L 538 264 L 535 254 L 529 256  L 525 247" stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Camelopardalis -->
+  <g>
+    <circle fill="white" r="1" cx="465.000" cy="255.000"/>
+    <circle fill="white" r="1" cx="464.000" cy="243.000"/>
+    <circle fill="white" r="1" cx="462.000" cy="267.000"/>
+    <circle fill="white" r="1" cx="455.000" cy="248.000"/>
+    <circle fill="white" r="1" cx="446.000" cy="258.000"/>
+    <path d="M 462 267 L 465 255 L 464 243 L 455 248 L 446 258" stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Aurig -->
+  <g>
+    <circle fill="white" r="1" cx="393.000" cy="242.000"/>
+    <circle fill="white" r="1" cx="388.000" cy="255.000"/>
+    <circle fill="white" r="1" cx="379.000" cy="261.000"/>
+    <circle fill="white" r="1" cx="379.000" cy="242.000"/>
+    <circle fill="white" r="1" cx="365.000" cy="270.000"/>
+    <path d="m 393 242 L 388 255 L 379 261 L 365 270 L 379 242 L 393 242 " stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Chaemeleon -->
+  <g>
+    <circle fill="white" r="1" cx="309.000" cy="262.000"/>
+    <circle fill="white" r="1" cx="302.000" cy="252.000"/>
+    <circle fill="white" r="1" cx="297.000" cy="257.000"/>
+    <circle fill="white" r="1" cx="292.000" cy="250.000"/>
+    <path d="m 309 262 L 302 252 L 292 250 L 297 257 L 309 262" stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Dorado -->
+  <g>
+    <circle fill="white" r="1" cx="227.000" cy="246.000"/>
+    <circle fill="white" r="1" cx="223.000" cy="261.000"/>
+    <circle fill="white" r="1" cx="223.000" cy="268.000"/>
+    <circle fill="white" r="1" cx="221.000" cy="241.000"/>
+    <path d="M 221 241 L 227 246 L 223 261 L 223 268" stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Tucana -->
+  <g>
+    <circle fill="white" r="1" cx="156.000" cy="264.000"/>
+    <circle fill="white" r="1" cx="156.000" cy="256.000"/>
+    <circle fill="white" r="1" cx="153.000" cy="253.000"/>
+    <circle fill="white" r="1" cx="135.000" cy="260.000"/>
+    <circle fill="white" r="1" cx="134.000" cy="249.000"/>
+    <path d="m156 264 L 156 256 L 153 253 M 156 256 L 135 260 L 134 249" stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Hyrdus -->
+  <g>
+    <circle fill="white" r="1" cx="80.000" cy="242.000"/>
+    <circle fill="white" r="1" cx="70.000" cy="254.000"/>
+    <circle fill="white" r="1" cx="66.000" cy="255.000"/>
+    <circle fill="white" r="1" cx="58.000" cy="268.000"/>
+    <circle fill="white" r="1" cx="56.000" cy="243.000"/>
+    <path d="m70 254 L 80 242 L 56 243 M 66 255 L 58 268" stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Lunx -->
+  <g>
+    <circle fill="white" r="1" cx="479.000" cy="163.000"/>
+    <circle fill="white" r="1" cx="456.000" cy="166.000"/>
+    <circle fill="white" r="1" cx="440.000" cy="190.000"/>
+    <circle fill="white" r="1" cx="432.000" cy="197.000"/>
+    <path d="m479 163 L 456 166 L 440 190 L 432 197" stroke="#fff" opacity=".8"/>
+  </g>
+  <!--   Bootes -->
+  <g>
+    <circle fill="white" r="1" cx="404.000" cy="159.000"/>
+    <circle fill="white" r="1" cx="398.000" cy="166.000"/>
+    <circle fill="white" r="1" cx="379.000" cy="182.000"/>
+    <circle fill="white" r="1" cx="374.000" cy="176.000"/>
+    <circle fill="white" r="1" cx="362.000" cy="197.000"/>
+    <circle fill="white" r="1" cx="357.000" cy="185.000"/>
+    <circle fill="white" r="1" cx="350.000" cy="198.000"/>
+    <path d="m398 166 L 379 182 L 362 197 L350 198 L 357 185 L 374 176 L 398 166 L 404 159 " stroke="#fff" opacity=".8"/>
+  </g>
+<!-- Sculptor -->
+  <g>
+    <circle fill="white" r="1" cx="311.000" cy="194.000"/>
+    <circle fill="white" r="1" cx="304.000" cy="168.000"/>
+    <circle fill="white" r="1" cx="291.000" cy="167.000"/>
+    <path d="m311 194 L 304 168 L 291 167" stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Pisces Australia -->
+  <g>
+    <circle fill="white" r="1" cx="228.000" cy="189.000"/>
+    <circle fill="white" r="1" cx="225.000" cy="181.000"/>
+    <circle fill="white" r="1" cx="224.000" cy="164.000"/>
+    <circle fill="white" r="1" cx="222.000" cy="189.000"/>
+    <circle fill="white" r="1" cx="215.000" cy="183.000"/>
+    <path d="m228 189 L 225 181 L 224 164 L 215 183 L 222 189 L 228 189" stroke="#fff" opacity=".8"/>
+  </g>
+  <g>
+    <circle fill="white" r="1" cx="151.000" cy="180.000"/>
+    <circle fill="white" r="1" cx="147.000" cy="176.000"/>
+    <circle fill="white" r="1" cx="144.000" cy="180.000"/>
+    <circle fill="white" r="1" cx="137.000" cy="180.000"/>
+    <path d="m151 180 L 144 180 L 137 180 L 147 176 L 151 180" stroke="#fff" opacity=".8"/>
+  </g>
+<!--   Reticulum -->
+  <g>
+    <circle fill="white" r="1" cx="74.000" cy="176.000"/>
+    <circle fill="white" r="1" cx="74.000" cy="181.000"/>
+    <circle fill="white" r="1" cx="66.000" cy="185.000"/>
+    <circle fill="white" r="1" cx="60.000" cy="181.000"/>
+    <path d="m74 176 L 74 181 L 66 185 L 60 181" stroke="#fff" opacity=".8"/>
+  </g>
+<!-- Aquila -->
+  <g>
+    <circle fill="white" r="1" cx="396.000" cy="100.000"/>
+    <circle fill="white" r="1" cx="378.000" cy="121.000"/>
+    <circle fill="white" r="1" cx="378.000" cy="99.000"/>
+    <circle fill="white" r="1" cx="378.000" cy="113.000"/>
+    <circle fill="white" r="1" cx="369.000" cy="109.000"/>
+    <circle fill="white" r="1" cx="366.000" cy="82.000"/>
+    <circle fill="white" r="1" cx="366.000" cy="105.000"/>
+    <path d="m396 100 L 378 99 L 366 105 L 369 109 M 366 82 L 378 99 L 378 113 L 378 121 " stroke="#fff" opacity=".8"/>
+  </g>
+ 
+</svg>

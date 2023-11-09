@@ -1,0 +1,424 @@
+{
+  "address": "0x9F4C20F725e76363699Fe356268e8C827e5fceC8",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "burn",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "generateCharacter",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getApproved",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint16",
+              "name": "baseColor",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "starSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "funkSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "circleSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "groundSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "constellationSeed",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Color.DNA",
+          "name": "dna",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "gazes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "daytime",
+          "type": "bool"
+        }
+      ],
+      "name": "getDeco",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ownerOf",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint16",
+              "name": "baseColor",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "starSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "funkSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "circleSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "groundSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "constellationSeed",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Color.DNA",
+          "name": "dna",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "gazes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "daytime",
+          "type": "bool"
+        }
+      ],
+      "name": "packageAsSVG",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "safeTransferFrom",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenURI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x6fc56a26b228f48fb9311ccd92ced9c636f34b596b66f9b519ff662303cb7b56",
+  "receipt": {
+    "to": null,
+    "from": "0x0a12A6777fc7D65b1461070648dA9CAE6962fcEe",
+    "contractAddress": "0x9F4C20F725e76363699Fe356268e8C827e5fceC8",
+    "transactionIndex": 65,
+    "gasUsed": "852838",
+    "logsBloom": "0x00100000000000000000000000000000000000000000000000800000000000000000000000001000000000000000020000008000000000000000000000000000000000000000000000000000000000804001000000000000000100020000000000000000020000000000000000000800000000000000000080000000000000400000000000000000000000000000000000000002000000000000000200000000200000000000000000000000000000000000000000000000000000000000004000000000000000000001000000000000000000000000000000100000000020000000000000000000000000000000000000000000000000000000000020100000",
+    "blockHash": "0x810eba66614fb009ce26ed8aa010d8dd7c27795ef8f08a8bf69c5aefaad8f160",
+    "transactionHash": "0x6fc56a26b228f48fb9311ccd92ced9c636f34b596b66f9b519ff662303cb7b56",
+    "logs": [
+      {
+        "transactionIndex": 65,
+        "blockNumber": 43949457,
+        "transactionHash": "0x6fc56a26b228f48fb9311ccd92ced9c636f34b596b66f9b519ff662303cb7b56",
+        "address": "0x9F4C20F725e76363699Fe356268e8C827e5fceC8",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000a12a6777fc7d65b1461070648da9cae6962fcee"
+        ],
+        "data": "0x",
+        "logIndex": 213,
+        "blockHash": "0x810eba66614fb009ce26ed8aa010d8dd7c27795ef8f08a8bf69c5aefaad8f160"
+      },
+      {
+        "transactionIndex": 65,
+        "blockNumber": 43949457,
+        "transactionHash": "0x6fc56a26b228f48fb9311ccd92ced9c636f34b596b66f9b519ff662303cb7b56",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x0000000000000000000000000a12a6777fc7d65b1461070648da9cae6962fcee",
+          "0x000000000000000000000000794e44d1334a56fea7f4df12633b88820d0c5888"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000006da360bce385fe0000000000000000000000000000000000000000000000006208edc2da4a67f100000000000000000000000000000000000000000000020b1bb319ebbcbd5cc1000000000000000000000000000000000000000000000000619b4a621d66e1f300000000000000000000000000000000000000000000020b1c20bd4c79a0e2bf",
+        "logIndex": 214,
+        "blockHash": "0x810eba66614fb009ce26ed8aa010d8dd7c27795ef8f08a8bf69c5aefaad8f160"
+      }
+    ],
+    "blockNumber": 43949457,
+    "cumulativeGasUsed": "8631927",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "bcc7bb6fe413bf74408cb40fb5fcac35",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.18+commit.87f61d96\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"generateCharacter\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getApproved\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint16\",\"name\":\"baseColor\",\"type\":\"uint16\"},{\"internalType\":\"uint256\",\"name\":\"starSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"funkSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"circleSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"groundSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"constellationSeed\",\"type\":\"uint256\"}],\"internalType\":\"struct Color.DNA\",\"name\":\"dna\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"gazes\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"daytime\",\"type\":\"bool\"}],\"name\":\"getDeco\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"ownerOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint16\",\"name\":\"baseColor\",\"type\":\"uint16\"},{\"internalType\":\"uint256\",\"name\":\"starSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"funkSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"circleSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"groundSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"constellationSeed\",\"type\":\"uint256\"}],\"internalType\":\"struct Color.DNA\",\"name\":\"dna\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"gazes\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"daytime\",\"type\":\"bool\"}],\"name\":\"packageAsSVG\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"tokenURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/decos/Empty_SkyMath.sol\":\"Empty_SkyMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1000},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Base64.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (utils/Base64.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides a set of functions to operate with Base64 strings.\\n *\\n * _Available since v4.5._\\n */\\nlibrary Base64 {\\n    /**\\n     * @dev Base64 Encoding/Decoding Table\\n     */\\n    string internal constant _TABLE = \\\"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/\\\";\\n\\n    /**\\n     * @dev Converts a `bytes` to its Bytes64 `string` representation.\\n     */\\n    function encode(bytes memory data) internal pure returns (string memory) {\\n        /**\\n         * Inspired by Brecht Devos (Brechtpd) implementation - MIT licence\\n         * https://github.com/Brechtpd/base64/blob/e78d9fd951e7b0977ddca77d92dc85183770daf4/base64.sol\\n         */\\n        if (data.length == 0) return \\\"\\\";\\n\\n        // Loads the table into memory\\n        string memory table = _TABLE;\\n\\n        // Encoding takes 3 bytes chunks of binary data from `bytes` data parameter\\n        // and split into 4 numbers of 6 bits.\\n        // The final Base64 length should be `bytes` data length multiplied by 4/3 rounded up\\n        // - `data.length + 2`  -> Round up\\n        // - `/ 3`              -> Number of 3-bytes chunks\\n        // - `4 *`              -> 4 characters for each chunk\\n        string memory result = new string(4 * ((data.length + 2) / 3));\\n\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            // Prepare the lookup table (skip the first \\\"length\\\" byte)\\n            let tablePtr := add(table, 1)\\n\\n            // Prepare result pointer, jump over length\\n            let resultPtr := add(result, 32)\\n\\n            // Run over the input, 3 bytes at a time\\n            for {\\n                let dataPtr := data\\n                let endPtr := add(data, mload(data))\\n            } lt(dataPtr, endPtr) {\\n\\n            } {\\n                // Advance 3 bytes\\n                dataPtr := add(dataPtr, 3)\\n                let input := mload(dataPtr)\\n\\n                // To write each character, shift the 3 bytes (18 bits) chunk\\n                // 4 times in blocks of 6 bits for each character (18, 12, 6, 0)\\n                // and apply logical AND with 0x3F which is the number of\\n                // the previous character in the ASCII table prior to the Base64 Table\\n                // The result is then added to the table to get the character to write,\\n                // and finally write it in the result pointer but with a left shift\\n                // of 256 (1 byte) - 8 (1 ASCII char) = 248 bits\\n\\n                mstore8(resultPtr, mload(add(tablePtr, and(shr(18, input), 0x3F))))\\n                resultPtr := add(resultPtr, 1) // Advance\\n\\n                mstore8(resultPtr, mload(add(tablePtr, and(shr(12, input), 0x3F))))\\n                resultPtr := add(resultPtr, 1) // Advance\\n\\n                mstore8(resultPtr, mload(add(tablePtr, and(shr(6, input), 0x3F))))\\n                resultPtr := add(resultPtr, 1) // Advance\\n\\n                mstore8(resultPtr, mload(add(tablePtr, and(input, 0x3F))))\\n                resultPtr := add(resultPtr, 1) // Advance\\n            }\\n\\n            // When data `bytes` is not exactly 3 bytes long\\n            // it is padded with `=` characters at the end\\n            switch mod(mload(data), 3)\\n            case 1 {\\n                mstore8(sub(resultPtr, 1), 0x3d)\\n                mstore8(sub(resultPtr, 2), 0x3d)\\n            }\\n            case 2 {\\n                mstore8(sub(resultPtr, 1), 0x3d)\\n            }\\n        }\\n\\n        return result;\\n    }\\n}\\n\",\"keccak256\":\"0x5f3461639fe20794cfb4db4a6d8477388a15b2e70a018043084b7c4bedfa8136\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.8.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"./math/Math.sol\\\";\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        unchecked {\\n            uint256 length = Math.log10(value) + 1;\\n            string memory buffer = new string(length);\\n            uint256 ptr;\\n            /// @solidity memory-safe-assembly\\n            assembly {\\n                ptr := add(buffer, add(32, length))\\n            }\\n            while (true) {\\n                ptr--;\\n                /// @solidity memory-safe-assembly\\n                assembly {\\n                    mstore8(ptr, byte(mod(value, 10), _SYMBOLS))\\n                }\\n                value /= 10;\\n                if (value == 0) break;\\n            }\\n            return buffer;\\n        }\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        unchecked {\\n            return toHexString(value, Math.log256(value) + 1);\\n        }\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xa4d1d62251f8574deb032a35fc948386a9b4de74b812d4f545a1ac120486b48a\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/math/Math.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.8.0) (utils/math/Math.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Standard math utilities missing in the Solidity language.\\n */\\nlibrary Math {\\n    enum Rounding {\\n        Down, // Toward negative infinity\\n        Up, // Toward infinity\\n        Zero // Toward zero\\n    }\\n\\n    /**\\n     * @dev Returns the largest of two numbers.\\n     */\\n    function max(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a > b ? a : b;\\n    }\\n\\n    /**\\n     * @dev Returns the smallest of two numbers.\\n     */\\n    function min(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a < b ? a : b;\\n    }\\n\\n    /**\\n     * @dev Returns the average of two numbers. The result is rounded towards\\n     * zero.\\n     */\\n    function average(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // (a + b) / 2 can overflow.\\n        return (a & b) + (a ^ b) / 2;\\n    }\\n\\n    /**\\n     * @dev Returns the ceiling of the division of two numbers.\\n     *\\n     * This differs from standard division with `/` in that it rounds up instead\\n     * of rounding down.\\n     */\\n    function ceilDiv(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // (a + b - 1) / b can overflow on addition, so we distribute.\\n        return a == 0 ? 0 : (a - 1) / b + 1;\\n    }\\n\\n    /**\\n     * @notice Calculates floor(x * y / denominator) with full precision. Throws if result overflows a uint256 or denominator == 0\\n     * @dev Original credit to Remco Bloemen under MIT license (https://xn--2-umb.com/21/muldiv)\\n     * with further edits by Uniswap Labs also under MIT license.\\n     */\\n    function mulDiv(\\n        uint256 x,\\n        uint256 y,\\n        uint256 denominator\\n    ) internal pure returns (uint256 result) {\\n        unchecked {\\n            // 512-bit multiply [prod1 prod0] = x * y. Compute the product mod 2^256 and mod 2^256 - 1, then use\\n            // use the Chinese Remainder Theorem to reconstruct the 512 bit result. The result is stored in two 256\\n            // variables such that product = prod1 * 2^256 + prod0.\\n            uint256 prod0; // Least significant 256 bits of the product\\n            uint256 prod1; // Most significant 256 bits of the product\\n            assembly {\\n                let mm := mulmod(x, y, not(0))\\n                prod0 := mul(x, y)\\n                prod1 := sub(sub(mm, prod0), lt(mm, prod0))\\n            }\\n\\n            // Handle non-overflow cases, 256 by 256 division.\\n            if (prod1 == 0) {\\n                return prod0 / denominator;\\n            }\\n\\n            // Make sure the result is less than 2^256. Also prevents denominator == 0.\\n            require(denominator > prod1);\\n\\n            ///////////////////////////////////////////////\\n            // 512 by 256 division.\\n            ///////////////////////////////////////////////\\n\\n            // Make division exact by subtracting the remainder from [prod1 prod0].\\n            uint256 remainder;\\n            assembly {\\n                // Compute remainder using mulmod.\\n                remainder := mulmod(x, y, denominator)\\n\\n                // Subtract 256 bit number from 512 bit number.\\n                prod1 := sub(prod1, gt(remainder, prod0))\\n                prod0 := sub(prod0, remainder)\\n            }\\n\\n            // Factor powers of two out of denominator and compute largest power of two divisor of denominator. Always >= 1.\\n            // See https://cs.stackexchange.com/q/138556/92363.\\n\\n            // Does not overflow because the denominator cannot be zero at this stage in the function.\\n            uint256 twos = denominator & (~denominator + 1);\\n            assembly {\\n                // Divide denominator by twos.\\n                denominator := div(denominator, twos)\\n\\n                // Divide [prod1 prod0] by twos.\\n                prod0 := div(prod0, twos)\\n\\n                // Flip twos such that it is 2^256 / twos. If twos is zero, then it becomes one.\\n                twos := add(div(sub(0, twos), twos), 1)\\n            }\\n\\n            // Shift in bits from prod1 into prod0.\\n            prod0 |= prod1 * twos;\\n\\n            // Invert denominator mod 2^256. Now that denominator is an odd number, it has an inverse modulo 2^256 such\\n            // that denominator * inv = 1 mod 2^256. Compute the inverse by starting with a seed that is correct for\\n            // four bits. That is, denominator * inv = 1 mod 2^4.\\n            uint256 inverse = (3 * denominator) ^ 2;\\n\\n            // Use the Newton-Raphson iteration to improve the precision. Thanks to Hensel's lifting lemma, this also works\\n            // in modular arithmetic, doubling the correct bits in each step.\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^8\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^16\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^32\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^64\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^128\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^256\\n\\n            // Because the division is now exact we can divide by multiplying with the modular inverse of denominator.\\n            // This will give us the correct result modulo 2^256. Since the preconditions guarantee that the outcome is\\n            // less than 2^256, this is the final result. We don't need to compute the high bits of the result and prod1\\n            // is no longer required.\\n            result = prod0 * inverse;\\n            return result;\\n        }\\n    }\\n\\n    /**\\n     * @notice Calculates x * y / denominator with full precision, following the selected rounding direction.\\n     */\\n    function mulDiv(\\n        uint256 x,\\n        uint256 y,\\n        uint256 denominator,\\n        Rounding rounding\\n    ) internal pure returns (uint256) {\\n        uint256 result = mulDiv(x, y, denominator);\\n        if (rounding == Rounding.Up && mulmod(x, y, denominator) > 0) {\\n            result += 1;\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Returns the square root of a number. If the number is not a perfect square, the value is rounded down.\\n     *\\n     * Inspired by Henry S. Warren, Jr.'s \\\"Hacker's Delight\\\" (Chapter 11).\\n     */\\n    function sqrt(uint256 a) internal pure returns (uint256) {\\n        if (a == 0) {\\n            return 0;\\n        }\\n\\n        // For our first guess, we get the biggest power of 2 which is smaller than the square root of the target.\\n        //\\n        // We know that the \\\"msb\\\" (most significant bit) of our target number `a` is a power of 2 such that we have\\n        // `msb(a) <= a < 2*msb(a)`. This value can be written `msb(a)=2**k` with `k=log2(a)`.\\n        //\\n        // This can be rewritten `2**log2(a) <= a < 2**(log2(a) + 1)`\\n        // \\u2192 `sqrt(2**k) <= sqrt(a) < sqrt(2**(k+1))`\\n        // \\u2192 `2**(k/2) <= sqrt(a) < 2**((k+1)/2) <= 2**(k/2 + 1)`\\n        //\\n        // Consequently, `2**(log2(a) / 2)` is a good first approximation of `sqrt(a)` with at least 1 correct bit.\\n        uint256 result = 1 << (log2(a) >> 1);\\n\\n        // At this point `result` is an estimation with one bit of precision. We know the true value is a uint128,\\n        // since it is the square root of a uint256. Newton's method converges quadratically (precision doubles at\\n        // every iteration). We thus need at most 7 iteration to turn our partial result with one bit of precision\\n        // into the expected uint128 result.\\n        unchecked {\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            return min(result, a / result);\\n        }\\n    }\\n\\n    /**\\n     * @notice Calculates sqrt(a), following the selected rounding direction.\\n     */\\n    function sqrt(uint256 a, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = sqrt(a);\\n            return result + (rounding == Rounding.Up && result * result < a ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 2, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log2(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >> 128 > 0) {\\n                value >>= 128;\\n                result += 128;\\n            }\\n            if (value >> 64 > 0) {\\n                value >>= 64;\\n                result += 64;\\n            }\\n            if (value >> 32 > 0) {\\n                value >>= 32;\\n                result += 32;\\n            }\\n            if (value >> 16 > 0) {\\n                value >>= 16;\\n                result += 16;\\n            }\\n            if (value >> 8 > 0) {\\n                value >>= 8;\\n                result += 8;\\n            }\\n            if (value >> 4 > 0) {\\n                value >>= 4;\\n                result += 4;\\n            }\\n            if (value >> 2 > 0) {\\n                value >>= 2;\\n                result += 2;\\n            }\\n            if (value >> 1 > 0) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 2, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log2(value);\\n            return result + (rounding == Rounding.Up && 1 << result < value ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log10(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >= 10**64) {\\n                value /= 10**64;\\n                result += 64;\\n            }\\n            if (value >= 10**32) {\\n                value /= 10**32;\\n                result += 32;\\n            }\\n            if (value >= 10**16) {\\n                value /= 10**16;\\n                result += 16;\\n            }\\n            if (value >= 10**8) {\\n                value /= 10**8;\\n                result += 8;\\n            }\\n            if (value >= 10**4) {\\n                value /= 10**4;\\n                result += 4;\\n            }\\n            if (value >= 10**2) {\\n                value /= 10**2;\\n                result += 2;\\n            }\\n            if (value >= 10**1) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log10(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log10(value);\\n            return result + (rounding == Rounding.Up && 10**result < value ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 256, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     *\\n     * Adding one to the result gives the number of pairs of hex symbols needed to represent `value` as a hex string.\\n     */\\n    function log256(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >> 128 > 0) {\\n                value >>= 128;\\n                result += 16;\\n            }\\n            if (value >> 64 > 0) {\\n                value >>= 64;\\n                result += 8;\\n            }\\n            if (value >> 32 > 0) {\\n                value >>= 32;\\n                result += 4;\\n            }\\n            if (value >> 16 > 0) {\\n                value >>= 16;\\n                result += 2;\\n            }\\n            if (value >> 8 > 0) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log256(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log256(value);\\n            return result + (rounding == Rounding.Up && 1 << (result * 8) < value ? 1 : 0);\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xa1e8e83cd0087785df04ac79fb395d9f3684caeaf973d9e2c71caef723a3a5d6\",\"license\":\"MIT\"},\"contracts/Color.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.18;\\nimport \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\nlibrary Color {\\n    using Strings for uint256;\\n\\n    struct DNA {\\n        uint256 tokenId;\\n        uint16 baseColor;\\n        uint256 starSeed;\\n        uint256 funkSeed;\\n        uint256 circleSeed;\\n        uint256 groundSeed;\\n        uint256 constellationSeed;\\n    }\\n\\n    struct HSL {\\n        uint16 H;\\n        uint16 S;\\n        uint16 L;\\n    }\\n\\n    struct Point {\\n        uint16 x;\\n        uint16 y;\\n    }\\n\\n    struct Circle {\\n        uint16 x;\\n        uint16 y;\\n        uint16 r;\\n        uint8 count;\\n        uint16 stroke;\\n        bool active;\\n    }\\n\\n    function HSLtoString(HSL memory color) public pure returns (string memory) {\\n        return\\n            string(\\n                abi.encodePacked(\\n                    \\\"hsl(\\\",\\n                    ((uint256)(color.H)).toString(),\\n                    \\\",\\\",\\n                    ((uint256)(color.S)).toString(),\\n                    \\\"%,\\\",\\n                    ((uint256)(color.L)).toString(),\\n                    \\\"%)\\\"\\n                )\\n            );\\n    }\\n\\n    function toString(uint16 num) public pure returns (string memory) {\\n        return ((uint256)(num)).toString();\\n    }\\n\\n    function psuedorandom(\\n        uint256 tokenId,\\n        uint256 nonce\\n    ) public pure returns (uint256) {\\n        return uint(keccak256(abi.encodePacked(tokenId, nonce)));\\n    }\\n\\n    function wiggle(\\n        uint256 tokenId,\\n        uint256 nonce,\\n        uint16 base,\\n        uint16 offset\\n    ) public pure returns (uint16) {\\n        uint16 wiggleAmount = (uint16)(psuedorandom(tokenId, nonce) % offset);\\n        if ((uint8)(psuedorandom(tokenId, nonce) % 2) == 0) {\\n            return base + wiggleAmount;\\n        } else {\\n            return subZero(base, wiggleAmount);\\n        }\\n    }\\n\\n    function wiggleString(\\n        uint256 tokenId,\\n        uint256 nonce,\\n        uint16 base,\\n        uint16 offset\\n    ) public pure returns (string memory) {\\n        return toString(wiggle(tokenId, nonce, base, offset));\\n    }\\n\\n    function wiggleUp(\\n        uint256 tokenId,\\n        uint256 nonce,\\n        uint16 base,\\n        uint16 offset\\n    ) public pure returns (uint16) {\\n        uint16 wiggleAmount = (uint16)(psuedorandom(tokenId, nonce) % offset);\\n        return base + wiggleAmount;\\n    }\\n\\n    function subZero(uint16 first, uint16 second) public pure returns (uint16) {\\n        if (first > second) {\\n            return first - second;\\n        } else {\\n            return 0;\\n        }\\n    }\\n\\n    function flipColor(\\n        Color.HSL memory color\\n    ) public pure returns (Color.HSL memory) {\\n        uint16 newH = color.H + 180 > 360 ? color.H - 180 : color.H + 180;\\n        return Color.HSL(newH, color.S, color.L);\\n    }\\n\\n    function rotateColor(\\n        Color.HSL memory color,\\n        uint16 amount\\n    ) public pure returns (Color.HSL memory) {\\n        uint16 newH = color.H + amount > 360\\n            ? subZero(color.H, amount)\\n            : color.H + amount;\\n        return Color.HSL(newH, color.S, color.L);\\n    }\\n\\n    function genDNA(uint256 tokenId) public pure returns (DNA memory) {\\n        DNA memory dna;\\n        dna.tokenId = tokenId;\\n        dna.baseColor = uint16((tokenId % 16) * 10);\\n        dna.starSeed = psuedorandom(tokenId, 123);\\n        dna.funkSeed = psuedorandom(tokenId, 234);\\n        dna.circleSeed = psuedorandom(tokenId, 345);\\n        dna.groundSeed = psuedorandom(tokenId, 456);\\n        dna.constellationSeed = tokenId;\\n\\n        return dna;\\n    }\\n}\\n\",\"keccak256\":\"0xf666304c94ce23e23aef55bb5abe5cfb2be1b2dd031eda7ec5476495a5bbbc4c\",\"license\":\"MIT\"},\"contracts/decos/Empty_SkyMath.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.18;\\n\\nimport \\\"./IDeco.sol\\\";\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\nimport \\\"@openzeppelin/contracts/utils/Base64.sol\\\";\\n\\ncontract Empty_SkyMath is IDeco, Ownable {\\n    using Strings for uint256;\\n\\n    function ownerOf(uint256 tokenId) external view returns (address) {\\n        return _msgSender();\\n    }\\n\\n    function balanceOf(address owner) external view returns (uint256) {\\n        return 1;\\n    }\\n\\n    function tokenURI(uint256 tokenId) public view returns (string memory) {\\n        bytes memory dataURI = abi.encodePacked(\\n            \\\"{\\\",\\n            '\\\"name\\\": \\\"chainellation Mountains #',\\n            tokenId.toString(),\\n            '\\\",',\\n            '\\\"description\\\": \\\"chainellation Mountains\\\",',\\n            '\\\"image\\\": \\\"',\\n            generateCharacter(tokenId),\\n            '\\\"',\\n            \\\"}\\\"\\n        );\\n        return\\n            string(\\n                abi.encodePacked(\\n                    \\\"data:application/json;base64,\\\",\\n                    Base64.encode(dataURI)\\n                )\\n            );\\n    }\\n\\n    function generateCharacter(\\n        uint256 tokenId\\n    ) public view returns (string memory) {\\n        Color.DNA memory dna = Color.genDNA(tokenId);\\n        bytes memory svg = abi.encodePacked(\\n            packageAsSVG(tokenId, dna, 0, true)\\n        );\\n\\n        return\\n            string(\\n                abi.encodePacked(\\n                    \\\"data:image/svg+xml;base64,\\\",\\n                    Base64.encode(svg)\\n                )\\n            );\\n    }\\n\\n    function packageAsSVG(\\n        uint256 tokenId,\\n        Color.DNA memory dna,\\n        uint256 gazes,\\n        bool daytime\\n    ) public view returns (string memory) {\\n        return\\n            string.concat(\\n                '<svg viewBox=\\\"0 0 512 512\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\">',\\n                getDeco(tokenId, dna, gazes, daytime),\\n                \\\"</svg>\\\"\\n            );\\n    }\\n\\n    function getDeco(\\n        uint256 tokenId,\\n        Color.DNA memory dna,\\n        uint256 gazes,\\n        bool daytime\\n    ) public pure returns (string memory) {\\n        return string.concat('<g id=\\\"skymath\\\">', \\\"</g>\\\");\\n    }\\n\\n    function getApproved(\\n        uint256 tokenId\\n    ) external view override returns (address) {\\n        return _msgSender();\\n    }\\n\\n    function safeTransferFrom(\\n        address from,\\n        address to,\\n        uint256 tokenId\\n    ) external override {}\\n\\n    function burn(uint256 tokenId) external override {}\\n}\\n\",\"keccak256\":\"0xe7af1ab8b362b76e3b4f5c109681c1a2111d31e02d59b942d6b5793244975de8\",\"license\":\"MIT\"},\"contracts/decos/IDeco.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.18;\\nimport \\\"../Color.sol\\\";\\n\\ninterface IDeco {\\n    function getDeco(\\n        uint256 tokenId,\\n        Color.DNA memory dna,\\n        uint256 gazes,\\n        bool daytime\\n    ) external view returns (string memory);\\n\\n    function ownerOf(uint256 tokenId) external view returns (address);\\n\\n    function getApproved(uint256 tokenId) external view returns (address);\\n\\n    function safeTransferFrom(\\n        address from,\\n        address to,\\n        uint256 tokenId\\n    ) external;\\n\\n    function burn(uint256 tokenId) external;\\n\\n    function balanceOf(address owner) external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x06c882081a5140f3a38162f7542cbfd8d028739f75181879744c87faaa392eb0\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061001a3361001f565b61006f565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b610e178061007e6000396000f3fe608060405234801561001057600080fd5b50600436106100d45760003560e01c8063715018a611610081578063e3366c991161005b578063e3366c991461019d578063e8b5bef6146101b0578063f2fde38b146101c357600080fd5b8063715018a6146101715780638da5cb5b14610179578063c87b56dd1461018a57600080fd5b806342966c68116100b257806342966c681461013e5780636352211e146100d957806370a082311461014f57600080fd5b8063081812fc146100d95780630daefed51461010957806342842e0e14610129575b600080fd5b6100ec6100e7366004610809565b6101d6565b6040516001600160a01b0390911681526020015b60405180910390f35b61011c610117366004610809565b6101e0565b6040516101009190610846565b61013c610137366004610895565b505050565b005b61013c61014c366004610809565b50565b61016361015d3660046108d1565b50600190565b604051908152602001610100565b61013c6102d7565b6000546001600160a01b03166100ec565b61011c610198366004610809565b6102eb565b61011c6101ab366004610960565b610353565b61011c6101be366004610960565b6103c2565b61013c6101d13660046108d1565b6103e0565b6000335b92915050565b6040517f761fc4030000000000000000000000000000000000000000000000000000000081526004810182905260609060009073d795DE79b46792928a386EAcddE5Ef173146509F9063761fc4039060240160e060405180830381865af415801561024f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102739190610a09565b905060006102858483600060016103c2565b6040516020016102959190610a78565b60405160208183030381529060405290506102af81610472565b6040516020016102bf9190610a94565b60405160208183030381529060405292505050919050565b6102df6105c5565b6102e9600061061f565b565b606060006102f883610687565b610301846101e0565b604051602001610312929190610ad9565b604051602081830303815290604052905061032c81610472565b60405160200161033c9190610c68565b604051602081830303815290604052915050919050565b6040517f3c672069643d22736b796d617468223e0000000000000000000000000000000060208201527f3c2f673e0000000000000000000000000000000000000000000000000000000060308201526060906034015b6040516020818303038152906040529050949350505050565b60606103d085858585610353565b6040516020016103a99190610cad565b6103e86105c5565b6001600160a01b0381166104695760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201527f646472657373000000000000000000000000000000000000000000000000000060648201526084015b60405180910390fd5b61014c8161061f565b6060815160000361049157505060408051602081019091526000815290565b6000604051806060016040528060408152602001610da260409139905060006003845160026104c09190610d55565b6104ca9190610d68565b6104d5906004610d8a565b67ffffffffffffffff8111156104ed576104ed6108f3565b6040519080825280601f01601f191660200182016040528015610517576020820181803683370190505b509050600182016020820185865187015b80821015610583576003820191508151603f8160121c168501518453600184019350603f81600c1c168501518453600184019350603f8160061c168501518453600184019350603f8116850151845350600183019250610528565b505060038651066001811461059f57600281146105b2576105ba565b603d6001830353603d60028303536105ba565b603d60018303535b509195945050505050565b6000546001600160a01b031633146102e95760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610460565b600080546001600160a01b038381167fffffffffffffffffffffffff0000000000000000000000000000000000000000831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6060600061069483610727565b600101905060008167ffffffffffffffff8111156106b4576106b46108f3565b6040519080825280601f01601f1916602001820160405280156106de576020820181803683370190505b5090508181016020015b600019017f3031323334353637383961626364656600000000000000000000000000000000600a86061a8153600a85049450846106e857509392505050565b6000807a184f03e93ff9f4daa797ed6e38ed64bf6a1f0100000000000000008310610770577a184f03e93ff9f4daa797ed6e38ed64bf6a1f010000000000000000830492506040015b6d04ee2d6d415b85acef8100000000831061079c576d04ee2d6d415b85acef8100000000830492506020015b662386f26fc1000083106107ba57662386f26fc10000830492506010015b6305f5e10083106107d2576305f5e100830492506008015b61271083106107e657612710830492506004015b606483106107f8576064830492506002015b600a83106101da5760010192915050565b60006020828403121561081b57600080fd5b5035919050565b60005b8381101561083d578181015183820152602001610825565b50506000910152565b6020815260008251806020840152610865816040850160208701610822565b601f01601f19169190910160400192915050565b80356001600160a01b038116811461089057600080fd5b919050565b6000806000606084860312156108aa57600080fd5b6108b384610879565b92506108c160208501610879565b9150604084013590509250925092565b6000602082840312156108e357600080fd5b6108ec82610879565b9392505050565b634e487b7160e01b600052604160045260246000fd5b60405160e0810167ffffffffffffffff8111828210171561093a57634e487b7160e01b600052604160045260246000fd5b60405290565b61ffff8116811461014c57600080fd5b8035801515811461089057600080fd5b60008060008084860361014081121561097857600080fd5b8535945060e0601f198201121561098e57600080fd5b50610997610909565b6020860135815260408601356109ac81610940565b80602083015250606086013560408201526080860135606082015260a0860135608082015260c086013560a082015260e086013560c08201528093505061010085013591506109fe6101208601610950565b905092959194509250565b600060e08284031215610a1b57600080fd5b610a23610909565b825181526020830151610a3581610940565b8060208301525060408301516040820152606083015160608201526080830151608082015260a083015160a082015260c083015160c08201528091505092915050565b60008251610a8a818460208701610822565b9190910192915050565b7f646174613a696d6167652f7376672b786d6c3b6261736536342c000000000000815260008251610acc81601a850160208701610822565b91909101601a0192915050565b7f7b0000000000000000000000000000000000000000000000000000000000000081527f226e616d65223a2022636861696e656c6c6174696f6e204d6f756e7461696e7360018201527f2023000000000000000000000000000000000000000000000000000000000000602182015260008351610b5d816023850160208801610822565b7f222c0000000000000000000000000000000000000000000000000000000000006023918401918201527f226465736372697074696f6e223a2022636861696e656c6c6174696f6e204d6f60258201527f756e7461696e73222c000000000000000000000000000000000000000000000060458201527f22696d616765223a202200000000000000000000000000000000000000000000604e8201528351610c0c816058840160208801610822565b7f2200000000000000000000000000000000000000000000000000000000000000605892909101918201527f7d000000000000000000000000000000000000000000000000000000000000006059820152605a01949350505050565b7f646174613a6170706c69636174696f6e2f6a736f6e3b6261736536342c000000815260008251610ca081601d850160208701610822565b91909101601d0192915050565b7f3c7376672076696577426f783d2230203020353132203531322220786d6c6e7381527f3d22687474703a2f2f7777772e77332e6f72672f323030302f737667223e0000602082015260008251610d0b81603e850160208701610822565b7f3c2f7376673e0000000000000000000000000000000000000000000000000000603e939091019283015250604401919050565b634e487b7160e01b600052601160045260246000fd5b808201808211156101da576101da610d3f565b600082610d8557634e487b7160e01b600052601260045260246000fd5b500490565b80820281158282048414176101da576101da610d3f56fe4142434445464748494a4b4c4d4e4f505152535455565758595a6162636465666768696a6b6c6d6e6f707172737475767778797a303132333435363738392b2fa264697066735822122009365b240bf97698f8a99905d4be2bb6d6a93af225d75eb8fbaad5b059d1e77764736f6c63430008120033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100d45760003560e01c8063715018a611610081578063e3366c991161005b578063e3366c991461019d578063e8b5bef6146101b0578063f2fde38b146101c357600080fd5b8063715018a6146101715780638da5cb5b14610179578063c87b56dd1461018a57600080fd5b806342966c68116100b257806342966c681461013e5780636352211e146100d957806370a082311461014f57600080fd5b8063081812fc146100d95780630daefed51461010957806342842e0e14610129575b600080fd5b6100ec6100e7366004610809565b6101d6565b6040516001600160a01b0390911681526020015b60405180910390f35b61011c610117366004610809565b6101e0565b6040516101009190610846565b61013c610137366004610895565b505050565b005b61013c61014c366004610809565b50565b61016361015d3660046108d1565b50600190565b604051908152602001610100565b61013c6102d7565b6000546001600160a01b03166100ec565b61011c610198366004610809565b6102eb565b61011c6101ab366004610960565b610353565b61011c6101be366004610960565b6103c2565b61013c6101d13660046108d1565b6103e0565b6000335b92915050565b6040517f761fc4030000000000000000000000000000000000000000000000000000000081526004810182905260609060009073__$11e21e6c56ca563b85c74e3fd3a08242f9$__9063761fc4039060240160e060405180830381865af415801561024f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102739190610a09565b905060006102858483600060016103c2565b6040516020016102959190610a78565b60405160208183030381529060405290506102af81610472565b6040516020016102bf9190610a94565b60405160208183030381529060405292505050919050565b6102df6105c5565b6102e9600061061f565b565b606060006102f883610687565b610301846101e0565b604051602001610312929190610ad9565b604051602081830303815290604052905061032c81610472565b60405160200161033c9190610c68565b604051602081830303815290604052915050919050565b6040517f3c672069643d22736b796d617468223e0000000000000000000000000000000060208201527f3c2f673e0000000000000000000000000000000000000000000000000000000060308201526060906034015b6040516020818303038152906040529050949350505050565b60606103d085858585610353565b6040516020016103a99190610cad565b6103e86105c5565b6001600160a01b0381166104695760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201527f646472657373000000000000000000000000000000000000000000000000000060648201526084015b60405180910390fd5b61014c8161061f565b6060815160000361049157505060408051602081019091526000815290565b6000604051806060016040528060408152602001610da260409139905060006003845160026104c09190610d55565b6104ca9190610d68565b6104d5906004610d8a565b67ffffffffffffffff8111156104ed576104ed6108f3565b6040519080825280601f01601f191660200182016040528015610517576020820181803683370190505b509050600182016020820185865187015b80821015610583576003820191508151603f8160121c168501518453600184019350603f81600c1c168501518453600184019350603f8160061c168501518453600184019350603f8116850151845350600183019250610528565b505060038651066001811461059f57600281146105b2576105ba565b603d6001830353603d60028303536105ba565b603d60018303535b509195945050505050565b6000546001600160a01b031633146102e95760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610460565b600080546001600160a01b038381167fffffffffffffffffffffffff0000000000000000000000000000000000000000831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6060600061069483610727565b600101905060008167ffffffffffffffff8111156106b4576106b46108f3565b6040519080825280601f01601f1916602001820160405280156106de576020820181803683370190505b5090508181016020015b600019017f3031323334353637383961626364656600000000000000000000000000000000600a86061a8153600a85049450846106e857509392505050565b6000807a184f03e93ff9f4daa797ed6e38ed64bf6a1f0100000000000000008310610770577a184f03e93ff9f4daa797ed6e38ed64bf6a1f010000000000000000830492506040015b6d04ee2d6d415b85acef8100000000831061079c576d04ee2d6d415b85acef8100000000830492506020015b662386f26fc1000083106107ba57662386f26fc10000830492506010015b6305f5e10083106107d2576305f5e100830492506008015b61271083106107e657612710830492506004015b606483106107f8576064830492506002015b600a83106101da5760010192915050565b60006020828403121561081b57600080fd5b5035919050565b60005b8381101561083d578181015183820152602001610825565b50506000910152565b6020815260008251806020840152610865816040850160208701610822565b601f01601f19169190910160400192915050565b80356001600160a01b038116811461089057600080fd5b919050565b6000806000606084860312156108aa57600080fd5b6108b384610879565b92506108c160208501610879565b9150604084013590509250925092565b6000602082840312156108e357600080fd5b6108ec82610879565b9392505050565b634e487b7160e01b600052604160045260246000fd5b60405160e0810167ffffffffffffffff8111828210171561093a57634e487b7160e01b600052604160045260246000fd5b60405290565b61ffff8116811461014c57600080fd5b8035801515811461089057600080fd5b60008060008084860361014081121561097857600080fd5b8535945060e0601f198201121561098e57600080fd5b50610997610909565b6020860135815260408601356109ac81610940565b80602083015250606086013560408201526080860135606082015260a0860135608082015260c086013560a082015260e086013560c08201528093505061010085013591506109fe6101208601610950565b905092959194509250565b600060e08284031215610a1b57600080fd5b610a23610909565b825181526020830151610a3581610940565b8060208301525060408301516040820152606083015160608201526080830151608082015260a083015160a082015260c083015160c08201528091505092915050565b60008251610a8a818460208701610822565b9190910192915050565b7f646174613a696d6167652f7376672b786d6c3b6261736536342c000000000000815260008251610acc81601a850160208701610822565b91909101601a0192915050565b7f7b0000000000000000000000000000000000000000000000000000000000000081527f226e616d65223a2022636861696e656c6c6174696f6e204d6f756e7461696e7360018201527f2023000000000000000000000000000000000000000000000000000000000000602182015260008351610b5d816023850160208801610822565b7f222c0000000000000000000000000000000000000000000000000000000000006023918401918201527f226465736372697074696f6e223a2022636861696e656c6c6174696f6e204d6f60258201527f756e7461696e73222c000000000000000000000000000000000000000000000060458201527f22696d616765223a202200000000000000000000000000000000000000000000604e8201528351610c0c816058840160208801610822565b7f2200000000000000000000000000000000000000000000000000000000000000605892909101918201527f7d000000000000000000000000000000000000000000000000000000000000006059820152605a01949350505050565b7f646174613a6170706c69636174696f6e2f6a736f6e3b6261736536342c000000815260008251610ca081601d850160208701610822565b91909101601d0192915050565b7f3c7376672076696577426f783d2230203020353132203531322220786d6c6e7381527f3d22687474703a2f2f7777772e77332e6f72672f323030302f737667223e0000602082015260008251610d0b81603e850160208701610822565b7f3c2f7376673e0000000000000000000000000000000000000000000000000000603e939091019283015250604401919050565b634e487b7160e01b600052601160045260246000fd5b808201808211156101da576101da610d3f565b600082610d8557634e487b7160e01b600052601260045260246000fd5b500490565b80820281158282048414176101da576101da610d3f56fe4142434445464748494a4b4c4d4e4f505152535455565758595a6162636465666768696a6b6c6d6e6f707172737475767778797a303132333435363738392b2fa264697066735822122009365b240bf97698f8a99905d4be2bb6d6a93af225d75eb8fbaad5b059d1e77764736f6c63430008120033",
+  "libraries": {
+    "Color": "0xd795DE79b46792928a386EAcddE5Ef173146509F"
+  },
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 7,
+        "contract": "contracts/decos/Empty_SkyMath.sol:Empty_SkyMath",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      }
+    }
+  }
+}

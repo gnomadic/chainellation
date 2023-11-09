@@ -1,0 +1,429 @@
+{
+  "address": "0xd795DE79b46792928a386EAcddE5Ef173146509F",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint16",
+              "name": "H",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "S",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "L",
+              "type": "uint16"
+            }
+          ],
+          "internalType": "struct Color.HSL",
+          "name": "color",
+          "type": "tuple"
+        }
+      ],
+      "name": "HSLtoString",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint16",
+              "name": "H",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "S",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "L",
+              "type": "uint16"
+            }
+          ],
+          "internalType": "struct Color.HSL",
+          "name": "color",
+          "type": "tuple"
+        }
+      ],
+      "name": "flipColor",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint16",
+              "name": "H",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "S",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "L",
+              "type": "uint16"
+            }
+          ],
+          "internalType": "struct Color.HSL",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "genDNA",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint16",
+              "name": "baseColor",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "starSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "funkSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "circleSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "groundSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "constellationSeed",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Color.DNA",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "nonce",
+          "type": "uint256"
+        }
+      ],
+      "name": "psuedorandom",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint16",
+              "name": "H",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "S",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "L",
+              "type": "uint16"
+            }
+          ],
+          "internalType": "struct Color.HSL",
+          "name": "color",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint16",
+          "name": "amount",
+          "type": "uint16"
+        }
+      ],
+      "name": "rotateColor",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint16",
+              "name": "H",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "S",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "L",
+              "type": "uint16"
+            }
+          ],
+          "internalType": "struct Color.HSL",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "first",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "second",
+          "type": "uint16"
+        }
+      ],
+      "name": "subZero",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "num",
+          "type": "uint16"
+        }
+      ],
+      "name": "toString",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "nonce",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint16",
+          "name": "base",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "offset",
+          "type": "uint16"
+        }
+      ],
+      "name": "wiggle",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "nonce",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint16",
+          "name": "base",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "offset",
+          "type": "uint16"
+        }
+      ],
+      "name": "wiggleString",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "nonce",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint16",
+          "name": "base",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "offset",
+          "type": "uint16"
+        }
+      ],
+      "name": "wiggleUp",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xa683b505948de22d590f99085be6536eb5bf9b84e0ae90f31f800bededb62549",
+  "receipt": {
+    "to": null,
+    "from": "0x0a12A6777fc7D65b1461070648dA9CAE6962fcEe",
+    "contractAddress": "0xd795DE79b46792928a386EAcddE5Ef173146509F",
+    "transactionIndex": 38,
+    "gasUsed": "705327",
+    "logsBloom": "0x00100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000108000000000000000000000000000000000000000000000000000000000800000000000000000000100000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000002000000000000000000000000200000040000100000000000000000000000000000000000000000000000004000000000000000000001000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000100000",
+    "blockHash": "0x86abc0c4bf96e9805eb251abca1acad0bf65245d6125dee83a41a8aec3615cb3",
+    "transactionHash": "0xa683b505948de22d590f99085be6536eb5bf9b84e0ae90f31f800bededb62549",
+    "logs": [
+      {
+        "transactionIndex": 38,
+        "blockNumber": 43949407,
+        "transactionHash": "0xa683b505948de22d590f99085be6536eb5bf9b84e0ae90f31f800bededb62549",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x0000000000000000000000000a12a6777fc7d65b1461070648da9cae6962fcee",
+          "0x00000000000000000000000026c80cc193b27d73d2c40943acec77f4da2c5bd8"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000006051cce321961c0000000000000000000000000000000000000000000000008ac7230489e800000000000000000000000000000000000000000000000019af8ad8407a65608a7f0000000000000000000000000000000000000000000000008a66d137a6c669e40000000000000000000000000000000000000000000019af8b3892474882209b",
+        "logIndex": 315,
+        "blockHash": "0x86abc0c4bf96e9805eb251abca1acad0bf65245d6125dee83a41a8aec3615cb3"
+      }
+    ],
+    "blockNumber": 43949407,
+    "cumulativeGasUsed": "10104450",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "3e6973bac707de8cce66ea97621d2f00",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.18+commit.87f61d96\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"components\":[{\"internalType\":\"uint16\",\"name\":\"H\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"S\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"L\",\"type\":\"uint16\"}],\"internalType\":\"struct Color.HSL\",\"name\":\"color\",\"type\":\"tuple\"}],\"name\":\"HSLtoString\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint16\",\"name\":\"H\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"S\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"L\",\"type\":\"uint16\"}],\"internalType\":\"struct Color.HSL\",\"name\":\"color\",\"type\":\"tuple\"}],\"name\":\"flipColor\",\"outputs\":[{\"components\":[{\"internalType\":\"uint16\",\"name\":\"H\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"S\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"L\",\"type\":\"uint16\"}],\"internalType\":\"struct Color.HSL\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"genDNA\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint16\",\"name\":\"baseColor\",\"type\":\"uint16\"},{\"internalType\":\"uint256\",\"name\":\"starSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"funkSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"circleSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"groundSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"constellationSeed\",\"type\":\"uint256\"}],\"internalType\":\"struct Color.DNA\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"}],\"name\":\"psuedorandom\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint16\",\"name\":\"H\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"S\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"L\",\"type\":\"uint16\"}],\"internalType\":\"struct Color.HSL\",\"name\":\"color\",\"type\":\"tuple\"},{\"internalType\":\"uint16\",\"name\":\"amount\",\"type\":\"uint16\"}],\"name\":\"rotateColor\",\"outputs\":[{\"components\":[{\"internalType\":\"uint16\",\"name\":\"H\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"S\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"L\",\"type\":\"uint16\"}],\"internalType\":\"struct Color.HSL\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"first\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"second\",\"type\":\"uint16\"}],\"name\":\"subZero\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"num\",\"type\":\"uint16\"}],\"name\":\"toString\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"internalType\":\"uint16\",\"name\":\"base\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"offset\",\"type\":\"uint16\"}],\"name\":\"wiggle\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"internalType\":\"uint16\",\"name\":\"base\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"offset\",\"type\":\"uint16\"}],\"name\":\"wiggleString\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"internalType\":\"uint16\",\"name\":\"base\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"offset\",\"type\":\"uint16\"}],\"name\":\"wiggleUp\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Color.sol\":\"Color\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1000},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.8.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"./math/Math.sol\\\";\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        unchecked {\\n            uint256 length = Math.log10(value) + 1;\\n            string memory buffer = new string(length);\\n            uint256 ptr;\\n            /// @solidity memory-safe-assembly\\n            assembly {\\n                ptr := add(buffer, add(32, length))\\n            }\\n            while (true) {\\n                ptr--;\\n                /// @solidity memory-safe-assembly\\n                assembly {\\n                    mstore8(ptr, byte(mod(value, 10), _SYMBOLS))\\n                }\\n                value /= 10;\\n                if (value == 0) break;\\n            }\\n            return buffer;\\n        }\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        unchecked {\\n            return toHexString(value, Math.log256(value) + 1);\\n        }\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xa4d1d62251f8574deb032a35fc948386a9b4de74b812d4f545a1ac120486b48a\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/math/Math.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.8.0) (utils/math/Math.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Standard math utilities missing in the Solidity language.\\n */\\nlibrary Math {\\n    enum Rounding {\\n        Down, // Toward negative infinity\\n        Up, // Toward infinity\\n        Zero // Toward zero\\n    }\\n\\n    /**\\n     * @dev Returns the largest of two numbers.\\n     */\\n    function max(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a > b ? a : b;\\n    }\\n\\n    /**\\n     * @dev Returns the smallest of two numbers.\\n     */\\n    function min(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a < b ? a : b;\\n    }\\n\\n    /**\\n     * @dev Returns the average of two numbers. The result is rounded towards\\n     * zero.\\n     */\\n    function average(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // (a + b) / 2 can overflow.\\n        return (a & b) + (a ^ b) / 2;\\n    }\\n\\n    /**\\n     * @dev Returns the ceiling of the division of two numbers.\\n     *\\n     * This differs from standard division with `/` in that it rounds up instead\\n     * of rounding down.\\n     */\\n    function ceilDiv(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // (a + b - 1) / b can overflow on addition, so we distribute.\\n        return a == 0 ? 0 : (a - 1) / b + 1;\\n    }\\n\\n    /**\\n     * @notice Calculates floor(x * y / denominator) with full precision. Throws if result overflows a uint256 or denominator == 0\\n     * @dev Original credit to Remco Bloemen under MIT license (https://xn--2-umb.com/21/muldiv)\\n     * with further edits by Uniswap Labs also under MIT license.\\n     */\\n    function mulDiv(\\n        uint256 x,\\n        uint256 y,\\n        uint256 denominator\\n    ) internal pure returns (uint256 result) {\\n        unchecked {\\n            // 512-bit multiply [prod1 prod0] = x * y. Compute the product mod 2^256 and mod 2^256 - 1, then use\\n            // use the Chinese Remainder Theorem to reconstruct the 512 bit result. The result is stored in two 256\\n            // variables such that product = prod1 * 2^256 + prod0.\\n            uint256 prod0; // Least significant 256 bits of the product\\n            uint256 prod1; // Most significant 256 bits of the product\\n            assembly {\\n                let mm := mulmod(x, y, not(0))\\n                prod0 := mul(x, y)\\n                prod1 := sub(sub(mm, prod0), lt(mm, prod0))\\n            }\\n\\n            // Handle non-overflow cases, 256 by 256 division.\\n            if (prod1 == 0) {\\n                return prod0 / denominator;\\n            }\\n\\n            // Make sure the result is less than 2^256. Also prevents denominator == 0.\\n            require(denominator > prod1);\\n\\n            ///////////////////////////////////////////////\\n            // 512 by 256 division.\\n            ///////////////////////////////////////////////\\n\\n            // Make division exact by subtracting the remainder from [prod1 prod0].\\n            uint256 remainder;\\n            assembly {\\n                // Compute remainder using mulmod.\\n                remainder := mulmod(x, y, denominator)\\n\\n                // Subtract 256 bit number from 512 bit number.\\n                prod1 := sub(prod1, gt(remainder, prod0))\\n                prod0 := sub(prod0, remainder)\\n            }\\n\\n            // Factor powers of two out of denominator and compute largest power of two divisor of denominator. Always >= 1.\\n            // See https://cs.stackexchange.com/q/138556/92363.\\n\\n            // Does not overflow because the denominator cannot be zero at this stage in the function.\\n            uint256 twos = denominator & (~denominator + 1);\\n            assembly {\\n                // Divide denominator by twos.\\n                denominator := div(denominator, twos)\\n\\n                // Divide [prod1 prod0] by twos.\\n                prod0 := div(prod0, twos)\\n\\n                // Flip twos such that it is 2^256 / twos. If twos is zero, then it becomes one.\\n                twos := add(div(sub(0, twos), twos), 1)\\n            }\\n\\n            // Shift in bits from prod1 into prod0.\\n            prod0 |= prod1 * twos;\\n\\n            // Invert denominator mod 2^256. Now that denominator is an odd number, it has an inverse modulo 2^256 such\\n            // that denominator * inv = 1 mod 2^256. Compute the inverse by starting with a seed that is correct for\\n            // four bits. That is, denominator * inv = 1 mod 2^4.\\n            uint256 inverse = (3 * denominator) ^ 2;\\n\\n            // Use the Newton-Raphson iteration to improve the precision. Thanks to Hensel's lifting lemma, this also works\\n            // in modular arithmetic, doubling the correct bits in each step.\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^8\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^16\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^32\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^64\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^128\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^256\\n\\n            // Because the division is now exact we can divide by multiplying with the modular inverse of denominator.\\n            // This will give us the correct result modulo 2^256. Since the preconditions guarantee that the outcome is\\n            // less than 2^256, this is the final result. We don't need to compute the high bits of the result and prod1\\n            // is no longer required.\\n            result = prod0 * inverse;\\n            return result;\\n        }\\n    }\\n\\n    /**\\n     * @notice Calculates x * y / denominator with full precision, following the selected rounding direction.\\n     */\\n    function mulDiv(\\n        uint256 x,\\n        uint256 y,\\n        uint256 denominator,\\n        Rounding rounding\\n    ) internal pure returns (uint256) {\\n        uint256 result = mulDiv(x, y, denominator);\\n        if (rounding == Rounding.Up && mulmod(x, y, denominator) > 0) {\\n            result += 1;\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Returns the square root of a number. If the number is not a perfect square, the value is rounded down.\\n     *\\n     * Inspired by Henry S. Warren, Jr.'s \\\"Hacker's Delight\\\" (Chapter 11).\\n     */\\n    function sqrt(uint256 a) internal pure returns (uint256) {\\n        if (a == 0) {\\n            return 0;\\n        }\\n\\n        // For our first guess, we get the biggest power of 2 which is smaller than the square root of the target.\\n        //\\n        // We know that the \\\"msb\\\" (most significant bit) of our target number `a` is a power of 2 such that we have\\n        // `msb(a) <= a < 2*msb(a)`. This value can be written `msb(a)=2**k` with `k=log2(a)`.\\n        //\\n        // This can be rewritten `2**log2(a) <= a < 2**(log2(a) + 1)`\\n        // \\u2192 `sqrt(2**k) <= sqrt(a) < sqrt(2**(k+1))`\\n        // \\u2192 `2**(k/2) <= sqrt(a) < 2**((k+1)/2) <= 2**(k/2 + 1)`\\n        //\\n        // Consequently, `2**(log2(a) / 2)` is a good first approximation of `sqrt(a)` with at least 1 correct bit.\\n        uint256 result = 1 << (log2(a) >> 1);\\n\\n        // At this point `result` is an estimation with one bit of precision. We know the true value is a uint128,\\n        // since it is the square root of a uint256. Newton's method converges quadratically (precision doubles at\\n        // every iteration). We thus need at most 7 iteration to turn our partial result with one bit of precision\\n        // into the expected uint128 result.\\n        unchecked {\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            return min(result, a / result);\\n        }\\n    }\\n\\n    /**\\n     * @notice Calculates sqrt(a), following the selected rounding direction.\\n     */\\n    function sqrt(uint256 a, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = sqrt(a);\\n            return result + (rounding == Rounding.Up && result * result < a ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 2, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log2(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >> 128 > 0) {\\n                value >>= 128;\\n                result += 128;\\n            }\\n            if (value >> 64 > 0) {\\n                value >>= 64;\\n                result += 64;\\n            }\\n            if (value >> 32 > 0) {\\n                value >>= 32;\\n                result += 32;\\n            }\\n            if (value >> 16 > 0) {\\n                value >>= 16;\\n                result += 16;\\n            }\\n            if (value >> 8 > 0) {\\n                value >>= 8;\\n                result += 8;\\n            }\\n            if (value >> 4 > 0) {\\n                value >>= 4;\\n                result += 4;\\n            }\\n            if (value >> 2 > 0) {\\n                value >>= 2;\\n                result += 2;\\n            }\\n            if (value >> 1 > 0) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 2, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log2(value);\\n            return result + (rounding == Rounding.Up && 1 << result < value ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log10(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >= 10**64) {\\n                value /= 10**64;\\n                result += 64;\\n            }\\n            if (value >= 10**32) {\\n                value /= 10**32;\\n                result += 32;\\n            }\\n            if (value >= 10**16) {\\n                value /= 10**16;\\n                result += 16;\\n            }\\n            if (value >= 10**8) {\\n                value /= 10**8;\\n                result += 8;\\n            }\\n            if (value >= 10**4) {\\n                value /= 10**4;\\n                result += 4;\\n            }\\n            if (value >= 10**2) {\\n                value /= 10**2;\\n                result += 2;\\n            }\\n            if (value >= 10**1) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log10(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log10(value);\\n            return result + (rounding == Rounding.Up && 10**result < value ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 256, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     *\\n     * Adding one to the result gives the number of pairs of hex symbols needed to represent `value` as a hex string.\\n     */\\n    function log256(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >> 128 > 0) {\\n                value >>= 128;\\n                result += 16;\\n            }\\n            if (value >> 64 > 0) {\\n                value >>= 64;\\n                result += 8;\\n            }\\n            if (value >> 32 > 0) {\\n                value >>= 32;\\n                result += 4;\\n            }\\n            if (value >> 16 > 0) {\\n                value >>= 16;\\n                result += 2;\\n            }\\n            if (value >> 8 > 0) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log256(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log256(value);\\n            return result + (rounding == Rounding.Up && 1 << (result * 8) < value ? 1 : 0);\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xa1e8e83cd0087785df04ac79fb395d9f3684caeaf973d9e2c71caef723a3a5d6\",\"license\":\"MIT\"},\"contracts/Color.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.18;\\nimport \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\nlibrary Color {\\n    using Strings for uint256;\\n\\n    struct DNA {\\n        uint256 tokenId;\\n        uint16 baseColor;\\n        uint256 starSeed;\\n        uint256 funkSeed;\\n        uint256 circleSeed;\\n        uint256 groundSeed;\\n        uint256 constellationSeed;\\n    }\\n\\n    struct HSL {\\n        uint16 H;\\n        uint16 S;\\n        uint16 L;\\n    }\\n\\n    struct Point {\\n        uint16 x;\\n        uint16 y;\\n    }\\n\\n    struct Circle {\\n        uint16 x;\\n        uint16 y;\\n        uint16 r;\\n        uint8 count;\\n        uint16 stroke;\\n        bool active;\\n    }\\n\\n    function HSLtoString(HSL memory color) public pure returns (string memory) {\\n        return\\n            string(\\n                abi.encodePacked(\\n                    \\\"hsl(\\\",\\n                    ((uint256)(color.H)).toString(),\\n                    \\\",\\\",\\n                    ((uint256)(color.S)).toString(),\\n                    \\\"%,\\\",\\n                    ((uint256)(color.L)).toString(),\\n                    \\\"%)\\\"\\n                )\\n            );\\n    }\\n\\n    function toString(uint16 num) public pure returns (string memory) {\\n        return ((uint256)(num)).toString();\\n    }\\n\\n    function psuedorandom(\\n        uint256 tokenId,\\n        uint256 nonce\\n    ) public pure returns (uint256) {\\n        return uint(keccak256(abi.encodePacked(tokenId, nonce)));\\n    }\\n\\n    function wiggle(\\n        uint256 tokenId,\\n        uint256 nonce,\\n        uint16 base,\\n        uint16 offset\\n    ) public pure returns (uint16) {\\n        uint16 wiggleAmount = (uint16)(psuedorandom(tokenId, nonce) % offset);\\n        if ((uint8)(psuedorandom(tokenId, nonce) % 2) == 0) {\\n            return base + wiggleAmount;\\n        } else {\\n            return subZero(base, wiggleAmount);\\n        }\\n    }\\n\\n    function wiggleString(\\n        uint256 tokenId,\\n        uint256 nonce,\\n        uint16 base,\\n        uint16 offset\\n    ) public pure returns (string memory) {\\n        return toString(wiggle(tokenId, nonce, base, offset));\\n    }\\n\\n    function wiggleUp(\\n        uint256 tokenId,\\n        uint256 nonce,\\n        uint16 base,\\n        uint16 offset\\n    ) public pure returns (uint16) {\\n        uint16 wiggleAmount = (uint16)(psuedorandom(tokenId, nonce) % offset);\\n        return base + wiggleAmount;\\n    }\\n\\n    function subZero(uint16 first, uint16 second) public pure returns (uint16) {\\n        if (first > second) {\\n            return first - second;\\n        } else {\\n            return 0;\\n        }\\n    }\\n\\n    function flipColor(\\n        Color.HSL memory color\\n    ) public pure returns (Color.HSL memory) {\\n        uint16 newH = color.H + 180 > 360 ? color.H - 180 : color.H + 180;\\n        return Color.HSL(newH, color.S, color.L);\\n    }\\n\\n    function rotateColor(\\n        Color.HSL memory color,\\n        uint16 amount\\n    ) public pure returns (Color.HSL memory) {\\n        uint16 newH = color.H + amount > 360\\n            ? subZero(color.H, amount)\\n            : color.H + amount;\\n        return Color.HSL(newH, color.S, color.L);\\n    }\\n\\n    function genDNA(uint256 tokenId) public pure returns (DNA memory) {\\n        DNA memory dna;\\n        dna.tokenId = tokenId;\\n        dna.baseColor = uint16((tokenId % 16) * 10);\\n        dna.starSeed = psuedorandom(tokenId, 123);\\n        dna.funkSeed = psuedorandom(tokenId, 234);\\n        dna.circleSeed = psuedorandom(tokenId, 345);\\n        dna.groundSeed = psuedorandom(tokenId, 456);\\n        dna.constellationSeed = tokenId;\\n\\n        return dna;\\n    }\\n}\\n\",\"keccak256\":\"0xf666304c94ce23e23aef55bb5abe5cfb2be1b2dd031eda7ec5476495a5bbbc4c\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x610bd461003a600b82828239805160001a60731461002d57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600436106100c85760003560e01c80633a20c87911610080578063d7ec08e711610065578063d7ec08e714610237578063d9081a581461024a578063dcaa20441461025d57600080fd5b80633a20c87914610182578063761fc403146101ca57600080fd5b80631c1ed559116100b15780631c1ed55914610109578063210636e9146101495780633329f04f1461016f57600080fd5b80630fc5c9fc146100cd5780631b0d4b4d146100f6575b600080fd5b6100e06100db3660046108b4565b610270565b6040516100ed91906108fb565b60405180910390f35b6100e061010436600461092e565b6102cd565b61011c6101173660046108b4565b6102e2565b60408051825161ffff908116825260208085015182169083015292820151909216908201526060016100ed565b61015c610157366004610949565b61036c565b60405161ffff90911681526020016100ed565b61015c61017d36600461098f565b61040d565b6101bc6101903660046109c2565b604080516020808201949094528082019290925280518083038201815260609092019052805191012090565b6040519081526020016100ed565b6101dd6101d83660046109e4565b610439565b6040516100ed9190600060e0820190508251825261ffff602084015116602083015260408301516040830152606083015160608301526080830151608083015260a083015160a083015260c083015160c083015292915050565b6100e0610245366004610949565b610592565b61011c6102583660046109fd565b6105ac565b61015c61026b366004610949565b610636565b6060610283826000015161ffff16610688565b610294836020015161ffff16610688565b6102a5846040015161ffff16610688565b6040516020016102b793929190610a28565b6040516020818303038152906040529050919050565b60606102dc8261ffff16610688565b92915050565b60408051606081018252600080825260208201819052918101919091528151600090610168906103139060b4610b28565b61ffff161161032e5782516103299060b4610b28565b61033c565b825161033c9060b490610b4a565b6040805160608101825261ffff928316815260208681015184169082015294810151909116908401525090919050565b6040805160208082018790528183018690528251808303840181526060909201909252805191012060009081906103a89061ffff851690610b65565b6040805160208082018a9052818301899052825180830384018152606090920190925280519101209091506103df90600290610b65565b60ff166000036103fb576103f38185610b28565b915050610405565b6103f3848261040d565b949350505050565b60008161ffff168361ffff161115610430576104298284610b4a565b90506102dc565b50600092915050565b61047d6040518060e0016040528060008152602001600061ffff16815260200160008152602001600081526020016000815260200160008152602001600081525090565b6104c16040518060e0016040528060008152602001600061ffff16815260200160008152602001600081526020016000815260200160008152602001600081525090565b8281526104cf601084610b65565b6104da90600a610b87565b61ffff1660208281019190915260408051808301869052607b818301528151808203830181526060918201835280519084012082850152815180840187905260ea818401528251808203840181529082018352805190840120818501528151808401879052610159818401528251808203840181529082018352805190840120608085015281518084018790526101c8818401528251808203840181529101909152805191012060a082015260c08101929092525090565b60606105a36101048686868661036c565b95945050505050565b604080516060810182526000808252602082018190529181019190915260006101688385600001516105de9190610b28565b61ffff16116105f95783516105f4908490610b28565b610605565b8351610605908461040d565b6040805160608101825261ffff92831681526020878101518416908201529581015190911690850152509192915050565b6040805160208082018790528183018690528251808303840181526060909201909252805191012060009081906106729061ffff851690610b65565b905061067e8185610b28565b9695505050505050565b6060600061069583610728565b600101905060008167ffffffffffffffff8111156106b5576106b561080a565b6040519080825280601f01601f1916602001820160405280156106df576020820181803683370190505b5090508181016020015b600019017f3031323334353637383961626364656600000000000000000000000000000000600a86061a8153600a85049450846106e957509392505050565b6000807a184f03e93ff9f4daa797ed6e38ed64bf6a1f0100000000000000008310610771577a184f03e93ff9f4daa797ed6e38ed64bf6a1f010000000000000000830492506040015b6d04ee2d6d415b85acef8100000000831061079d576d04ee2d6d415b85acef8100000000830492506020015b662386f26fc1000083106107bb57662386f26fc10000830492506010015b6305f5e10083106107d3576305f5e100830492506008015b61271083106107e757612710830492506004015b606483106107f9576064830492506002015b600a83106102dc5760010192915050565b634e487b7160e01b600052604160045260246000fd5b803561ffff8116811461083257600080fd5b919050565b60006060828403121561084957600080fd5b6040516060810181811067ffffffffffffffff8211171561087a57634e487b7160e01b600052604160045260246000fd5b60405290508061088983610820565b815261089760208401610820565b60208201526108a860408401610820565b60408201525092915050565b6000606082840312156108c657600080fd5b6108d08383610837565b9392505050565b60005b838110156108f25781810151838201526020016108da565b50506000910152565b602081526000825180602084015261091a8160408501602087016108d7565b601f01601f19169190910160400192915050565b60006020828403121561094057600080fd5b6108d082610820565b6000806000806080858703121561095f57600080fd5b843593506020850135925061097660408601610820565b915061098460608601610820565b905092959194509250565b600080604083850312156109a257600080fd5b6109ab83610820565b91506109b960208401610820565b90509250929050565b600080604083850312156109d557600080fd5b50508035926020909101359150565b6000602082840312156109f657600080fd5b5035919050565b60008060808385031215610a1057600080fd5b610a1a8484610837565b91506109b960608401610820565b7f68736c2800000000000000000000000000000000000000000000000000000000815260008451610a608160048501602089016108d7565b7f2c000000000000000000000000000000000000000000000000000000000000006004918401918201528451610a9d8160058401602089016108d7565b7f252c000000000000000000000000000000000000000000000000000000000000600592909101918201528351610adb8160078401602088016108d7565b7f25290000000000000000000000000000000000000000000000000000000000006007929091019182015260090195945050505050565b634e487b7160e01b600052601160045260246000fd5b61ffff818116838216019080821115610b4357610b43610b12565b5092915050565b61ffff828116828216039080821115610b4357610b43610b12565b600082610b8257634e487b7160e01b600052601260045260246000fd5b500690565b80820281158282048414176102dc576102dc610b1256fea2646970667358221220d34c9be9e43d44a3abdf9b2e00ca3a37afd66186cf3e0b4183db40908b733ba864736f6c63430008120033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600436106100c85760003560e01c80633a20c87911610080578063d7ec08e711610065578063d7ec08e714610237578063d9081a581461024a578063dcaa20441461025d57600080fd5b80633a20c87914610182578063761fc403146101ca57600080fd5b80631c1ed559116100b15780631c1ed55914610109578063210636e9146101495780633329f04f1461016f57600080fd5b80630fc5c9fc146100cd5780631b0d4b4d146100f6575b600080fd5b6100e06100db3660046108b4565b610270565b6040516100ed91906108fb565b60405180910390f35b6100e061010436600461092e565b6102cd565b61011c6101173660046108b4565b6102e2565b60408051825161ffff908116825260208085015182169083015292820151909216908201526060016100ed565b61015c610157366004610949565b61036c565b60405161ffff90911681526020016100ed565b61015c61017d36600461098f565b61040d565b6101bc6101903660046109c2565b604080516020808201949094528082019290925280518083038201815260609092019052805191012090565b6040519081526020016100ed565b6101dd6101d83660046109e4565b610439565b6040516100ed9190600060e0820190508251825261ffff602084015116602083015260408301516040830152606083015160608301526080830151608083015260a083015160a083015260c083015160c083015292915050565b6100e0610245366004610949565b610592565b61011c6102583660046109fd565b6105ac565b61015c61026b366004610949565b610636565b6060610283826000015161ffff16610688565b610294836020015161ffff16610688565b6102a5846040015161ffff16610688565b6040516020016102b793929190610a28565b6040516020818303038152906040529050919050565b60606102dc8261ffff16610688565b92915050565b60408051606081018252600080825260208201819052918101919091528151600090610168906103139060b4610b28565b61ffff161161032e5782516103299060b4610b28565b61033c565b825161033c9060b490610b4a565b6040805160608101825261ffff928316815260208681015184169082015294810151909116908401525090919050565b6040805160208082018790528183018690528251808303840181526060909201909252805191012060009081906103a89061ffff851690610b65565b6040805160208082018a9052818301899052825180830384018152606090920190925280519101209091506103df90600290610b65565b60ff166000036103fb576103f38185610b28565b915050610405565b6103f3848261040d565b949350505050565b60008161ffff168361ffff161115610430576104298284610b4a565b90506102dc565b50600092915050565b61047d6040518060e0016040528060008152602001600061ffff16815260200160008152602001600081526020016000815260200160008152602001600081525090565b6104c16040518060e0016040528060008152602001600061ffff16815260200160008152602001600081526020016000815260200160008152602001600081525090565b8281526104cf601084610b65565b6104da90600a610b87565b61ffff1660208281019190915260408051808301869052607b818301528151808203830181526060918201835280519084012082850152815180840187905260ea818401528251808203840181529082018352805190840120818501528151808401879052610159818401528251808203840181529082018352805190840120608085015281518084018790526101c8818401528251808203840181529101909152805191012060a082015260c08101929092525090565b60606105a36101048686868661036c565b95945050505050565b604080516060810182526000808252602082018190529181019190915260006101688385600001516105de9190610b28565b61ffff16116105f95783516105f4908490610b28565b610605565b8351610605908461040d565b6040805160608101825261ffff92831681526020878101518416908201529581015190911690850152509192915050565b6040805160208082018790528183018690528251808303840181526060909201909252805191012060009081906106729061ffff851690610b65565b905061067e8185610b28565b9695505050505050565b6060600061069583610728565b600101905060008167ffffffffffffffff8111156106b5576106b561080a565b6040519080825280601f01601f1916602001820160405280156106df576020820181803683370190505b5090508181016020015b600019017f3031323334353637383961626364656600000000000000000000000000000000600a86061a8153600a85049450846106e957509392505050565b6000807a184f03e93ff9f4daa797ed6e38ed64bf6a1f0100000000000000008310610771577a184f03e93ff9f4daa797ed6e38ed64bf6a1f010000000000000000830492506040015b6d04ee2d6d415b85acef8100000000831061079d576d04ee2d6d415b85acef8100000000830492506020015b662386f26fc1000083106107bb57662386f26fc10000830492506010015b6305f5e10083106107d3576305f5e100830492506008015b61271083106107e757612710830492506004015b606483106107f9576064830492506002015b600a83106102dc5760010192915050565b634e487b7160e01b600052604160045260246000fd5b803561ffff8116811461083257600080fd5b919050565b60006060828403121561084957600080fd5b6040516060810181811067ffffffffffffffff8211171561087a57634e487b7160e01b600052604160045260246000fd5b60405290508061088983610820565b815261089760208401610820565b60208201526108a860408401610820565b60408201525092915050565b6000606082840312156108c657600080fd5b6108d08383610837565b9392505050565b60005b838110156108f25781810151838201526020016108da565b50506000910152565b602081526000825180602084015261091a8160408501602087016108d7565b601f01601f19169190910160400192915050565b60006020828403121561094057600080fd5b6108d082610820565b6000806000806080858703121561095f57600080fd5b843593506020850135925061097660408601610820565b915061098460608601610820565b905092959194509250565b600080604083850312156109a257600080fd5b6109ab83610820565b91506109b960208401610820565b90509250929050565b600080604083850312156109d557600080fd5b50508035926020909101359150565b6000602082840312156109f657600080fd5b5035919050565b60008060808385031215610a1057600080fd5b610a1a8484610837565b91506109b960608401610820565b7f68736c2800000000000000000000000000000000000000000000000000000000815260008451610a608160048501602089016108d7565b7f2c000000000000000000000000000000000000000000000000000000000000006004918401918201528451610a9d8160058401602089016108d7565b7f252c000000000000000000000000000000000000000000000000000000000000600592909101918201528351610adb8160078401602088016108d7565b7f25290000000000000000000000000000000000000000000000000000000000006007929091019182015260090195945050505050565b634e487b7160e01b600052601160045260246000fd5b61ffff818116838216019080821115610b4357610b43610b12565b5092915050565b61ffff828116828216039080821115610b4357610b43610b12565b600082610b8257634e487b7160e01b600052601260045260246000fd5b500690565b80820281158282048414176102dc576102dc610b1256fea2646970667358221220d34c9be9e43d44a3abdf9b2e00ca3a37afd66186cf3e0b4183db40908b733ba864736f6c63430008120033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
