@@ -40,7 +40,11 @@ export default function Header() {
                         </div>
                       </Link>
                     </li>
-                    <div className="border-r-2" />
+                    {i == NavItems.length - 1 ? (
+                      <></>
+                    ) : (
+                      <div className="border-r-2" />
+                    )}
                   </>
                 );
               })}

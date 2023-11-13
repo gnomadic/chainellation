@@ -26,15 +26,15 @@ const Held: NextPage = (props: any) => {
                 width="4160"
                 height="6240"
               />
-              <div
+              {/* <div
                 aria-hidden="true"
                 className="relative inset-0 z-0 pt-24 min-w-max bg-gradient-to-b from-clearslate/0 via-clearslate/50 to-clearslate"
-              />
+              /> */}
               <NightSkyHeld address={address} deploy={deploy} />
-              <div
+              {/* <div
                 aria-hidden="true"
                 className="pt-24 relative min-w-max inset-0 z-[1] bg-gradient-to-b from-clearslate via-clearslate/50 to-clearslate/0"
-              />
+              /> */}
             </section>
           </main>
         </section>

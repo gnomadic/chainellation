@@ -206,15 +206,19 @@ export default function NightSkyMint(props: MintProps) {
   }, []);
 
   return (
-    <section className="border-boldorange border-[8px] rounded-lg mx-2 z-10 relative">
-      <div className="bg-[#98161D] mx-auto   text-[#F5DFB3] py-4 text-lg  text-center font-bold">
-        <p className="md:text-9xl text-6xl font-jost uppercase text-[#F5DFB3] py-12">
-          Mint A Night Sky
-        </p>
-      </div>
-      <div className="border-4 border-boldorange"></div>
-      <div className="pb-12 bg-niceblack">
-        hi
+    <section className="mx-2 z-10 relative">
+      <div
+        aria-hidden="true"
+        className="relative inset-0 z-0 pt-24 min-w-max bg-gradient-to-b from-clearslate/0 via-clearslate/50 to-clearslate"
+      />
+      <div className="relative z-10 bg-clearslate font-roboto py-16">
+        <section className="text-offwhite text-xl px-36">
+          <div className="text-6xl font-normal uppercase leading-normal text-center text-offwhite font-arb ">
+            Mint your night sky
+          </div>
+          <div className="w-20 mx-auto h-[0px] border-2 border-boldorange"></div>
+        </section>
+
         <div className="grid grid-cols-1 gap-8 pt-12 md:grid-cols-2 md:pt-20">
           <div className="mx-4 ">
             <div className="border-boldorange border-[2px] rounded-lg max-w-[512px] mx-auto">
@@ -383,6 +387,10 @@ export default function NightSkyMint(props: MintProps) {
           </div>
         </div>
       </div>
+      <div
+        aria-hidden="true"
+        className="pt-24 relative min-w-max inset-0 z-[1] bg-gradient-to-b from-clearslate via-clearslate/50 to-clearslate/0"
+      />
     </section>
   );
 }
