@@ -33,7 +33,7 @@ export default function Index() {
             aria-hidden="true"
             className="relative inset-0 z-0 pt-24 min-w-max bg-gradient-to-b from-clearslate/0 via-clearslate/50 to-clearslate"
           />
-          <div className="relative z-10 pt-18 bg-clearslate font-roboto py-16">
+          <div className="relative z-10 md:pt-18 bg-clearslate font-roboto py-16">
             {/* <div className="text-6xl font-normal uppercase leading-normal text-center text-offwhite font-arb">
               Chainellations
             </div> */}

@@ -37,6 +37,26 @@ export default function MobileNav(props: MobileNavProps) {
             );
           })}
 
+          <li className="pb-8 ">
+            <a
+              href="https://twitter.com/twomoonsthegame"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <div className="relative cursor-pointer">twitter</div>
+            </a>
+          </li>
+
+          <li className="">
+            <a
+              href="https://discord.com/invite/ZrpWd3ZyeJ"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <div className="relative cursor-pointer">discord</div>
+            </a>
+          </li>
+
           {/* <li className="">
             <a
               target="_blank"

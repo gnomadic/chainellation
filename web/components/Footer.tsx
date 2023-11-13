@@ -29,13 +29,16 @@ export default function Footer() {
                         </div>
                       </Link>
                     </li>
-
-                    <div className="border-r-2 border-offwhite" />
+                    {i == NavItems.length - 1 ? (
+                      <></>
+                    ) : (
+                      <div className="border-r-2" />
+                    )}
                   </>
                 );
               })}
-
-              <li>
+              <div className="border-r-2 border-offwhite hidden md:block" />
+              <li className="hidden md:block">
                 <a
                   href="https://twitter.com/twomoonsthegame"
                   rel="noopener noreferrer"
@@ -44,9 +47,9 @@ export default function Footer() {
                   <div className="relative cursor-pointer">twitter</div>
                 </a>
               </li>
-              <div className="border-r-2 border-offwhite" />
+              <div className="border-r-2 border-offwhite hidden md:block" />
 
-              <li>
+              <li className="hidden md:block">
                 <a
                   href="https://discord.com/invite/ZrpWd3ZyeJ"
                   rel="noopener noreferrer"
