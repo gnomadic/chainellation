@@ -1,0 +1,775 @@
+{
+  "address": "0xC5fb7C3232b88782d0c2a8D19A9dcF8b4c170239",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "chainellation",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "AlreadyRegistered",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidDecoType",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotOwner",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "DECORATION_ONE",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "FOCUS",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "SILHOUTTE",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "SKY_MATH",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "allDecorations",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllDecorations",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "getAvailableDecorations",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint16",
+              "name": "primaryHue",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "secondaryHue",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "starSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "funkSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "circleSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "groundSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "constellationSeed",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Color.DNA",
+          "name": "dna",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "gazes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "daytime",
+          "type": "bool"
+        }
+      ],
+      "name": "getDecorationOne",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint16",
+              "name": "primaryHue",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "secondaryHue",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "starSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "funkSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "circleSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "groundSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "constellationSeed",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Color.DNA",
+          "name": "dna",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "gazes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "daytime",
+          "type": "bool"
+        }
+      ],
+      "name": "getFocus",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint16",
+              "name": "primaryHue",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "secondaryHue",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "starSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "funkSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "circleSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "groundSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "constellationSeed",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Color.DNA",
+          "name": "dna",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "gazes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "daytime",
+          "type": "bool"
+        }
+      ],
+      "name": "getSilhouette",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint16",
+              "name": "primaryHue",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "secondaryHue",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "starSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "funkSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "circleSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "groundSeed",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "constellationSeed",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Color.DNA",
+          "name": "dna",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "gazes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "daytime",
+          "type": "bool"
+        }
+      ],
+      "name": "getSkyMath",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_deco",
+          "type": "address"
+        },
+        {
+          "internalType": "uint8",
+          "name": "spot",
+          "type": "uint8"
+        }
+      ],
+      "name": "register",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "reset",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint8",
+          "name": "decoType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "address",
+          "name": "deco",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "decoId",
+          "type": "uint256"
+        }
+      ],
+      "name": "setDecoration",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint8[]",
+          "name": "decoTypes",
+          "type": "uint8[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "decos",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "decoIds",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "setDecorationBatch",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_deco",
+          "type": "address"
+        }
+      ],
+      "name": "unregister",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_tokenContract",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawToken",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x8f5f5a33dbcf360d6dc723f9db28d68d538dc0f518179af361934bcd10d53d7d",
+  "receipt": {
+    "to": null,
+    "from": "0x0a12A6777fc7D65b1461070648dA9CAE6962fcEe",
+    "contractAddress": "0xC5fb7C3232b88782d0c2a8D19A9dcF8b4c170239",
+    "transactionIndex": 42,
+    "gasUsed": "1526572",
+    "logsBloom": "0x00100000000000000000000000000000000000000000000000800000000000000000000800000000080000000000020000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000020000000000000008000800000000000000000000000000000000400000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x703fb8d616748ce0be85a2702532c86f5415abdc958dc65ec7afbd36686ce72c",
+    "transactionHash": "0x8f5f5a33dbcf360d6dc723f9db28d68d538dc0f518179af361934bcd10d53d7d",
+    "logs": [
+      {
+        "transactionIndex": 42,
+        "blockNumber": 4603269,
+        "transactionHash": "0x8f5f5a33dbcf360d6dc723f9db28d68d538dc0f518179af361934bcd10d53d7d",
+        "address": "0xC5fb7C3232b88782d0c2a8D19A9dcF8b4c170239",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000000a12a6777fc7d65b1461070648da9cae6962fcee"
+        ],
+        "data": "0x",
+        "logIndex": 81,
+        "blockHash": "0x703fb8d616748ce0be85a2702532c86f5415abdc958dc65ec7afbd36686ce72c"
+      }
+    ],
+    "blockNumber": 4603269,
+    "cumulativeGasUsed": "9607873",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": ["0x414646540621CC43fB3CF7863D31A36e5D6D884b"],
+  "numDeployments": 2,
+  "solcInputHash": "9885a51d7648daed0debc716e86be982",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.18+commit.87f61d96\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"chainellation\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"AlreadyRegistered\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidDecoType\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotOwner\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DECORATION_ONE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"FOCUS\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SILHOUTTE\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SKY_MATH\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"allDecorations\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllDecorations\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"getAvailableDecorations\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint16\",\"name\":\"primaryHue\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"secondaryHue\",\"type\":\"uint16\"},{\"internalType\":\"uint256\",\"name\":\"starSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"funkSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"circleSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"groundSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"constellationSeed\",\"type\":\"uint256\"}],\"internalType\":\"struct Color.DNA\",\"name\":\"dna\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"gazes\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"daytime\",\"type\":\"bool\"}],\"name\":\"getDecorationOne\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint16\",\"name\":\"primaryHue\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"secondaryHue\",\"type\":\"uint16\"},{\"internalType\":\"uint256\",\"name\":\"starSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"funkSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"circleSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"groundSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"constellationSeed\",\"type\":\"uint256\"}],\"internalType\":\"struct Color.DNA\",\"name\":\"dna\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"gazes\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"daytime\",\"type\":\"bool\"}],\"name\":\"getFocus\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint16\",\"name\":\"primaryHue\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"secondaryHue\",\"type\":\"uint16\"},{\"internalType\":\"uint256\",\"name\":\"starSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"funkSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"circleSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"groundSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"constellationSeed\",\"type\":\"uint256\"}],\"internalType\":\"struct Color.DNA\",\"name\":\"dna\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"gazes\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"daytime\",\"type\":\"bool\"}],\"name\":\"getSilhouette\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint16\",\"name\":\"primaryHue\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"secondaryHue\",\"type\":\"uint16\"},{\"internalType\":\"uint256\",\"name\":\"starSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"funkSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"circleSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"groundSeed\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"constellationSeed\",\"type\":\"uint256\"}],\"internalType\":\"struct Color.DNA\",\"name\":\"dna\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"gazes\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"daytime\",\"type\":\"bool\"}],\"name\":\"getSkyMath\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_deco\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"spot\",\"type\":\"uint8\"}],\"name\":\"register\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"reset\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"decoType\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"deco\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"decoId\",\"type\":\"uint256\"}],\"name\":\"setDecoration\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint8[]\",\"name\":\"decoTypes\",\"type\":\"uint8[]\"},{\"internalType\":\"address[]\",\"name\":\"decos\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"decoIds\",\"type\":\"uint256[]\"}],\"name\":\"setDecorationBatch\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_deco\",\"type\":\"address\"}],\"name\":\"unregister\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_tokenContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"withdrawToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/chainellations/Decorations.sol\":\"Decorations\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1000},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Base64.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (utils/Base64.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides a set of functions to operate with Base64 strings.\\n *\\n * _Available since v4.5._\\n */\\nlibrary Base64 {\\n    /**\\n     * @dev Base64 Encoding/Decoding Table\\n     */\\n    string internal constant _TABLE = \\\"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/\\\";\\n\\n    /**\\n     * @dev Converts a `bytes` to its Bytes64 `string` representation.\\n     */\\n    function encode(bytes memory data) internal pure returns (string memory) {\\n        /**\\n         * Inspired by Brecht Devos (Brechtpd) implementation - MIT licence\\n         * https://github.com/Brechtpd/base64/blob/e78d9fd951e7b0977ddca77d92dc85183770daf4/base64.sol\\n         */\\n        if (data.length == 0) return \\\"\\\";\\n\\n        // Loads the table into memory\\n        string memory table = _TABLE;\\n\\n        // Encoding takes 3 bytes chunks of binary data from `bytes` data parameter\\n        // and split into 4 numbers of 6 bits.\\n        // The final Base64 length should be `bytes` data length multiplied by 4/3 rounded up\\n        // - `data.length + 2`  -> Round up\\n        // - `/ 3`              -> Number of 3-bytes chunks\\n        // - `4 *`              -> 4 characters for each chunk\\n        string memory result = new string(4 * ((data.length + 2) / 3));\\n\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            // Prepare the lookup table (skip the first \\\"length\\\" byte)\\n            let tablePtr := add(table, 1)\\n\\n            // Prepare result pointer, jump over length\\n            let resultPtr := add(result, 32)\\n\\n            // Run over the input, 3 bytes at a time\\n            for {\\n                let dataPtr := data\\n                let endPtr := add(data, mload(data))\\n            } lt(dataPtr, endPtr) {\\n\\n            } {\\n                // Advance 3 bytes\\n                dataPtr := add(dataPtr, 3)\\n                let input := mload(dataPtr)\\n\\n                // To write each character, shift the 3 bytes (18 bits) chunk\\n                // 4 times in blocks of 6 bits for each character (18, 12, 6, 0)\\n                // and apply logical AND with 0x3F which is the number of\\n                // the previous character in the ASCII table prior to the Base64 Table\\n                // The result is then added to the table to get the character to write,\\n                // and finally write it in the result pointer but with a left shift\\n                // of 256 (1 byte) - 8 (1 ASCII char) = 248 bits\\n\\n                mstore8(resultPtr, mload(add(tablePtr, and(shr(18, input), 0x3F))))\\n                resultPtr := add(resultPtr, 1) // Advance\\n\\n                mstore8(resultPtr, mload(add(tablePtr, and(shr(12, input), 0x3F))))\\n                resultPtr := add(resultPtr, 1) // Advance\\n\\n                mstore8(resultPtr, mload(add(tablePtr, and(shr(6, input), 0x3F))))\\n                resultPtr := add(resultPtr, 1) // Advance\\n\\n                mstore8(resultPtr, mload(add(tablePtr, and(input, 0x3F))))\\n                resultPtr := add(resultPtr, 1) // Advance\\n            }\\n\\n            // When data `bytes` is not exactly 3 bytes long\\n            // it is padded with `=` characters at the end\\n            switch mod(mload(data), 3)\\n            case 1 {\\n                mstore8(sub(resultPtr, 1), 0x3d)\\n                mstore8(sub(resultPtr, 2), 0x3d)\\n            }\\n            case 2 {\\n                mstore8(sub(resultPtr, 1), 0x3d)\\n            }\\n        }\\n\\n        return result;\\n    }\\n}\\n\",\"keccak256\":\"0x5f3461639fe20794cfb4db4a6d8477388a15b2e70a018043084b7c4bedfa8136\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.8.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"./math/Math.sol\\\";\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        unchecked {\\n            uint256 length = Math.log10(value) + 1;\\n            string memory buffer = new string(length);\\n            uint256 ptr;\\n            /// @solidity memory-safe-assembly\\n            assembly {\\n                ptr := add(buffer, add(32, length))\\n            }\\n            while (true) {\\n                ptr--;\\n                /// @solidity memory-safe-assembly\\n                assembly {\\n                    mstore8(ptr, byte(mod(value, 10), _SYMBOLS))\\n                }\\n                value /= 10;\\n                if (value == 0) break;\\n            }\\n            return buffer;\\n        }\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        unchecked {\\n            return toHexString(value, Math.log256(value) + 1);\\n        }\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xa4d1d62251f8574deb032a35fc948386a9b4de74b812d4f545a1ac120486b48a\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/math/Math.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.8.0) (utils/math/Math.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Standard math utilities missing in the Solidity language.\\n */\\nlibrary Math {\\n    enum Rounding {\\n        Down, // Toward negative infinity\\n        Up, // Toward infinity\\n        Zero // Toward zero\\n    }\\n\\n    /**\\n     * @dev Returns the largest of two numbers.\\n     */\\n    function max(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a > b ? a : b;\\n    }\\n\\n    /**\\n     * @dev Returns the smallest of two numbers.\\n     */\\n    function min(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a < b ? a : b;\\n    }\\n\\n    /**\\n     * @dev Returns the average of two numbers. The result is rounded towards\\n     * zero.\\n     */\\n    function average(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // (a + b) / 2 can overflow.\\n        return (a & b) + (a ^ b) / 2;\\n    }\\n\\n    /**\\n     * @dev Returns the ceiling of the division of two numbers.\\n     *\\n     * This differs from standard division with `/` in that it rounds up instead\\n     * of rounding down.\\n     */\\n    function ceilDiv(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // (a + b - 1) / b can overflow on addition, so we distribute.\\n        return a == 0 ? 0 : (a - 1) / b + 1;\\n    }\\n\\n    /**\\n     * @notice Calculates floor(x * y / denominator) with full precision. Throws if result overflows a uint256 or denominator == 0\\n     * @dev Original credit to Remco Bloemen under MIT license (https://xn--2-umb.com/21/muldiv)\\n     * with further edits by Uniswap Labs also under MIT license.\\n     */\\n    function mulDiv(\\n        uint256 x,\\n        uint256 y,\\n        uint256 denominator\\n    ) internal pure returns (uint256 result) {\\n        unchecked {\\n            // 512-bit multiply [prod1 prod0] = x * y. Compute the product mod 2^256 and mod 2^256 - 1, then use\\n            // use the Chinese Remainder Theorem to reconstruct the 512 bit result. The result is stored in two 256\\n            // variables such that product = prod1 * 2^256 + prod0.\\n            uint256 prod0; // Least significant 256 bits of the product\\n            uint256 prod1; // Most significant 256 bits of the product\\n            assembly {\\n                let mm := mulmod(x, y, not(0))\\n                prod0 := mul(x, y)\\n                prod1 := sub(sub(mm, prod0), lt(mm, prod0))\\n            }\\n\\n            // Handle non-overflow cases, 256 by 256 division.\\n            if (prod1 == 0) {\\n                return prod0 / denominator;\\n            }\\n\\n            // Make sure the result is less than 2^256. Also prevents denominator == 0.\\n            require(denominator > prod1);\\n\\n            ///////////////////////////////////////////////\\n            // 512 by 256 division.\\n            ///////////////////////////////////////////////\\n\\n            // Make division exact by subtracting the remainder from [prod1 prod0].\\n            uint256 remainder;\\n            assembly {\\n                // Compute remainder using mulmod.\\n                remainder := mulmod(x, y, denominator)\\n\\n                // Subtract 256 bit number from 512 bit number.\\n                prod1 := sub(prod1, gt(remainder, prod0))\\n                prod0 := sub(prod0, remainder)\\n            }\\n\\n            // Factor powers of two out of denominator and compute largest power of two divisor of denominator. Always >= 1.\\n            // See https://cs.stackexchange.com/q/138556/92363.\\n\\n            // Does not overflow because the denominator cannot be zero at this stage in the function.\\n            uint256 twos = denominator & (~denominator + 1);\\n            assembly {\\n                // Divide denominator by twos.\\n                denominator := div(denominator, twos)\\n\\n                // Divide [prod1 prod0] by twos.\\n                prod0 := div(prod0, twos)\\n\\n                // Flip twos such that it is 2^256 / twos. If twos is zero, then it becomes one.\\n                twos := add(div(sub(0, twos), twos), 1)\\n            }\\n\\n            // Shift in bits from prod1 into prod0.\\n            prod0 |= prod1 * twos;\\n\\n            // Invert denominator mod 2^256. Now that denominator is an odd number, it has an inverse modulo 2^256 such\\n            // that denominator * inv = 1 mod 2^256. Compute the inverse by starting with a seed that is correct for\\n            // four bits. That is, denominator * inv = 1 mod 2^4.\\n            uint256 inverse = (3 * denominator) ^ 2;\\n\\n            // Use the Newton-Raphson iteration to improve the precision. Thanks to Hensel's lifting lemma, this also works\\n            // in modular arithmetic, doubling the correct bits in each step.\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^8\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^16\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^32\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^64\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^128\\n            inverse *= 2 - denominator * inverse; // inverse mod 2^256\\n\\n            // Because the division is now exact we can divide by multiplying with the modular inverse of denominator.\\n            // This will give us the correct result modulo 2^256. Since the preconditions guarantee that the outcome is\\n            // less than 2^256, this is the final result. We don't need to compute the high bits of the result and prod1\\n            // is no longer required.\\n            result = prod0 * inverse;\\n            return result;\\n        }\\n    }\\n\\n    /**\\n     * @notice Calculates x * y / denominator with full precision, following the selected rounding direction.\\n     */\\n    function mulDiv(\\n        uint256 x,\\n        uint256 y,\\n        uint256 denominator,\\n        Rounding rounding\\n    ) internal pure returns (uint256) {\\n        uint256 result = mulDiv(x, y, denominator);\\n        if (rounding == Rounding.Up && mulmod(x, y, denominator) > 0) {\\n            result += 1;\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Returns the square root of a number. If the number is not a perfect square, the value is rounded down.\\n     *\\n     * Inspired by Henry S. Warren, Jr.'s \\\"Hacker's Delight\\\" (Chapter 11).\\n     */\\n    function sqrt(uint256 a) internal pure returns (uint256) {\\n        if (a == 0) {\\n            return 0;\\n        }\\n\\n        // For our first guess, we get the biggest power of 2 which is smaller than the square root of the target.\\n        //\\n        // We know that the \\\"msb\\\" (most significant bit) of our target number `a` is a power of 2 such that we have\\n        // `msb(a) <= a < 2*msb(a)`. This value can be written `msb(a)=2**k` with `k=log2(a)`.\\n        //\\n        // This can be rewritten `2**log2(a) <= a < 2**(log2(a) + 1)`\\n        // \\u2192 `sqrt(2**k) <= sqrt(a) < sqrt(2**(k+1))`\\n        // \\u2192 `2**(k/2) <= sqrt(a) < 2**((k+1)/2) <= 2**(k/2 + 1)`\\n        //\\n        // Consequently, `2**(log2(a) / 2)` is a good first approximation of `sqrt(a)` with at least 1 correct bit.\\n        uint256 result = 1 << (log2(a) >> 1);\\n\\n        // At this point `result` is an estimation with one bit of precision. We know the true value is a uint128,\\n        // since it is the square root of a uint256. Newton's method converges quadratically (precision doubles at\\n        // every iteration). We thus need at most 7 iteration to turn our partial result with one bit of precision\\n        // into the expected uint128 result.\\n        unchecked {\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            result = (result + a / result) >> 1;\\n            return min(result, a / result);\\n        }\\n    }\\n\\n    /**\\n     * @notice Calculates sqrt(a), following the selected rounding direction.\\n     */\\n    function sqrt(uint256 a, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = sqrt(a);\\n            return result + (rounding == Rounding.Up && result * result < a ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 2, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log2(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >> 128 > 0) {\\n                value >>= 128;\\n                result += 128;\\n            }\\n            if (value >> 64 > 0) {\\n                value >>= 64;\\n                result += 64;\\n            }\\n            if (value >> 32 > 0) {\\n                value >>= 32;\\n                result += 32;\\n            }\\n            if (value >> 16 > 0) {\\n                value >>= 16;\\n                result += 16;\\n            }\\n            if (value >> 8 > 0) {\\n                value >>= 8;\\n                result += 8;\\n            }\\n            if (value >> 4 > 0) {\\n                value >>= 4;\\n                result += 4;\\n            }\\n            if (value >> 2 > 0) {\\n                value >>= 2;\\n                result += 2;\\n            }\\n            if (value >> 1 > 0) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 2, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log2(value);\\n            return result + (rounding == Rounding.Up && 1 << result < value ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log10(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >= 10**64) {\\n                value /= 10**64;\\n                result += 64;\\n            }\\n            if (value >= 10**32) {\\n                value /= 10**32;\\n                result += 32;\\n            }\\n            if (value >= 10**16) {\\n                value /= 10**16;\\n                result += 16;\\n            }\\n            if (value >= 10**8) {\\n                value /= 10**8;\\n                result += 8;\\n            }\\n            if (value >= 10**4) {\\n                value /= 10**4;\\n                result += 4;\\n            }\\n            if (value >= 10**2) {\\n                value /= 10**2;\\n                result += 2;\\n            }\\n            if (value >= 10**1) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log10(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log10(value);\\n            return result + (rounding == Rounding.Up && 10**result < value ? 1 : 0);\\n        }\\n    }\\n\\n    /**\\n     * @dev Return the log in base 256, rounded down, of a positive value.\\n     * Returns 0 if given 0.\\n     *\\n     * Adding one to the result gives the number of pairs of hex symbols needed to represent `value` as a hex string.\\n     */\\n    function log256(uint256 value) internal pure returns (uint256) {\\n        uint256 result = 0;\\n        unchecked {\\n            if (value >> 128 > 0) {\\n                value >>= 128;\\n                result += 16;\\n            }\\n            if (value >> 64 > 0) {\\n                value >>= 64;\\n                result += 8;\\n            }\\n            if (value >> 32 > 0) {\\n                value >>= 32;\\n                result += 4;\\n            }\\n            if (value >> 16 > 0) {\\n                value >>= 16;\\n                result += 2;\\n            }\\n            if (value >> 8 > 0) {\\n                result += 1;\\n            }\\n        }\\n        return result;\\n    }\\n\\n    /**\\n     * @dev Return the log in base 10, following the selected rounding direction, of a positive value.\\n     * Returns 0 if given 0.\\n     */\\n    function log256(uint256 value, Rounding rounding) internal pure returns (uint256) {\\n        unchecked {\\n            uint256 result = log256(value);\\n            return result + (rounding == Rounding.Up && 1 << (result * 8) < value ? 1 : 0);\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xa1e8e83cd0087785df04ac79fb395d9f3684caeaf973d9e2c71caef723a3a5d6\",\"license\":\"MIT\"},\"contracts/Color.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.18;\\nimport \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\nlibrary Color {\\n    using Strings for uint256;\\n\\n    struct DNA {\\n        uint256 tokenId;\\n        uint16 primaryHue;\\n        uint16 secondaryHue;\\n        uint256 starSeed;\\n        uint256 funkSeed;\\n        uint256 circleSeed;\\n        uint256 groundSeed;\\n        uint256 constellationSeed;\\n    }\\n\\n    struct HSL {\\n        uint16 H;\\n        uint16 S;\\n        uint16 L;\\n    }\\n\\n    struct Point {\\n        uint16 x;\\n        uint16 y;\\n    }\\n\\n    struct Circle {\\n        uint16 x;\\n        uint16 y;\\n        uint16 r;\\n        uint8 count;\\n        uint16 stroke;\\n        bool active;\\n    }\\n\\n    function HSLtoString(HSL memory color) public pure returns (string memory) {\\n        return\\n            string(\\n                abi.encodePacked(\\n                    \\\"hsl(\\\",\\n                    ((uint256)(color.H)).toString(),\\n                    \\\",\\\",\\n                    ((uint256)(color.S)).toString(),\\n                    \\\"%,\\\",\\n                    ((uint256)(color.L)).toString(),\\n                    \\\"%)\\\"\\n                )\\n            );\\n    }\\n\\n    function toString(uint16 num) public pure returns (string memory) {\\n        return ((uint256)(num)).toString();\\n    }\\n\\n    function psuedorandom(\\n        uint256 tokenId,\\n        uint256 nonce\\n    ) public pure returns (uint256) {\\n        return uint(keccak256(abi.encodePacked(tokenId, nonce)));\\n    }\\n\\n    function wiggle(\\n        uint256 tokenId,\\n        uint256 nonce,\\n        uint16 base,\\n        uint16 offset\\n    ) public pure returns (uint16) {\\n        uint16 wiggleAmount = (uint16)(psuedorandom(tokenId, nonce) % offset);\\n        if ((uint8)(psuedorandom(tokenId, nonce) % 2) == 0) {\\n            return base + wiggleAmount;\\n        } else {\\n            return subZero(base, wiggleAmount);\\n        }\\n    }\\n\\n    function wiggleString(\\n        uint256 tokenId,\\n        uint256 nonce,\\n        uint16 base,\\n        uint16 offset\\n    ) public pure returns (string memory) {\\n        return toString(wiggle(tokenId, nonce, base, offset));\\n    }\\n\\n    function wiggleUp(\\n        uint256 tokenId,\\n        uint256 nonce,\\n        uint16 base,\\n        uint16 offset\\n    ) public pure returns (uint16) {\\n        uint16 wiggleAmount = (uint16)(psuedorandom(tokenId, nonce) % offset);\\n        return base + wiggleAmount;\\n    }\\n\\n    function subZero(uint16 first, uint16 second) public pure returns (uint16) {\\n        if (first > second) {\\n            return first - second;\\n        } else {\\n            return 0;\\n        }\\n    }\\n\\n    function flipColor(\\n        Color.HSL memory color\\n    ) public pure returns (Color.HSL memory) {\\n        uint16 newH = color.H + 180 > 360 ? color.H - 180 : color.H + 180;\\n        return Color.HSL(newH, color.S, color.L);\\n    }\\n\\n    // TODO this isn't actually the rotate function because it zeros out\\n    function rotateColor(\\n        Color.HSL memory color,\\n        uint16 amount\\n    ) public pure returns (Color.HSL memory) {\\n        uint16 hue = (color.H + amount) % 360;\\n        return Color.HSL(hue, color.S, color.L);\\n    }\\n\\n    function genDNA(\\n        uint256 tokenId,\\n        uint32 colors\\n    ) public pure returns (DNA memory) {\\n        DNA memory dna;\\n        dna.tokenId = tokenId;\\n        dna.primaryHue = uint16(colors >> 16);\\n        dna.secondaryHue = uint16(colors);\\n        dna.starSeed = psuedorandom(tokenId, 123);\\n        dna.funkSeed = psuedorandom(tokenId, 234);\\n        dna.circleSeed = psuedorandom(tokenId, 345);\\n        dna.groundSeed = psuedorandom(tokenId, 456);\\n        dna.constellationSeed = tokenId;\\n\\n        return dna;\\n    }\\n\\n    function defaultColors(uint256 tokenId) public pure returns (uint32) {\\n        uint16 primary = uint16((tokenId % 16) * 10);\\n        uint16 secondary = rotateColor(HSL(primary, 0, 0), 60).H;\\n        return (uint32(primary) << 16) | uint32(secondary);\\n    }\\n}\\n\",\"keccak256\":\"0x60057b99ad7d554097021055407591b9cf2f1171561a97d43cf01c1e6aaab4ce\",\"license\":\"MIT\"},\"contracts/chainellations/Constellations.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.18;\\nimport \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\nlibrary Constellations {\\n    using Strings for uint256;\\n\\n    function getConstellation(\\n        uint256 constellationSeed,\\n        uint8 gazed\\n    ) public view returns (string memory) {\\n        uint8 seed = (uint8)(constellationSeed % 13);\\n        if (seed == 0) {\\n            return Aries(gazed);\\n        } else if (seed == 1) {\\n            return Sagittarius(gazed);\\n        } else if (seed == 2) {\\n            return Capricorn(gazed);\\n        } else if (seed == 3) {\\n            return Aquarius(gazed);\\n        } else if (seed == 4) {\\n            return Pisces(gazed);\\n        } else if (seed == 5) {\\n            return Scorpio(gazed);\\n        } else if (seed == 6) {\\n            return Libra(gazed);\\n        } else if (seed == 7) {\\n            return Virgo(gazed);\\n        } else if (seed == 8) {\\n            return Leo(gazed);\\n        } else if (seed == 9) {\\n            return Cancer(gazed);\\n        } else if (seed == 10) {\\n            return Gemini(gazed);\\n        } else if (seed == 11) {\\n            return Taurus(gazed);\\n        } else if (seed == 12) {\\n            return Pegasus(gazed);\\n        } else if (seed == 13) {\\n            return UrsaMinor(gazed);\\n        } else {\\n            return Cygnus(gazed);\\n        }\\n    }\\n\\n    function buildStar(\\n        string[] memory stars,\\n        string memory open,\\n        string memory close,\\n        uint8 show\\n    ) public pure returns (string memory) {\\n        if (show > stars.length) {\\n            show = (uint8)(stars.length);\\n        }\\n\\n        string memory constellation = \\\"\\\";\\n        constellation = string.concat(constellation, open);\\n        for (uint8 i = 0; i < show; i++) {\\n            constellation = string.concat(constellation, stars[i]);\\n        }\\n        if (show == stars.length) {\\n            constellation = string.concat(constellation, close);\\n        } else {\\n            constellation = string.concat(constellation, \\\"</g>\\\");\\n        }\\n        // return (constellation, ((uint8)(stars.length) - show));\\n        return (constellation);\\n    }\\n\\n    function Aries(uint8 show) public view returns (string memory) {\\n        string[] memory stars = new string[](6);\\n\\n        string\\n            memory open = '<g transform=\\\"translate(316,133), rotate(0)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n\\n        stars[0] = '<circle cx=\\\"-30\\\" cy=\\\"60\\\" r=\\\"2\\\"/>';\\n        stars[1] = '<circle cx=\\\"-10\\\" cy=\\\"45\\\" r=\\\"2\\\"/>';\\n        stars[2] = '<circle cx=\\\"5\\\" cy=\\\"0\\\" r=\\\"2\\\"/>';\\n        stars[3] = '<circle cx=\\\"55\\\" cy=\\\"10\\\" r=\\\"2\\\"/>';\\n        stars[4] = '<circle cx=\\\"80\\\" cy=\\\"30\\\" r=\\\"2\\\"/>';\\n        stars[5] = '<circle cx=\\\"85\\\" cy=\\\"45\\\" r=\\\"2\\\"/>';\\n\\n        string\\n            memory close = '<path d=\\\"m -30 60 L -10 45 L 5 0 L 55 10 L 80 30 L 85 45\\\" fill=\\\"none\\\" stroke=\\\"white\\\" opacity=\\\".5\\\"/></g>';\\n        return buildStar(stars, open, close, show);\\n    }\\n\\n    function Sagittarius(uint8 show) public view returns (string memory) {\\n        string\\n            memory open = '<g transform=\\\"translate(234,-290), rotate(0)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n        string[] memory stars = new string[](20);\\n\\n        stars[0] = '<circle r=\\\"2\\\" cx=\\\"169\\\" cy=\\\"447\\\"/>';\\n        stars[1] = '<circle r=\\\"2\\\" cx=\\\"148\\\" cy=\\\"462\\\"/>';\\n        stars[2] = '<circle r=\\\"2\\\" cx=\\\"139\\\" cy=\\\"482\\\"/>';\\n        stars[3] = '<circle r=\\\"2\\\" cx=\\\"136\\\" cy=\\\"419\\\"/>';\\n        stars[4] = '<circle r=\\\"2\\\" cx=\\\"134\\\" cy=\\\"457\\\"/>';\\n        stars[5] = '<circle r=\\\"2\\\" cx=\\\"132\\\" cy=\\\"475\\\"/>';\\n        stars[6] = '<circle r=\\\"2\\\" cx=\\\"128\\\" cy=\\\"441\\\"/>';\\n        stars[7] = '<circle r=\\\"2\\\" cx=\\\"110\\\" cy=\\\"449\\\"/>';\\n        stars[8] = '<circle r=\\\"2\\\" cx=\\\"100\\\" cy=\\\"446\\\"/>';\\n        stars[9] = '<circle r=\\\"2\\\" cx=\\\"97\\\" cy=\\\"460\\\"/>';\\n        stars[10] = '<circle r=\\\"2\\\" cx=\\\"97\\\" cy=\\\"421\\\"/>';\\n        stars[11] = '<circle r=\\\"2\\\" cx=\\\"91\\\" cy=\\\"519\\\"/>';\\n        stars[12] = '<circle r=\\\"2\\\" cx=\\\"91\\\" cy=\\\"453\\\"/>';\\n        stars[13] = '<circle r=\\\"2\\\" cx=\\\"90\\\" cy=\\\"426\\\"/>';\\n        stars[14] = '<circle r=\\\"2\\\" cx=\\\"88\\\" cy=\\\"507\\\"/>';\\n        stars[15] = '<circle r=\\\"2\\\" cx=\\\"81\\\" cy=\\\"424\\\"/>';\\n        stars[16] = '<circle r=\\\"2\\\" cx=\\\"71\\\" cy=\\\"515\\\"/>';\\n        stars[17] = '<circle r=\\\"2\\\" cx=\\\"66\\\" cy=\\\"415\\\"/>';\\n        stars[18] = '<circle r=\\\"2\\\" cx=\\\"62\\\" cy=\\\"446\\\"/>';\\n        stars[19] = '<circle r=\\\"2\\\" cx=\\\"42\\\" cy=\\\"468\\\"/>';\\n\\n        string\\n            memory close = '<path d=\\\"m169, 447 L 148, 462 L 134,457 L 132, 475 L 139, 482 M 134,457 L 128,441 L 136,419 M 128, 441 L 110, 449 L 100,446 L 90,426 L 97,421 M 90,426 L 81,424 L 66,415 M 110, 449 L 97, 460 L 91, 453 L 100,446 M 91,453 L 62, 446 L 42, 468 L 71, 515 L 88,507 M 71,515 L 91,519\\\" stroke=\\\"#fff\\\" opacity=\\\".5\\\" fill=\\\"none\\\"/></g>';\\n\\n        return buildStar(stars, open, close, show);\\n    }\\n\\n    function Capricorn(uint8 show) public view returns (string memory) {\\n        string[] memory stars = new string[](11);\\n\\n        string\\n            memory open = '<g transform=\\\"translate(114,-300), rotate(0)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n        stars[0] = '<circle r=\\\"2\\\" cx=\\\"254\\\" cy=\\\"492\\\"/>';\\n        stars[1] = '<circle r=\\\"2\\\" cx=\\\"253\\\" cy=\\\"483\\\"/>';\\n        stars[2] = '<circle r=\\\"2\\\" cx=\\\"241\\\" cy=\\\"498\\\"/>';\\n        stars[3] = '<circle r=\\\"2\\\" cx=\\\"232\\\" cy=\\\"424\\\"/>';\\n        stars[4] = '<circle r=\\\"2\\\" cx=\\\"231\\\" cy=\\\"414\\\"/>';\\n        stars[5] = '<circle r=\\\"2\\\" cx=\\\"221\\\" cy=\\\"510\\\"/>';\\n        stars[6] = '<circle r=\\\"2\\\" cx=\\\"212\\\" cy=\\\"481\\\"/>';\\n        stars[7] = '<circle r=\\\"2\\\" cx=\\\"202\\\" cy=\\\"514\\\"/>';\\n        stars[8] = '<circle r=\\\"2\\\" cx=\\\"201\\\" cy=\\\"495\\\"/>';\\n        stars[9] = '<circle r=\\\"2\\\" cx=\\\"191\\\" cy=\\\"511\\\"/>';\\n        stars[10] = '<circle r=\\\"2\\\" cx=\\\"189\\\" cy=\\\"519\\\"/>';\\n        string\\n            memory close = '<path d=\\\"M 254, 492 L 241, 498 L 221, 510 L 202,514 L 189, 519 L 191, 511 L 201,495 L 212, 481 L 232, 424 L 231 414 M 232, 424 L 253, 483\\\" stroke=\\\"#fff\\\" opacity=\\\".5\\\" fill=\\\"none\\\"/></g>';\\n        return buildStar(stars, open, close, show);\\n    }\\n\\n    function Aquarius(uint8 show) public view returns (string memory) {\\n        string[] memory stars = new string[](13);\\n        string\\n            memory open = '<g transform=\\\"translate(-6,-300), rotate(0)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n        stars[0] = '<circle r=\\\"2\\\" cx=\\\"378\\\" cy=\\\"406 \\\"/>';\\n        stars[1] = '<circle r=\\\"2\\\" cx=\\\"372\\\" cy=\\\"530 \\\"/>';\\n        stars[2] = '<circle r=\\\"2\\\" cx=\\\"354\\\" cy=\\\"517 \\\"/>';\\n        stars[3] = '<circle r=\\\"2\\\" cx=\\\"347\\\" cy=\\\"512 \\\"/>';\\n        stars[4] = '<circle r=\\\"2\\\" cx=\\\"339\\\" cy=\\\"435 \\\"/>';\\n        stars[5] = '<circle r=\\\"2\\\" cx=\\\"335\\\" cy=\\\"476 \\\"/>';\\n        stars[6] = '<circle r=\\\"2\\\" cx=\\\"325\\\" cy=\\\"515 \\\"/>';\\n        stars[7] = '<circle r=\\\"2\\\" cx=\\\"319\\\" cy=\\\"534 \\\"/>';\\n        stars[8] = '<circle r=\\\"2\\\" cx=\\\"302\\\" cy=\\\"459 \\\"/>';\\n        stars[9] = '<circle r=\\\"2\\\" cx=\\\"302\\\" cy=\\\"480 \\\"/>';\\n        stars[10] = '<circle r=\\\"2\\\" cx=\\\"292\\\" cy=\\\"484 \\\"/>';\\n        stars[11] = '<circle r=\\\"2\\\" cx=\\\"289\\\" cy=\\\"492 \\\"/>';\\n        stars[12] = '<circle r=\\\"2\\\" cx=\\\"365\\\" cy=\\\"472 \\\"/>';\\n        string\\n            memory close = '<path d=\\\"M378, 406 L 339, 435 L 302, 459 L 302, 480 L 292 484 L 289, 492 L 319 534 L 325,515 L 347,512 L 354,517 L 372,530 M 302,459 L 335,476 L 365 472\\\" fill=\\\"none\\\" stroke=\\\"#fff\\\" opacity=\\\".5\\\"/></g>';\\n        return buildStar(stars, open, close, show);\\n    }\\n\\n    function Pisces(uint8 show) public view returns (string memory) {\\n        string[] memory stars = new string[](17);\\n\\n        string\\n            memory open = '<g transform=\\\"translate(14,-170), rotate(0) scale(0.7)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n        stars[0] = '<circle r=\\\"2.86\\\" cx=\\\"523\\\" cy=\\\"547 \\\"/>';\\n        stars[1] = '<circle r=\\\"2.86\\\" cx=\\\"502\\\" cy=\\\"526 \\\"/>';\\n        stars[2] = '<circle r=\\\"2.86\\\" cx=\\\"495\\\" cy=\\\"541 \\\"/>';\\n        stars[3] = '<circle r=\\\"2.86\\\" cx=\\\"482\\\" cy=\\\"502 \\\"/>';\\n        stars[4] = '<circle r=\\\"2.86\\\" cx=\\\"475\\\" cy=\\\"484 \\\"/>';\\n        stars[5] = '<circle r=\\\"2.86\\\" cx=\\\"474\\\" cy=\\\"417 \\\"/>';\\n        stars[6] = '<circle r=\\\"2.86\\\" cx=\\\"471\\\" cy=\\\"400 \\\"/>';\\n        stars[7] = '<circle r=\\\"2.86\\\" cx=\\\"468\\\" cy=\\\"427 \\\"/>';\\n        stars[8] = '<circle r=\\\"2.86\\\" cx=\\\"465\\\" cy=\\\"539 \\\"/>';\\n        stars[9] = '<circle r=\\\"2.86\\\" cx=\\\"459\\\" cy=\\\"445 \\\"/>';\\n        stars[10] = '<circle r=\\\"2.86\\\" cx=\\\"457\\\" cy=\\\"395 \\\"/>';\\n        stars[11] = '<circle r=\\\"2.86\\\" cx=\\\"454\\\" cy=\\\"425 \\\"/>';\\n        stars[12] = '<circle r=\\\"2.86\\\" cx=\\\"448\\\" cy=\\\"401 \\\"/>';\\n        stars[13] = '<circle r=\\\"2.86\\\" cx=\\\"445\\\" cy=\\\"413 \\\"/>';\\n        stars[14] = '<circle r=\\\"2.86\\\" cx=\\\"425\\\" cy=\\\"541 \\\"/>';\\n        stars[15] = '<circle r=\\\"2.86\\\" cx=\\\"415\\\" cy=\\\"553 \\\"/>';\\n        stars[16] = '<circle r=\\\"2.86\\\" cx=\\\"400\\\" cy=\\\"544 \\\"/>';\\n        string\\n            memory close = '<path d=\\\"m400, 544 L 415, 553 L 425,541 L465, 539 L 495, 541 L 523, 547 L 502, 526 L 482, 502 L 475, 484 L 459, 445 L 454, 425 L 445, 413 L 448, 401 L 457, 395 L 471, 400 L 474, 417 L 468, 427 L 454 425 \\\" stroke=\\\"#fff\\\" opacity=\\\".5\\\" fill=\\\"none\\\" stroke-width=\\\"1.43\\\"/></g>';\\n        return buildStar(stars, open, close, show);\\n    }\\n\\n    function Scorpio(uint8 show) public view returns (string memory) {\\n        string[] memory stars = new string[](15);\\n\\n        string\\n            memory open = '<g transform=\\\"translate(-121,-120), rotate(0)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n        stars[0] = '<circle r=\\\"2\\\" cx=\\\"513\\\" cy=\\\"256 \\\"/>';\\n        stars[1] = '<circle r=\\\"2\\\" cx=\\\"513\\\" cy=\\\"268 \\\"/>';\\n        stars[2] = '<circle r=\\\"2\\\" cx=\\\"510\\\" cy=\\\"248 \\\"/>';\\n        stars[3] = '<circle r=\\\"2\\\" cx=\\\"489\\\" cy=\\\"264 \\\"/>';\\n        stars[4] = '<circle r=\\\"2\\\" cx=\\\"481\\\" cy=\\\"268 \\\"/>';\\n        stars[5] = '<circle r=\\\"2\\\" cx=\\\"475\\\" cy=\\\"274 \\\"/>';\\n        stars[6] = '<circle r=\\\"2\\\" cx=\\\"458\\\" cy=\\\"296 \\\"/>';\\n        stars[7] = '<circle r=\\\"2\\\" cx=\\\"456\\\" cy=\\\"314 \\\"/>';\\n        stars[8] = '<circle r=\\\"2\\\" cx=\\\"452\\\" cy=\\\"328 \\\"/>';\\n        stars[9] = '<circle r=\\\"2\\\" cx=\\\"435\\\" cy=\\\"333 \\\"/>';\\n        stars[10] = '<circle r=\\\"2\\\" cx=\\\"419\\\" cy=\\\"304 \\\"/>';\\n        stars[11] = '<circle r=\\\"2\\\" cx=\\\"415\\\" cy=\\\"332 \\\"/>';\\n        stars[12] = '<circle r=\\\"2\\\" cx=\\\"410\\\" cy=\\\"313 \\\"/>';\\n        stars[13] = '<circle r=\\\"2\\\" cx=\\\"405\\\" cy=\\\"320 \\\"/>';\\n        stars[14] = '<circle r=\\\"2\\\" cx=\\\"513\\\" cy=\\\"281 \\\"/>';\\n        string\\n            memory close = '<path d=\\\"m419, 304 L 410, 313 L 405, 320 L 415, 332 L 435, 333 L  452, 328 L 456, 314 L 458, 296 L 475, 274 L 481, 268 L 489, 264 L 513, 256 L 510, 248 M 513, 256 L 513, 268 L 513 281\\\" stroke=\\\"#fff\\\" opacity=\\\".5\\\" fill=\\\"none\\\"/></g>';\\n        return buildStar(stars, open, close, show);\\n    }\\n\\n    function Libra(uint8 show) public view returns (string memory) {\\n        string[] memory stars = new string[](8);\\n        string\\n            memory open = '<g transform=\\\"translate(4,-120), rotate(0)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n        stars[0] = '<circle r=\\\"2\\\" cx=\\\"361\\\" cy=\\\"272 \\\"/>';\\n        stars[1] = '<circle r=\\\"2\\\" cx=\\\"356\\\" cy=\\\"307 \\\"/>';\\n        stars[2] = '<circle r=\\\"2\\\" cx=\\\"335\\\" cy=\\\"329 \\\"/>';\\n        stars[3] = '<circle r=\\\"2\\\" cx=\\\"335\\\" cy=\\\"321 \\\"/>';\\n        stars[4] = '<circle r=\\\"2\\\" cx=\\\"333\\\" cy=\\\"252 \\\"/>';\\n        stars[5] = '<circle r=\\\"2\\\" cx=\\\"324\\\" cy=\\\"276 \\\"/>';\\n        stars[6] = '<circle r=\\\"2\\\" cx=\\\"318\\\" cy=\\\"281 \\\"/>';\\n        stars[7] = '<circle r=\\\"2\\\" cx=\\\"309\\\" cy=\\\"287 \\\"/>';\\n        string\\n            memory close = '<path d=\\\"M 309, 287 L 318, 281 L 324, 276 L 333, 252 L 361, 272, 356, 307 L  335, 321 L 335, 329 M 356, 307 L 333, 252 \\\" stroke=\\\"#fff\\\" opacity=\\\".5\\\" fill=\\\"none\\\"/></g>';\\n        return buildStar(stars, open, close, show);\\n    }\\n\\n    function Virgo(uint8 show) public view returns (string memory) {\\n        string[] memory stars = new string[](12);\\n        string\\n            memory open = '<g transform=\\\"translate(114,-114), rotate(0)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n        stars[0] = '<circle r=\\\"2\\\" cx=\\\"261\\\" cy=\\\"296 \\\"/>';\\n        stars[1] = '<circle r=\\\"2\\\" cx=\\\"251\\\" cy=\\\"225 \\\"/>';\\n        stars[2] = '<circle r=\\\"2\\\" cx=\\\"248\\\" cy=\\\"276 \\\"/>';\\n        stars[3] = '<circle r=\\\"2\\\" cx=\\\"246\\\" cy=\\\"244 \\\"/>';\\n        stars[4] = '<circle r=\\\"2\\\" cx=\\\"241\\\" cy=\\\"327 \\\"/>';\\n        stars[5] = '<circle r=\\\"2\\\" cx=\\\"231\\\" cy=\\\"324 \\\"/>';\\n        stars[6] = '<circle r=\\\"2\\\" cx=\\\"225\\\" cy=\\\"249 \\\"/>';\\n        stars[7] = '<circle r=\\\"2\\\" cx=\\\"223\\\" cy=\\\"285 \\\"/>';\\n        stars[8] = '<circle r=\\\"2\\\" cx=\\\"221\\\" cy=\\\"342 \\\"/>';\\n        stars[9] = '<circle r=\\\"2\\\" cx=\\\"207\\\" cy=\\\"299 \\\"/>';\\n        stars[10] = '<circle r=\\\"2\\\" cx=\\\"198\\\" cy=\\\"242 \\\"/>';\\n        stars[11] = '<circle r=\\\"2\\\" cx=\\\"188\\\" cy=\\\"330 \\\"/>';\\n        string\\n            memory close = '<path d=\\\"m221, 342 L 231, 324 L 241, 327 L 261, 296 L 248, 276 L  246, 244 L 251, 225 M 246, 244 L 225, 249 L 198, 242 M 225, 249 L 223, 285 L 261, 296 M 223, 285 L 207 299 L 188 330\\\" stroke=\\\"#fff\\\" opacity=\\\".5\\\" fill=\\\"none\\\"/></g>';\\n        return buildStar(stars, open, close, show);\\n    }\\n\\n    function Leo(uint8 show) public view returns (string memory) {\\n        string[] memory stars = new string[](9);\\n\\n        string\\n            memory open = '<g transform=\\\"translate(254,-114), rotate(0)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n        stars[0] = '<circle r=\\\"2\\\" cx=\\\"136\\\" cy=\\\"276 \\\"/>';\\n        stars[1] = '<circle r=\\\"2\\\" cx=\\\"120\\\" cy=\\\"264 \\\"/>';\\n        stars[2] = '<circle r=\\\"2\\\" cx=\\\"108\\\" cy=\\\"224 \\\"/>';\\n        stars[3] = '<circle r=\\\"2\\\" cx=\\\"102\\\" cy=\\\"265 \\\"/>';\\n        stars[4] = '<circle r=\\\"2\\\" cx=\\\"94\\\" cy=\\\"226 \\\"/>';\\n        stars[5] = '<circle r=\\\"2\\\" cx=\\\"92\\\" cy=\\\"253 \\\"/>';\\n        stars[6] = '<circle r=\\\"2\\\" cx=\\\"80\\\" cy=\\\"324 \\\"/>';\\n        stars[7] = '<circle r=\\\"2\\\" cx=\\\"64\\\" cy=\\\"307 \\\"/>';\\n        stars[8] = '<circle r=\\\"2\\\" cx=\\\"61\\\" cy=\\\"344 \\\"/>';\\n        string\\n            memory close = '<path d=\\\"m108,224 L 94, 226 L 92, 253 L 102, 265 L 120 264 L  136 276 L 80 324 L 61 344L 64 307 L 102 265 M 80 324 L 120 264\\\" stroke=\\\"#fff\\\" opacity=\\\".5\\\" fill=\\\"none\\\"/></g>';\\n        return buildStar(stars, open, close, show);\\n    }\\n\\n    function Cancer(uint8 show) public view returns (string memory) {\\n        string[] memory stars = new string[](5);\\n\\n        string\\n            memory open = '<g transform=\\\"translate(-106,50), rotate(0)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n        stars[0] = '<circle r=\\\"2\\\" cx=\\\"491\\\" cy=\\\"143 \\\"/>';\\n        stars[1] = '<circle r=\\\"2\\\" cx=\\\"443\\\" cy=\\\"123 \\\"/>';\\n        stars[2] = '<circle r=\\\"2\\\" cx=\\\"440\\\" cy=\\\"157 \\\"/>';\\n        stars[3] = '<circle r=\\\"2\\\" cx=\\\"437\\\" cy=\\\"112 \\\"/>';\\n        stars[4] = '<circle r=\\\"2\\\" cx=\\\"418\\\" cy=\\\"88 \\\"/>';\\n        string\\n            memory close = '<path d=\\\"m491 143 L 443, 123 L 437 112 L 418 88 M 442 123 L 440 157   \\\" stroke=\\\"#fff\\\" opacity=\\\".5\\\" fill=\\\"none\\\"/></g>';\\n        return buildStar(stars, open, close, show);\\n    }\\n\\n    function Gemini(uint8 show) public view returns (string memory) {\\n        string[] memory stars = new string[](13);\\n\\n        string\\n            memory open = '<g transform=\\\"translate(4,50), rotate(0)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n        stars[0] = '<circle r=\\\"2\\\" cx=\\\"386\\\" cy=\\\"116 \\\"/>';\\n        stars[1] = '<circle r=\\\"2\\\" cx=\\\"377\\\" cy=\\\"115 \\\"/>';\\n        stars[2] = '<circle r=\\\"2\\\" cx=\\\"374\\\" cy=\\\"128 \\\"/>';\\n        stars[3] = '<circle r=\\\"2\\\" cx=\\\"365\\\" cy=\\\"144 \\\"/>';\\n        stars[4] = '<circle r=\\\"2\\\" cx=\\\"359\\\" cy=\\\"109 \\\"/>';\\n        stars[5] = '<circle r=\\\"2\\\" cx=\\\"359\\\" cy=\\\"162 \\\"/>';\\n        stars[6] = '<circle r=\\\"2\\\" cx=\\\"334\\\" cy=\\\"132 \\\"/>';\\n        stars[7] = '<circle r=\\\"2\\\" cx=\\\"324\\\" cy=\\\"89 \\\"/>';\\n        stars[8] = '<circle r=\\\"2\\\" cx=\\\"319\\\" cy=\\\"125 \\\"/>';\\n        stars[9] = '<circle r=\\\"2\\\" cx=\\\"315\\\" cy=\\\"87 \\\"/>';\\n        stars[10] = '<circle r=\\\"2\\\" cx=\\\"306\\\" cy=\\\"86 \\\"/>';\\n        stars[11] = '<circle r=\\\"2\\\" cx=\\\"297\\\" cy=\\\"116 \\\"/>';\\n        stars[12] = '<circle r=\\\"2\\\" cx=\\\"295\\\" cy=\\\"106 \\\"/>';\\n        string\\n            memory close = '<path d=\\\"m386 , 116 L 377, 115 L 374, 128 L 365, 144 L 334, 132 L  319, 125 L 297 116 L 295 106 L 306 86 L 315 87 L 324 89 L 359 109 L 377 115 M 365 144 L 359 162\\\" stroke=\\\"#fff\\\" opacity=\\\".5\\\" fill=\\\"none\\\"/></g>';\\n        return buildStar(stars, open, close, show);\\n    }\\n\\n    function Taurus(uint8 show) public view returns (string memory) {\\n        string[] memory stars = new string[](12);\\n\\n        string\\n            memory open = '<g transform=\\\"translate(194,80), rotate(0) scale(0.7)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n        stars[0] = '<circle r=\\\"2.86\\\" cx=\\\"262\\\" cy=\\\"184 \\\"/>';\\n        stars[1] = '<circle r=\\\"2.86\\\" cx=\\\"259\\\" cy=\\\"175 \\\"/>';\\n        stars[2] = '<circle r=\\\"2.86\\\" cx=\\\"228\\\" cy=\\\"154 \\\"/>';\\n        stars[3] = '<circle r=\\\"2.86\\\" cx=\\\"214\\\" cy=\\\"139 \\\"/>';\\n        stars[4] = '<circle r=\\\"2.86\\\" cx=\\\"214\\\" cy=\\\"129 \\\"/>';\\n        stars[5] = '<circle r=\\\"2.86\\\" cx=\\\"210\\\" cy=\\\"127 \\\"/>';\\n        stars[6] = '<circle r=\\\"2.86\\\" cx=\\\"210\\\" cy=\\\"121 \\\"/>';\\n        stars[7] = '<circle r=\\\"2.86\\\" cx=\\\"207\\\" cy=\\\"135 \\\"/>';\\n        stars[8] = '<circle r=\\\"2.86\\\" cx=\\\"203\\\" cy=\\\"100 \\\"/>';\\n        stars[9] = '<circle r=\\\"2.86\\\" cx=\\\"201\\\" cy=\\\"131 \\\"/>';\\n        stars[10] = '<circle r=\\\"2.86\\\" cx=\\\"184\\\" cy=\\\"67 \\\"/>';\\n        stars[11] = '<circle r=\\\"2.86\\\" cx=\\\"164\\\" cy=\\\"93 \\\"/>';\\n        string\\n            memory close = '<path d=\\\"m262 184 L 259 175 L 228 154 L 214 139 L 214 129 L 210 127 L 210 121 L 203 100 L 184 67 M 214 139 L 207 135 L 201 131 L 164 93\\\" stroke=\\\"#fff\\\" opacity=\\\".5\\\" fill=\\\"none\\\" stroke-width=\\\"1.43\\\"/></g>';\\n        return buildStar(stars, open, close, show);\\n    }\\n\\n    function Pegasus(uint8 show) public view returns (string memory) {\\n        string[] memory stars = new string[](12);\\n\\n        string\\n            memory open = '<g transform=\\\"translate(322 150)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n\\n        stars[0] = '<circle cx=\\\"-13\\\" r=\\\"2\\\"/>';\\n        stars[1] = '<circle cx=\\\"22\\\" cy=\\\"6\\\" r=\\\"2\\\"/>';\\n        stars[2] = '<circle cx=\\\"34\\\" cy=\\\"1\\\" r=\\\"2\\\"/>';\\n        stars[3] = '<circle cx=\\\"51\\\" cy=\\\"-7\\\" r=\\\"2\\\"/>';\\n        stars[4] = '<circle cx=\\\"-21\\\" cy=\\\"35\\\" r=\\\"2\\\"/>';\\n        stars[5] = '<circle cx=\\\"20\\\" cy=\\\"38\\\" r=\\\"2\\\"/>';\\n        stars[6] = '<circle cx=\\\"35\\\" cy=\\\"50\\\" r=\\\"2\\\"/>';\\n        stars[7] = '<circle cx=\\\"54\\\" cy=\\\"60\\\" r=\\\"2\\\"/>';\\n        stars[8] = '<circle cx=\\\"70\\\" cy=\\\"50\\\" r=\\\"2\\\"/>';\\n        stars[9] = '<circle cx=\\\"31\\\" cy=\\\"18\\\" r=\\\"2\\\"/>';\\n        stars[10] = '<circle cx=\\\"54\\\" cy=\\\"13\\\" r=\\\"2\\\"/>';\\n        stars[11] = '<circle cx=\\\"66\\\" cy=\\\"12\\\" r=\\\"2\\\"/>';\\n        string\\n            memory close = '<path d=\\\"M70 50 54 60 35 50 20 38l-41-3 8-35 35 6-2 32m46-26-12 1-23 5-9-12 12-5 17-8\\\" fill=\\\"none\\\" stroke=\\\"#fff\\\" opacity=\\\".5\\\"/></g>';\\n\\n        return buildStar(stars, open, close, show);\\n    }\\n\\n    function UrsaMinor(uint8 show) public view returns (string memory) {\\n        string[] memory stars = new string[](7);\\n\\n        string\\n            memory open = '<g transform=\\\"translate(320,130), rotate(-30)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n        stars[0] = '<circle cx=\\\"0\\\" cy=\\\"00\\\" r=\\\"2\\\" />';\\n        stars[1] = '<circle cx=\\\"-6\\\" cy=\\\"20\\\" r=\\\"2\\\" />';\\n        stars[2] = '<circle cx=\\\"-9\\\" cy=\\\"40\\\" r=\\\"2\\\" />';\\n        stars[3] = '<circle cx=\\\"-3\\\" cy=\\\"60\\\" r=\\\"2\\\" />';\\n        stars[4] = '<circle cx=\\\"-18\\\" cy=\\\"70\\\" r=\\\"2\\\"/>';\\n        stars[5] = '<circle cx=\\\"-12\\\" cy=\\\"92\\\" r=\\\"2\\\"/>';\\n        stars[6] = '<circle cx=\\\"8\\\" cy=\\\"91\\\" r=\\\"2\\\" />';\\n        string\\n            memory close = '<path d=\\\"m 0 00 L -6 20 L -9 40 L -3 60 L -18 70 L -12 92 L 8 91 L -3 60\\\" fill=\\\"none\\\" stroke=\\\"white\\\" opacity=\\\".5\\\"/></g>';\\n        return buildStar(stars, open, close, show);\\n    }\\n\\n    function Cygnus(uint8 show) public view returns (string memory) {\\n        string[] memory stars = new string[](6);\\n        string\\n            memory open = '<g transform=\\\"translate(134, -70) scale(3)\\\" fill=\\\"#fff\\\" opacity=\\\"0.8\\\">';\\n        stars[0] = '<circle r=\\\"0.66\\\" cx=\\\"87.000\\\" cy=\\\"76.000\\\"/>';\\n        stars[1] = '<circle r=\\\"0.66\\\" cx=\\\"72.000\\\" cy=\\\"76.000\\\"/>';\\n        stars[2] = '<circle r=\\\"0.66\\\" cx=\\\"62.000\\\" cy=\\\"93.000\\\"/>';\\n        stars[3] = '<circle r=\\\"0.66\\\" cx=\\\"61.000\\\" cy=\\\"64.000\\\"/>';\\n        stars[4] = '<circle r=\\\"0.66\\\" cx=\\\"59.000\\\" cy=\\\"80.000\\\"/>';\\n        stars[5] = '<circle r=\\\"0.66\\\" cx=\\\"49.000\\\" cy=\\\"79.000\\\"/>';\\n        string\\n            memory close = '<path d=\\\"m87 76 L 72 76 L 59 80 L 49 79 M 62 93 L 59 80 L 61 64\\\" stroke-width=\\\"0.333\\\" fill=\\\"none\\\" stroke=\\\"#fff\\\" opacity=\\\".5\\\"/></g>';\\n        return buildStar(stars, open, close, show);\\n    }\\n}\\n\",\"keccak256\":\"0x7c303ae774302e07a6f69d14f8cf4d1e31df2a0a4e0468e56f1a74df49cf8742\",\"license\":\"MIT\"},\"contracts/chainellations/Decorations.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.18;\\n\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\nimport \\\"../interfaces/IDeco.sol\\\";\\nimport \\\"../interfaces/IDecorations.sol\\\";\\nimport \\\"./Constellations.sol\\\";\\n\\ncontract Decorations is Ownable, IDecorations {\\n    struct Decoration {\\n        address silhouette;\\n        address skyMath;\\n        address decorationOne;\\n        address focus;\\n    }\\n    uint8 public constant SILHOUTTE = 1;\\n    uint8 public constant SKY_MATH = 2;\\n    uint8 public constant DECORATION_ONE = 3;\\n    uint8 public constant FOCUS = 4;\\n\\n    address private _chainellation;\\n\\n    mapping(address => uint8) private _slot;\\n    address[] public allDecorations;\\n\\n    mapping(uint256 => Decoration) private _decorations;\\n\\n    constructor(address chainellation) {\\n        _chainellation = chainellation;\\n    }\\n\\n    function getAllDecorations() public view returns (address[] memory) {\\n        return allDecorations;\\n    }\\n\\n    function getAvailableDecorations(\\n        address user\\n    ) public view returns (address[] memory, uint256[] memory) {\\n        address[] memory availableDecorations = new address[](\\n            allDecorations.length\\n        );\\n        uint256[] memory ids = new uint256[](allDecorations.length);\\n\\n        for (uint8 i = 0; i < allDecorations.length; i++) {\\n            if (IDeco(allDecorations[i]).balanceOf(user) > 0) {\\n                availableDecorations[i] = allDecorations[i];\\n                ids[i] = _slot[allDecorations[i]];\\n            }\\n        }\\n        return (availableDecorations, ids);\\n    }\\n\\n    function register(address _deco, uint8 spot) public onlyOwner {\\n        if (_slot[_deco] != 0) revert AlreadyRegistered();\\n\\n        _slot[_deco] = spot;\\n        allDecorations.push(_deco);\\n    }\\n\\n    function unregister(address _deco) public onlyOwner {\\n        _slot[_deco] = 0;\\n\\n        uint256 index = 0;\\n\\n        for (uint i = index; i < allDecorations.length - 1; i++) {\\n            if (allDecorations[i] == _deco) {\\n                index = i;\\n                break;\\n            }\\n        }\\n\\n        for (uint i = index; i < allDecorations.length - 1; i++) {\\n            allDecorations[i] = allDecorations[i + 1];\\n        }\\n        delete allDecorations[allDecorations.length - 1];\\n        allDecorations.pop();\\n    }\\n\\n    function reset() public onlyOwner {\\n        for (uint i = 0; i < allDecorations.length; i++) {\\n            _slot[allDecorations[i]] = 0;\\n        }\\n        delete allDecorations;\\n    }\\n\\n    function setDecorationBatch(\\n        uint256 tokenId,\\n        uint8[] memory decoTypes,\\n        address[] memory decos,\\n        uint256[] memory decoIds\\n    ) public {\\n        for (uint256 i = 0; i < decoIds.length; i++) {\\n            setDecoration(tokenId, decoTypes[i], decos[i], decoIds[i]);\\n        }\\n    }\\n\\n    function setDecoration(\\n        uint256 tokenId,\\n        uint8 decoType,\\n        address deco,\\n        uint256 decoId\\n    ) public {\\n        if (IDeco(_chainellation).ownerOf(tokenId) != msg.sender)\\n            revert NotOwner();\\n\\n        if (IDeco(deco).ownerOf(decoId) != msg.sender) revert NotOwner();\\n\\n        //check if deco is registered\\n        if (_slot[deco] != decoType) revert InvalidDecoType();\\n\\n        // set NFT to be souldbound\\n        IDeco(deco).soulbind(decoId);\\n\\n        if (decoType == SILHOUTTE) {\\n            _decorations[tokenId].silhouette = deco;\\n        } else if (decoType == SKY_MATH) {\\n            _decorations[tokenId].skyMath = deco;\\n        } else if (decoType == DECORATION_ONE) {\\n            _decorations[tokenId].decorationOne = deco;\\n        } else if (decoType == FOCUS) {\\n            _decorations[tokenId].focus = deco;\\n        } else {\\n            revert InvalidDecoType();\\n        }\\n    }\\n\\n    function getFocus(\\n        Color.DNA memory dna,\\n        uint256 gazes,\\n        bool daytime\\n    ) public view returns (string memory) {\\n        if (_decorations[dna.tokenId].focus == address(0)) {\\n            uint8 starCount;\\n\\n            if (starCount > 30) {\\n                starCount = 30;\\n            } else {\\n                starCount = (uint8)(gazes);\\n            }\\n\\n            return\\n                string.concat(\\n                    '<g id=\\\"focus\\\">',\\n                    Constellations.getConstellation(\\n                        dna.constellationSeed,\\n                        starCount\\n                    ),\\n                    \\\"</g>\\\"\\n                );\\n        }\\n        return\\n            IDeco(_decorations[dna.tokenId].focus).getDeco(\\n                dna.tokenId,\\n                dna,\\n                gazes,\\n                daytime\\n            );\\n    }\\n\\n    function getSilhouette(\\n        Color.DNA memory dna,\\n        uint256 gazes,\\n        bool daytime\\n    ) public view returns (string memory) {\\n        if (_decorations[dna.tokenId].silhouette == address(0)) {\\n            return '<g id=\\\"silhouette\\\"></g>';\\n        }\\n        return\\n            IDeco(_decorations[dna.tokenId].silhouette).getDeco(\\n                dna.tokenId,\\n                dna,\\n                gazes,\\n                daytime\\n            );\\n    }\\n\\n    function getSkyMath(\\n        Color.DNA memory dna,\\n        uint256 gazes,\\n        bool daytime\\n    ) public view returns (string memory) {\\n        if (_decorations[dna.tokenId].skyMath == address(0)) {\\n            return '<g id=\\\"skymath\\\"></g>';\\n        }\\n        return\\n            IDeco(_decorations[dna.tokenId].skyMath).getDeco(\\n                dna.tokenId,\\n                dna,\\n                gazes,\\n                daytime\\n            );\\n    }\\n\\n    function getDecorationOne(\\n        Color.DNA memory dna,\\n        uint256 gazes,\\n        bool daytime\\n    ) public view returns (string memory) {\\n        if (_decorations[dna.tokenId].decorationOne == address(0)) {\\n            return '<g id=\\\"deco\\\"></g>';\\n        }\\n        return\\n            IDeco(_decorations[dna.tokenId].decorationOne).getDeco(\\n                dna.tokenId,\\n                dna,\\n                gazes,\\n                daytime\\n            );\\n    }\\n\\n    function withdraw() external onlyOwner {\\n        payable(address(_msgSender())).transfer(address(this).balance);\\n    }\\n\\n    function withdrawToken(\\n        address _tokenContract,\\n        uint256 _amount\\n    ) external onlyOwner {\\n        IERC20(_tokenContract).transfer(msg.sender, _amount);\\n    }\\n\\n    error AlreadyRegistered();\\n    error NotOwner();\\n    error InvalidDecoType();\\n}\\n\\ninterface IERC20 {\\n    function transfer(address _to, uint256 _amount) external returns (bool);\\n}\\n\",\"keccak256\":\"0x2baea558f98a766bba2d2d45d05907ff21c02b75790c22e4861acf69256acd0d\",\"license\":\"MIT\"},\"contracts/interfaces/IDeco.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.18;\\nimport \\\"../Color.sol\\\";\\nimport \\\"@openzeppelin/contracts/utils/Base64.sol\\\";\\n\\nabstract contract IDeco {\\n    mapping(uint256 => bool) public soulbound;\\n\\n    function soulbind(uint256 tokenId) external {\\n        if (ownerOf(tokenId) != tx.origin) revert NotOwner();\\n        soulbound[tokenId] = true;\\n    }\\n\\n    function getDeco(\\n        uint256 tokenId,\\n        Color.DNA memory dna,\\n        uint256 gazes,\\n        bool daytime\\n    ) public view virtual returns (string memory);\\n\\n    function ownerOf(uint256 tokenId) public view virtual returns (address) {\\n        return tx.origin;\\n    }\\n\\n    function balanceOf(address owner) public view virtual returns (uint256) {\\n        return 1;\\n    }\\n\\n    function packageAsSVG(\\n        uint256 tokenId,\\n        Color.DNA memory dna,\\n        uint256 gazes,\\n        bool daytime\\n    ) public view returns (string memory) {\\n        return\\n            string.concat(\\n                '<svg viewBox=\\\"0 0 512 512\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\">',\\n                getDeco(tokenId, dna, gazes, daytime),\\n                \\\"</svg>\\\"\\n            );\\n    }\\n\\n    function generateCharacter(\\n        uint256 tokenId\\n    ) public view returns (string memory) {\\n        Color.DNA memory dna = Color.genDNA(\\n            tokenId,\\n            Color.defaultColors(tokenId)\\n        );\\n        bytes memory svg = abi.encodePacked(\\n            packageAsSVG(tokenId, dna, 0, true)\\n        );\\n\\n        return\\n            string(\\n                abi.encodePacked(\\n                    \\\"data:image/svg+xml;base64,\\\",\\n                    Base64.encode(svg)\\n                )\\n            );\\n    }\\n\\n    function getMetadata(\\n        uint256 tokenId\\n    ) public view virtual returns (string memory);\\n\\n    function tokenURI(\\n        uint256 tokenId\\n    ) public view virtual returns (string memory) {\\n        bytes memory dataURI = abi.encodePacked(\\n            \\\"{\\\",\\n            getMetadata(tokenId),\\n            \\\",\\\",\\n            '\\\"image\\\": \\\"',\\n            generateCharacter(tokenId),\\n            '\\\"',\\n            \\\"}\\\"\\n        );\\n        return\\n            string(\\n                abi.encodePacked(\\n                    \\\"data:application/json;base64,\\\",\\n                    Base64.encode(dataURI)\\n                )\\n            );\\n    }\\n\\n    error NotOwner();\\n    error SoulBound();\\n}\\n\",\"keccak256\":\"0x88fb44f9b96e08ee7071a287b0916cb4755a622e561a6bea26fbf4097071b7af\",\"license\":\"MIT\"},\"contracts/interfaces/IDecorations.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.18;\\n\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\nimport \\\"./IDeco.sol\\\";\\n\\ninterface IDecorations {\\n    function getFocus(\\n        Color.DNA memory dna,\\n        uint256 gazes,\\n        bool daytime\\n    ) external view returns (string memory);\\n\\n    function getSilhouette(\\n        Color.DNA memory dna,\\n        uint256 gazes,\\n        bool daytime\\n    ) external view returns (string memory);\\n\\n    function getSkyMath(\\n        Color.DNA memory dna,\\n        uint256 gazes,\\n        bool daytime\\n    ) external view returns (string memory);\\n\\n    function getDecorationOne(\\n        Color.DNA memory dna,\\n        uint256 gazes,\\n        bool daytime\\n    ) external view returns (string memory);\\n}\\n\",\"keccak256\":\"0x6ae1e459d9ba4dad975a1f1d900e7fcce6a0faf79131f8e55ea5d8915bf07cdc\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405162001abc38038062001abc833981016040819052610031916100af565b61003a3361005f565b600180546001600160a01b0319166001600160a01b03929092169190911790556100df565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6000602082840312156100c157600080fd5b81516001600160a01b03811681146100d857600080fd5b9392505050565b6119cd80620000ef6000396000f3fe608060405234801561001057600080fd5b50600436106101775760003560e01c8063715018a6116100d8578063ac7c0ae71161008c578063d826f88f11610066578063d826f88f146102dc578063e5190844146102e4578063f2fde38b146102f757600080fd5b8063ac7c0ae7146102a0578063bcefc129146102a8578063d145c884146102bb57600080fd5b806394020555116100bd578063940205551461025a5780639e281a981461027a578063a1f4451e1461028d57600080fd5b8063715018a6146102415780638da5cb5b1461024957600080fd5b80633942a6b91161012f57806342a64f041161011457806342a64f041461021157806343341500146102265780636cdfb8281461022e57600080fd5b80633942a6b9146101de5780633ccfd60b1461020957600080fd5b8063291d438611610160578063291d4386146101a45780632d2ea544146101c35780632ec2c246146101cb57600080fd5b806307e495981461017c578063139885dd14610191575b600080fd5b61018f61018a366004611210565b61030a565b005b61018f61019f366004611245565b6103d4565b6101ac600381565b60405160ff90911681526020015b60405180910390f35b6101ac600481565b61018f6101d936600461128b565b6106b5565b6101f16101ec3660046112a8565b610854565b6040516001600160a01b0390911681526020016101ba565b61018f61087e565b6102196108b5565b6040516101ba9190611305565b6101ac600281565b61018f61023c36600461147c565b610917565b61018f610993565b6000546001600160a01b03166101f1565b61026d610268366004611597565b6109a7565b6040516101ba9190611665565b61018f610288366004611698565b610a9c565b61026d61029b366004611597565b610b33565b6101ac600181565b61026d6102b6366004611597565b610c67565b6102ce6102c936600461128b565b610d07565b6040516101ba9291906116c4565b61018f610f4d565b61026d6102f2366004611597565b610fd1565b61018f61030536600461128b565b611077565b610312611109565b6001600160a01b03821660009081526002602052604090205460ff1615610365576040517f3a81d6fc00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6001600160a01b03919091166000818152600260205260408120805460ff191660ff909416939093179092556003805460018101825592527fc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b90910180546001600160a01b0319169091179055565b6001546040516331a9108f60e11b81526004810186905233916001600160a01b031690636352211e90602401602060405180830381865afa15801561041d573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610441919061171b565b6001600160a01b031614610468576040516330cd747160e01b815260040160405180910390fd5b6040516331a9108f60e11b81526004810182905233906001600160a01b03841690636352211e90602401602060405180830381865afa1580156104af573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104d3919061171b565b6001600160a01b0316146104fa576040516330cd747160e01b815260040160405180910390fd5b6001600160a01b03821660009081526002602052604090205460ff8481169116146105385760405163ec64f18d60e01b815260040160405180910390fd5b6040517f06febcba000000000000000000000000000000000000000000000000000000008152600481018290526001600160a01b038316906306febcba90602401600060405180830381600087803b15801561059357600080fd5b505af11580156105a7573d6000803e3d6000fd5b50505050600160ff168360ff16036105e557600084815260046020526040902080546001600160a01b0319166001600160a01b0384161790556106af565b60011960ff84160161062057600084815260046020526040902060010180546001600160a01b0319166001600160a01b0384161790556106af565b60021960ff84160161065b57600084815260046020526040902060020180546001600160a01b0319166001600160a01b0384161790556106af565b60031960ff84160161069657600084815260046020526040902060030180546001600160a01b0319166001600160a01b0384161790556106af565b60405163ec64f18d60e01b815260040160405180910390fd5b50505050565b6106bd611109565b6001600160a01b0381166000908152600260205260408120805460ff19169055805b6003546106ee9060019061174e565b81101561074657826001600160a01b03166003828154811061071257610712611767565b6000918252602090912001546001600160a01b03160361073457809150610746565b8061073e8161177d565b9150506106df565b50805b6003546107589060019061174e565b8110156107e357600361076c826001611796565b8154811061077c5761077c611767565b600091825260209091200154600380546001600160a01b0390921691839081106107a8576107a8611767565b600091825260209091200180546001600160a01b0319166001600160a01b0392909216919091179055806107db8161177d565b915050610749565b50600380546107f49060019061174e565b8154811061080457610804611767565b600091825260209091200180546001600160a01b0319169055600380548061082e5761082e6117a9565b600082815260209020810160001990810180546001600160a01b03191690550190555050565b6003818154811061086457600080fd5b6000918252602090912001546001600160a01b0316905081565b610886611109565b60405133904780156108fc02916000818181858888f193505050501580156108b2573d6000803e3d6000fd5b50565b6060600380548060200260200160405190810160405280929190818152602001828054801561090d57602002820191906000526020600020905b81546001600160a01b031681526001909101906020018083116108ef575b5050505050905090565b60005b815181101561098c5761097a8585838151811061093957610939611767565b602002602001015185848151811061095357610953611767565b602002602001015185858151811061096d5761096d611767565b60200260200101516103d4565b806109848161177d565b91505061091a565b5050505050565b61099b611109565b6109a56000611163565b565b82516000908152600460205260409020600101546060906001600160a01b0316610a05575060408051808201909152601481527f3c672069643d22736b796d617468223e3c2f673e0000000000000000000000006020820152610a95565b83516000908152600460208190526040918290206001015486519251633792591960e01b81526001600160a01b0390911692633792591992610a4d92899189918991016117bf565b600060405180830381865afa158015610a6a573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610a929190810190611842565b90505b9392505050565b610aa4611109565b6040517fa9059cbb000000000000000000000000000000000000000000000000000000008152336004820152602481018290526001600160a01b0383169063a9059cbb906044016020604051808303816000875af1158015610b0a573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b2e91906118d6565b505050565b82516000908152600460205260409020600301546060906001600160a01b0316610c1f578260e08501516040517f5b33e80e000000000000000000000000000000000000000000000000000000008152600481019190915260ff8216602482015273f6Dc45470a6a099834E0497DBBBE927f0854c5e290635b33e80e90604401600060405180830381865af4158015610bd0573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610bf89190810190611842565b604051602001610c0891906118f3565b604051602081830303815290604052915050610a95565b83516000908152600460208190526040918290206003015486519251633792591960e01b81526001600160a01b0390911692633792591992610a4d92899189918991016117bf565b82516000908152600460205260409020546060906001600160a01b0316610cc2575060408051808201909152601781527f3c672069643d2273696c686f7565747465223e3c2f673e0000000000000000006020820152610a95565b83516000908152600460208190526040918290205486519251633792591960e01b81526001600160a01b0390911692633792591992610a4d92899189918991016117bf565b606080600060038054905067ffffffffffffffff811115610d2a57610d2a611318565b604051908082528060200260200182016040528015610d53578160200160208202803683370190505b5060035490915060009067ffffffffffffffff811115610d7557610d75611318565b604051908082528060200260200182016040528015610d9e578160200160208202803683370190505b50905060005b60035460ff82161015610f4257600060038260ff1681548110610dc957610dc9611767565b6000918252602090912001546040517f70a082310000000000000000000000000000000000000000000000000000000081526001600160a01b038981166004830152909116906370a0823190602401602060405180830381865afa158015610e35573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610e59919061195f565b1115610f305760038160ff1681548110610e7557610e75611767565b9060005260206000200160009054906101000a90046001600160a01b0316838260ff1681518110610ea857610ea8611767565b60200260200101906001600160a01b031690816001600160a01b0316815250506002600060038360ff1681548110610ee257610ee2611767565b60009182526020808320909101546001600160a01b03168352820192909252604001902054825160ff918216918491908416908110610f2357610f23611767565b6020026020010181815250505b80610f3a81611978565b915050610da4565b509094909350915050565b610f55611109565b60005b600354811015610fc45760006002600060038481548110610f7b57610f7b611767565b6000918252602080832091909101546001600160a01b031683528201929092526040019020805460ff191660ff9290921691909117905580610fbc8161177d565b915050610f58565b506109a5600360006111b3565b82516000908152600460205260409020600201546060906001600160a01b031661102f575060408051808201909152601181527f3c672069643d226465636f223e3c2f673e0000000000000000000000000000006020820152610a95565b83516000908152600460208190526040918290206002015486519251633792591960e01b81526001600160a01b0390911692633792591992610a4d92899189918991016117bf565b61107f611109565b6001600160a01b0381166111005760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201527f646472657373000000000000000000000000000000000000000000000000000060648201526084015b60405180910390fd5b6108b281611163565b6000546001600160a01b031633146109a55760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657260448201526064016110f7565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b50805460008255906000526020600020908101906108b291905b808211156111e157600081556001016111cd565b5090565b6001600160a01b03811681146108b257600080fd5b803560ff8116811461120b57600080fd5b919050565b6000806040838503121561122357600080fd5b823561122e816111e5565b915061123c602084016111fa565b90509250929050565b6000806000806080858703121561125b57600080fd5b8435935061126b602086016111fa565b9250604085013561127b816111e5565b9396929550929360600135925050565b60006020828403121561129d57600080fd5b8135610a95816111e5565b6000602082840312156112ba57600080fd5b5035919050565b600081518084526020808501945080840160005b838110156112fa5781516001600160a01b0316875295820195908201906001016112d5565b509495945050505050565b602081526000610a9560208301846112c1565b634e487b7160e01b600052604160045260246000fd5b604051610100810167ffffffffffffffff8111828210171561135257611352611318565b60405290565b604051601f8201601f1916810167ffffffffffffffff8111828210171561138157611381611318565b604052919050565b600067ffffffffffffffff8211156113a3576113a3611318565b5060051b60200190565b600082601f8301126113be57600080fd5b813560206113d36113ce83611389565b611358565b82815260059290921b840181019181810190868411156113f257600080fd5b8286015b84811015611416578035611409816111e5565b83529183019183016113f6565b509695505050505050565b600082601f83011261143257600080fd5b813560206114426113ce83611389565b82815260059290921b8401810191818101908684111561146157600080fd5b8286015b848110156114165780358352918301918301611465565b6000806000806080858703121561149257600080fd5b8435935060208086013567ffffffffffffffff808211156114b257600080fd5b818801915088601f8301126114c657600080fd5b81356114d46113ce82611389565b81815260059190911b8301840190848101908b8311156114f357600080fd5b938501935b8285101561151857611509856111fa565b825293850193908501906114f8565b97505050604088013592508083111561153057600080fd5b61153c89848a016113ad565b9450606088013592508083111561155257600080fd5b505061156087828801611421565b91505092959194509250565b803561ffff8116811461120b57600080fd5b80151581146108b257600080fd5b803561120b8161157e565b60008060008385036101408112156115ae57600080fd5b610100808212156115be57600080fd5b6115c661132e565b9150853582526115d86020870161156c565b60208301526115e96040870161156c565b6040830152606086013560608301526080860135608083015260a086013560a083015260c086013560c083015260e086013560e08301528194508086013593505050611638610120850161158c565b90509250925092565b60005b8381101561165c578181015183820152602001611644565b50506000910152565b6020815260008251806020840152611684816040850160208701611641565b601f01601f19169190910160400192915050565b600080604083850312156116ab57600080fd5b82356116b6816111e5565b946020939093013593505050565b6040815260006116d760408301856112c1565b82810360208481019190915284518083528582019282019060005b8181101561170e578451835293830193918301916001016116f2565b5090979650505050505050565b60006020828403121561172d57600080fd5b8151610a95816111e5565b634e487b7160e01b600052601160045260246000fd5b8181038181111561176157611761611738565b92915050565b634e487b7160e01b600052603260045260246000fd5b60006001820161178f5761178f611738565b5060010190565b8082018082111561176157611761611738565b634e487b7160e01b600052603160045260246000fd5b60006101608201905085825284516020830152602085015161ffff8082166040850152806040880151166060850152505060608501516080830152608085015160a083015260a085015160c083015260c085015160e083015260e08501516101008301528361012083015261183961014083018415159052565b95945050505050565b60006020828403121561185457600080fd5b815167ffffffffffffffff8082111561186c57600080fd5b818401915084601f83011261188057600080fd5b81518181111561189257611892611318565b6118a5601f8201601f1916602001611358565b91508082528560208285010111156118bc57600080fd5b6118cd816020840160208601611641565b50949350505050565b6000602082840312156118e857600080fd5b8151610a958161157e565b7f3c672069643d22666f637573223e00000000000000000000000000000000000081526000825161192b81600e850160208701611641565b7f3c2f673e00000000000000000000000000000000000000000000000000000000600e939091019283015250601201919050565b60006020828403121561197157600080fd5b5051919050565b600060ff821660ff810361198e5761198e611738565b6001019291505056fea26469706673582212201dffd93083106817ee3e9b010e1897afa6244b242052bf3141b306da35fbe0eb64736f6c63430008120033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101775760003560e01c8063715018a6116100d8578063ac7c0ae71161008c578063d826f88f11610066578063d826f88f146102dc578063e5190844146102e4578063f2fde38b146102f757600080fd5b8063ac7c0ae7146102a0578063bcefc129146102a8578063d145c884146102bb57600080fd5b806394020555116100bd578063940205551461025a5780639e281a981461027a578063a1f4451e1461028d57600080fd5b8063715018a6146102415780638da5cb5b1461024957600080fd5b80633942a6b91161012f57806342a64f041161011457806342a64f041461021157806343341500146102265780636cdfb8281461022e57600080fd5b80633942a6b9146101de5780633ccfd60b1461020957600080fd5b8063291d438611610160578063291d4386146101a45780632d2ea544146101c35780632ec2c246146101cb57600080fd5b806307e495981461017c578063139885dd14610191575b600080fd5b61018f61018a366004611210565b61030a565b005b61018f61019f366004611245565b6103d4565b6101ac600381565b60405160ff90911681526020015b60405180910390f35b6101ac600481565b61018f6101d936600461128b565b6106b5565b6101f16101ec3660046112a8565b610854565b6040516001600160a01b0390911681526020016101ba565b61018f61087e565b6102196108b5565b6040516101ba9190611305565b6101ac600281565b61018f61023c36600461147c565b610917565b61018f610993565b6000546001600160a01b03166101f1565b61026d610268366004611597565b6109a7565b6040516101ba9190611665565b61018f610288366004611698565b610a9c565b61026d61029b366004611597565b610b33565b6101ac600181565b61026d6102b6366004611597565b610c67565b6102ce6102c936600461128b565b610d07565b6040516101ba9291906116c4565b61018f610f4d565b61026d6102f2366004611597565b610fd1565b61018f61030536600461128b565b611077565b610312611109565b6001600160a01b03821660009081526002602052604090205460ff1615610365576040517f3a81d6fc00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6001600160a01b03919091166000818152600260205260408120805460ff191660ff909416939093179092556003805460018101825592527fc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b90910180546001600160a01b0319169091179055565b6001546040516331a9108f60e11b81526004810186905233916001600160a01b031690636352211e90602401602060405180830381865afa15801561041d573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610441919061171b565b6001600160a01b031614610468576040516330cd747160e01b815260040160405180910390fd5b6040516331a9108f60e11b81526004810182905233906001600160a01b03841690636352211e90602401602060405180830381865afa1580156104af573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104d3919061171b565b6001600160a01b0316146104fa576040516330cd747160e01b815260040160405180910390fd5b6001600160a01b03821660009081526002602052604090205460ff8481169116146105385760405163ec64f18d60e01b815260040160405180910390fd5b6040517f06febcba000000000000000000000000000000000000000000000000000000008152600481018290526001600160a01b038316906306febcba90602401600060405180830381600087803b15801561059357600080fd5b505af11580156105a7573d6000803e3d6000fd5b50505050600160ff168360ff16036105e557600084815260046020526040902080546001600160a01b0319166001600160a01b0384161790556106af565b60011960ff84160161062057600084815260046020526040902060010180546001600160a01b0319166001600160a01b0384161790556106af565b60021960ff84160161065b57600084815260046020526040902060020180546001600160a01b0319166001600160a01b0384161790556106af565b60031960ff84160161069657600084815260046020526040902060030180546001600160a01b0319166001600160a01b0384161790556106af565b60405163ec64f18d60e01b815260040160405180910390fd5b50505050565b6106bd611109565b6001600160a01b0381166000908152600260205260408120805460ff19169055805b6003546106ee9060019061174e565b81101561074657826001600160a01b03166003828154811061071257610712611767565b6000918252602090912001546001600160a01b03160361073457809150610746565b8061073e8161177d565b9150506106df565b50805b6003546107589060019061174e565b8110156107e357600361076c826001611796565b8154811061077c5761077c611767565b600091825260209091200154600380546001600160a01b0390921691839081106107a8576107a8611767565b600091825260209091200180546001600160a01b0319166001600160a01b0392909216919091179055806107db8161177d565b915050610749565b50600380546107f49060019061174e565b8154811061080457610804611767565b600091825260209091200180546001600160a01b0319169055600380548061082e5761082e6117a9565b600082815260209020810160001990810180546001600160a01b03191690550190555050565b6003818154811061086457600080fd5b6000918252602090912001546001600160a01b0316905081565b610886611109565b60405133904780156108fc02916000818181858888f193505050501580156108b2573d6000803e3d6000fd5b50565b6060600380548060200260200160405190810160405280929190818152602001828054801561090d57602002820191906000526020600020905b81546001600160a01b031681526001909101906020018083116108ef575b5050505050905090565b60005b815181101561098c5761097a8585838151811061093957610939611767565b602002602001015185848151811061095357610953611767565b602002602001015185858151811061096d5761096d611767565b60200260200101516103d4565b806109848161177d565b91505061091a565b5050505050565b61099b611109565b6109a56000611163565b565b82516000908152600460205260409020600101546060906001600160a01b0316610a05575060408051808201909152601481527f3c672069643d22736b796d617468223e3c2f673e0000000000000000000000006020820152610a95565b83516000908152600460208190526040918290206001015486519251633792591960e01b81526001600160a01b0390911692633792591992610a4d92899189918991016117bf565b600060405180830381865afa158015610a6a573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610a929190810190611842565b90505b9392505050565b610aa4611109565b6040517fa9059cbb000000000000000000000000000000000000000000000000000000008152336004820152602481018290526001600160a01b0383169063a9059cbb906044016020604051808303816000875af1158015610b0a573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610b2e91906118d6565b505050565b82516000908152600460205260409020600301546060906001600160a01b0316610c1f578260e08501516040517f5b33e80e000000000000000000000000000000000000000000000000000000008152600481019190915260ff8216602482015273__$a8306bbe53a8cb7e168140ba991fce4a09$__90635b33e80e90604401600060405180830381865af4158015610bd0573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610bf89190810190611842565b604051602001610c0891906118f3565b604051602081830303815290604052915050610a95565b83516000908152600460208190526040918290206003015486519251633792591960e01b81526001600160a01b0390911692633792591992610a4d92899189918991016117bf565b82516000908152600460205260409020546060906001600160a01b0316610cc2575060408051808201909152601781527f3c672069643d2273696c686f7565747465223e3c2f673e0000000000000000006020820152610a95565b83516000908152600460208190526040918290205486519251633792591960e01b81526001600160a01b0390911692633792591992610a4d92899189918991016117bf565b606080600060038054905067ffffffffffffffff811115610d2a57610d2a611318565b604051908082528060200260200182016040528015610d53578160200160208202803683370190505b5060035490915060009067ffffffffffffffff811115610d7557610d75611318565b604051908082528060200260200182016040528015610d9e578160200160208202803683370190505b50905060005b60035460ff82161015610f4257600060038260ff1681548110610dc957610dc9611767565b6000918252602090912001546040517f70a082310000000000000000000000000000000000000000000000000000000081526001600160a01b038981166004830152909116906370a0823190602401602060405180830381865afa158015610e35573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610e59919061195f565b1115610f305760038160ff1681548110610e7557610e75611767565b9060005260206000200160009054906101000a90046001600160a01b0316838260ff1681518110610ea857610ea8611767565b60200260200101906001600160a01b031690816001600160a01b0316815250506002600060038360ff1681548110610ee257610ee2611767565b60009182526020808320909101546001600160a01b03168352820192909252604001902054825160ff918216918491908416908110610f2357610f23611767565b6020026020010181815250505b80610f3a81611978565b915050610da4565b509094909350915050565b610f55611109565b60005b600354811015610fc45760006002600060038481548110610f7b57610f7b611767565b6000918252602080832091909101546001600160a01b031683528201929092526040019020805460ff191660ff9290921691909117905580610fbc8161177d565b915050610f58565b506109a5600360006111b3565b82516000908152600460205260409020600201546060906001600160a01b031661102f575060408051808201909152601181527f3c672069643d226465636f223e3c2f673e0000000000000000000000000000006020820152610a95565b83516000908152600460208190526040918290206002015486519251633792591960e01b81526001600160a01b0390911692633792591992610a4d92899189918991016117bf565b61107f611109565b6001600160a01b0381166111005760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201527f646472657373000000000000000000000000000000000000000000000000000060648201526084015b60405180910390fd5b6108b281611163565b6000546001600160a01b031633146109a55760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657260448201526064016110f7565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b50805460008255906000526020600020908101906108b291905b808211156111e157600081556001016111cd565b5090565b6001600160a01b03811681146108b257600080fd5b803560ff8116811461120b57600080fd5b919050565b6000806040838503121561122357600080fd5b823561122e816111e5565b915061123c602084016111fa565b90509250929050565b6000806000806080858703121561125b57600080fd5b8435935061126b602086016111fa565b9250604085013561127b816111e5565b9396929550929360600135925050565b60006020828403121561129d57600080fd5b8135610a95816111e5565b6000602082840312156112ba57600080fd5b5035919050565b600081518084526020808501945080840160005b838110156112fa5781516001600160a01b0316875295820195908201906001016112d5565b509495945050505050565b602081526000610a9560208301846112c1565b634e487b7160e01b600052604160045260246000fd5b604051610100810167ffffffffffffffff8111828210171561135257611352611318565b60405290565b604051601f8201601f1916810167ffffffffffffffff8111828210171561138157611381611318565b604052919050565b600067ffffffffffffffff8211156113a3576113a3611318565b5060051b60200190565b600082601f8301126113be57600080fd5b813560206113d36113ce83611389565b611358565b82815260059290921b840181019181810190868411156113f257600080fd5b8286015b84811015611416578035611409816111e5565b83529183019183016113f6565b509695505050505050565b600082601f83011261143257600080fd5b813560206114426113ce83611389565b82815260059290921b8401810191818101908684111561146157600080fd5b8286015b848110156114165780358352918301918301611465565b6000806000806080858703121561149257600080fd5b8435935060208086013567ffffffffffffffff808211156114b257600080fd5b818801915088601f8301126114c657600080fd5b81356114d46113ce82611389565b81815260059190911b8301840190848101908b8311156114f357600080fd5b938501935b8285101561151857611509856111fa565b825293850193908501906114f8565b97505050604088013592508083111561153057600080fd5b61153c89848a016113ad565b9450606088013592508083111561155257600080fd5b505061156087828801611421565b91505092959194509250565b803561ffff8116811461120b57600080fd5b80151581146108b257600080fd5b803561120b8161157e565b60008060008385036101408112156115ae57600080fd5b610100808212156115be57600080fd5b6115c661132e565b9150853582526115d86020870161156c565b60208301526115e96040870161156c565b6040830152606086013560608301526080860135608083015260a086013560a083015260c086013560c083015260e086013560e08301528194508086013593505050611638610120850161158c565b90509250925092565b60005b8381101561165c578181015183820152602001611644565b50506000910152565b6020815260008251806020840152611684816040850160208701611641565b601f01601f19169190910160400192915050565b600080604083850312156116ab57600080fd5b82356116b6816111e5565b946020939093013593505050565b6040815260006116d760408301856112c1565b82810360208481019190915284518083528582019282019060005b8181101561170e578451835293830193918301916001016116f2565b5090979650505050505050565b60006020828403121561172d57600080fd5b8151610a95816111e5565b634e487b7160e01b600052601160045260246000fd5b8181038181111561176157611761611738565b92915050565b634e487b7160e01b600052603260045260246000fd5b60006001820161178f5761178f611738565b5060010190565b8082018082111561176157611761611738565b634e487b7160e01b600052603160045260246000fd5b60006101608201905085825284516020830152602085015161ffff8082166040850152806040880151166060850152505060608501516080830152608085015160a083015260a085015160c083015260c085015160e083015260e08501516101008301528361012083015261183961014083018415159052565b95945050505050565b60006020828403121561185457600080fd5b815167ffffffffffffffff8082111561186c57600080fd5b818401915084601f83011261188057600080fd5b81518181111561189257611892611318565b6118a5601f8201601f1916602001611358565b91508082528560208285010111156118bc57600080fd5b6118cd816020840160208601611641565b50949350505050565b6000602082840312156118e857600080fd5b8151610a958161157e565b7f3c672069643d22666f637573223e00000000000000000000000000000000000081526000825161192b81600e850160208701611641565b7f3c2f673e00000000000000000000000000000000000000000000000000000000600e939091019283015250601201919050565b60006020828403121561197157600080fd5b5051919050565b600060ff821660ff810361198e5761198e611738565b6001019291505056fea26469706673582212201dffd93083106817ee3e9b010e1897afa6244b242052bf3141b306da35fbe0eb64736f6c63430008120033",
+  "libraries": {
+    "Color": "0xbB158e58EE3b8fb58335E9E3B076240205333C72",
+    "Constellations": "0xf6Dc45470a6a099834E0497DBBBE927f0854c5e2"
+  },
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 7,
+        "contract": "contracts/chainellations/Decorations.sol:Decorations",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 3471,
+        "contract": "contracts/chainellations/Decorations.sol:Decorations",
+        "label": "_chainellation",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      },
+      {
+        "astId": 3475,
+        "contract": "contracts/chainellations/Decorations.sol:Decorations",
+        "label": "_slot",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_address,t_uint8)"
+      },
+      {
+        "astId": 3478,
+        "contract": "contracts/chainellations/Decorations.sol:Decorations",
+        "label": "allDecorations",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_array(t_address)dyn_storage"
+      },
+      {
+        "astId": 3483,
+        "contract": "contracts/chainellations/Decorations.sol:Decorations",
+        "label": "_decorations",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_mapping(t_uint256,t_struct(Decoration)3457_storage)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)dyn_storage": {
+        "base": "t_address",
+        "encoding": "dynamic_array",
+        "label": "address[]",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_address,t_uint8)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint8)",
+        "numberOfBytes": "32",
+        "value": "t_uint8"
+      },
+      "t_mapping(t_uint256,t_struct(Decoration)3457_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => struct Decorations.Decoration)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Decoration)3457_storage"
+      },
+      "t_struct(Decoration)3457_storage": {
+        "encoding": "inplace",
+        "label": "struct Decorations.Decoration",
+        "members": [
+          {
+            "astId": 3450,
+            "contract": "contracts/chainellations/Decorations.sol:Decorations",
+            "label": "silhouette",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address"
+          },
+          {
+            "astId": 3452,
+            "contract": "contracts/chainellations/Decorations.sol:Decorations",
+            "label": "skyMath",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address"
+          },
+          {
+            "astId": 3454,
+            "contract": "contracts/chainellations/Decorations.sol:Decorations",
+            "label": "decorationOne",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address"
+          },
+          {
+            "astId": 3456,
+            "contract": "contracts/chainellations/Decorations.sol:Decorations",
+            "label": "focus",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address"
+          }
+        ],
+        "numberOfBytes": "128"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      },
+      "t_uint8": {
+        "encoding": "inplace",
+        "label": "uint8",
+        "numberOfBytes": "1"
+      }
+    }
+  }
+}
