@@ -30,23 +30,22 @@ export default function Footer() {
                 </Link>
               </li> 
               <div className="border-r-2 border-offwhite" />*/}
-              {process.env.NEXT_PUBLIC_IN_DEV === "true" ? (
-                <>
-                  {NavItems.map((element, i) => {
-                    return (
-                      <>
-                        <li key={i}>
-                          <Link href={element.href}>
-                            <div className="relative cursor-pointer">
-                              {element.label}
-                            </div>
-                          </Link>
-                        </li>
-                        <div className="border-r-2 border-offwhite" />
-                      </>
-                    );
-                  })}
-                  {/* <li>
+
+              {NavItems.map((element, i) => {
+                return (
+                  <>
+                    <li key={i}>
+                      <Link href={element.href}>
+                        <div className="relative cursor-pointer">
+                          {element.label}
+                        </div>
+                      </Link>
+                    </li>
+                    <div className="border-r-2 border-offwhite" />
+                  </>
+                );
+              })}
+              {/* <li>
                     <Link href="/nightsky">
                       <div className="cursor-pointer relative before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
                         Night Skies
@@ -67,18 +66,7 @@ export default function Footer() {
                       </div>
                     </Link>
                   </li> */}
-                </>
-              ) : (
-                <>
-                  <li>
-                    <Link href="/inprogress">
-                      <div className="cursor-pointer relative before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
-                        In Progress
-                      </div>
-                    </Link>
-                  </li>
-                </>
-              )}
+
               <li>
                 <a
                   target="_blank"

@@ -23,31 +23,20 @@ export default function MobileNav(props: MobileNavProps) {
           </span>
         </Link>
         <ul className="gap-8 tracking-wider uppercase b-32 font-roboto">
-          {process.env.NEXT_PUBLIC_IN_DEV === "true" ? (
-            <>
-              {NavItems.map((element, i) => {
-                return (
-                  <>
-                    <li key={i}>
-                      <Link href={element.href}>
-                        <div className="relative pb-8 cursor-pointer">
-                          {element.label}
-                        </div>
-                      </Link>
-                    </li>
-                  </>
-                );
-              })}
-            </>
-          ) : (
-            <>
-              <li className="pt-8">
-                <Link href="/inprogress">
-                  <div className="relative text-white ">In Progress</div>
-                </Link>
-              </li>
-            </>
-          )}
+          {NavItems.map((element, i) => {
+            return (
+              <>
+                <li key={i}>
+                  <Link href={element.href}>
+                    <div className="relative pb-8 cursor-pointer">
+                      {element.label}
+                    </div>
+                  </Link>
+                </li>
+              </>
+            );
+          })}
+
           <li className="">
             <a
               target="_blank"

@@ -29,33 +29,20 @@ export default function Header(props: HeaderProps) {
 
           <nav>
             <ul className="hidden tracking-wider uppercase lg:gap-8 lg:flex-wrap lg:flex text-md text-offwhite">
-              {process.env.NEXT_PUBLIC_IN_DEV === "true" ? (
-                <>
-                  {NavItems.map((element, i) => {
-                    return (
-                      <>
-                        <li key={i}>
-                          <Link href={element.href}>
-                            <div className="relative cursor-pointer">
-                              {element.label}
-                            </div>
-                          </Link>
-                        </li>
-                        <div className="border-r-2" />
-                      </>
-                    );
-                  })}
-                </>
-              ) : (
-                <>
-                  <li>
-                    <Link href="/inprogress">
-                      <div className="relative cursor-pointer">In Progress</div>
-                    </Link>
-                  </li>
-                  <div className="border-r-2" />
-                </>
-              )}
+              {NavItems.map((element, i) => {
+                return (
+                  <>
+                    <li key={i}>
+                      <Link href={element.href}>
+                        <div className="relative cursor-pointer">
+                          {element.label}
+                        </div>
+                      </Link>
+                    </li>
+                    <div className="border-r-2" />
+                  </>
+                );
+              })}
 
               <li>
                 <a
