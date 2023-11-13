@@ -5,11 +5,12 @@ import MobileNav from "./MobileNav";
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import { NavItems } from "../domain/Nav";
 import { Address, Deployment } from "../domain/Domain";
+import useDeployment from "../hooks/useDeployment";
 
-type HeaderProps = { deploy: Deployment };
-
-export default function Header(props: HeaderProps) {
+export default function Header() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
+  const { deploy } = useDeployment();
 
   const handleMobileNavClick = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
@@ -22,7 +23,7 @@ export default function Header(props: HeaderProps) {
           <div className="items-center flex-shrink-0 gap-3 p-2 ">
             <Link href="/">
               <div className="text-3xl font-normal leading-loose text-white cursor-pointer uppercase font-arb">
-                {props.deploy.displayName}
+                {deploy.displayName}
               </div>
             </Link>
           </div>
@@ -44,7 +45,7 @@ export default function Header(props: HeaderProps) {
                 );
               })}
 
-              <li>
+              {/* <li>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
@@ -58,7 +59,7 @@ export default function Header(props: HeaderProps) {
                     />
                   </div>
                 </a>
-              </li>
+              </li> */}
             </ul>
           </nav>
           <div className="flex">

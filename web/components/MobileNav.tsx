@@ -37,7 +37,7 @@ export default function MobileNav(props: MobileNavProps) {
             );
           })}
 
-          <li className="">
+          {/* <li className="">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -51,7 +51,7 @@ export default function MobileNav(props: MobileNavProps) {
                 />
               </div>
             </a>
-          </li>
+          </li> */}
         </ul>
         <div className="flex items-center justify-center py-4 pt-16 mb-8 duration-200 transform">
           <ConnectButton />

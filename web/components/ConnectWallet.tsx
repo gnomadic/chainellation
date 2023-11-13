@@ -4,13 +4,22 @@ import concept from "../images/concept.webp";
 import socialx from "../images/social/social-x.svg";
 import socialdiscord from "../images/social/social-discord.svg";
 import socialgitbook from "../images/social/social-gitbook.svg";
+import baselogo from "../images/designed/base-logo.svg";
+import settingscog from "../images/designed/settings-cog.svg";
+import exploreicon from "../images/designed/explore-icon.svg";
+import playicon from "../images/designed/play-game.svg";
+import moonicon from "../images/designed/moon-circle.svg";
+import transporticon from "../images/designed/transport-logo.svg";
+import mars from "../images/designed/mars.svg";
+import Social from "../components/Social";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export default function ConnectWallet() {
   return (
     <section>
       <main className="relative background ">
         <section
-          id="inprogress"
+          id="connect"
           className="relative items-center min-h-screen pt-48"
         >
           <Image
@@ -20,73 +29,52 @@ export default function ConnectWallet() {
             width="4160"
             height="6240"
           />
-          <div className="border-boldorange border-[8px] rounded-lg mx-2 z-10 relative">
-            <div className="bg-[#98161D] mx-auto   text-[#F5DFB3] py-4 text-lg  text-center font-bold">
-              <p className="md:text-9xl text-6xl font-jost uppercase text-[#F5DFB3] py-12">
-                Connect Wallet
-              </p>
-            </div>
-            <div className="border-4 border-boldorange" />
-
-            <div className="bg-[#0a0a0abf] pt-4 ">
-              <div className="p-2 md:p-24">
-                <Image
-                  width={1024}
-                  height={512}
-                  src={concept}
-                  alt="logo"
-                  className="border-boldorange rounded-lg border-[4px] mx-auto"
-                />
-                <div className="grid grid-cols-2 gap-8 pt-12 md:pt-20">
-                  <p className="mb-20 text-lg font-light ml-2 text-[#F5DFB3] sm:text-2xl xl:leading-normal">
-                    Connect your Wallet to explore the solar system.
-                  </p>
-                  <ul className="ml-4">
-                    <a
-                      href="https://twitter.com/twomoonsthegame"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      className="flex pb-8"
-                    >
-                      <Image width={30} height={30} src={socialx} alt="logo" />
-                      <p className="text-[#F5DFB3] pl-2">X</p>
-                    </a>
-                    <a
-                      href="https://discord.com/invite/ZrpWd3ZyeJ"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      className="flex pb-8"
-                    >
-                      <Image
-                        width={30}
-                        height={30}
-                        src={socialdiscord}
-                        alt="logo"
-                      />
-                      <p className="text-[#F5DFB3] pl-2">Discord</p>
-                    </a>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://docs.twomoons.app"
-                      className="flex"
-                    >
-                      <Image
-                        className=""
-                        width={30}
-                        height={30}
-                        src={socialgitbook}
-                        alt="logo"
-                      />
-                      <p className="text-[#F5DFB3] pl-2">Whitepaper</p>
-                    </a>
-                  </ul>
-                </div>
+          <div
+            aria-hidden="true"
+            className="relative inset-0 z-0 pt-24 min-w-max bg-gradient-to-b from-clearslate/0 via-clearslate/50 to-clearslate"
+          />
+          <div className="relative z-10 pt-18 bg-clearslate font-roboto py-16">
+            <section className="text-offwhite text-xl px-36">
+              <div className="text-6xl font-normal uppercase leading-normal text-center text-offwhite font-arb pt-28">
+                Join the Cosmic Community
               </div>
-            </div>
+              <div className="w-20 mx-auto h-[0px] border-2 border-boldorange"></div>
+
+              <div className=" flex justify-center pt-24">
+                <ConnectButton
+                  chainStatus="icon"
+                  accountStatus="address"
+                  showBalance={false}
+                />
+              </div>
+            </section>
           </div>
+          <div
+            aria-hidden="true"
+            className="pt-24 relative min-w-max inset-0 z-[1] bg-gradient-to-b from-clearslate via-clearslate/50 to-clearslate/0"
+          />
         </section>
       </main>
     </section>
+  );
+}
+
+type FeatureCardProp = {
+  title: string;
+  description: string;
+  icon: string;
+};
+
+function FeatureCard(props: FeatureCardProp) {
+  return (
+    <div>
+      <p className="text-[#EA8F21] border-b-2 border-[#98161D] text-3xl md:text-2xl lg:text-4xl pb-4 font-bold uppercase">
+        {/* <span className="inline-block pr-4">
+          <Image width={30} height={30} src={props.icon} alt="logo" />
+        </span> */}
+        {props.title}
+      </p>
+      <p className="pt-4 text-xl text-lightgray">{props.description}</p>
+    </div>
   );
 }

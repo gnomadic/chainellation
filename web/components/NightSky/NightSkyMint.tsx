@@ -206,120 +206,119 @@ export default function NightSkyMint(props: MintProps) {
   }, []);
 
   return (
-    <ClientOnly>
-      <section className="border-boldorange border-[8px] rounded-lg mx-2 z-10 relative">
-        <div className="bg-[#98161D] mx-auto   text-[#F5DFB3] py-4 text-lg  text-center font-bold">
-          <p className="md:text-9xl text-6xl font-jost uppercase text-[#F5DFB3] py-12">
-            Mint A Night Sky
-          </p>
-        </div>
-        <div className="border-4 border-boldorange"></div>
-        <div className="pb-12 bg-niceblack">
-          hi
-          <div className="grid grid-cols-1 gap-8 pt-12 md:grid-cols-2 md:pt-20">
-            <div className="mx-4 ">
-              <div className="border-boldorange border-[2px] rounded-lg max-w-[512px] mx-auto">
-                <Image
-                  alt="minting"
-                  src={
-                    isImageLoading || preview == ""
-                      ? placeholder
-                      : "data:image/svg+xml;base64," + preview
-                  }
-                  className="mx-auto rounded-lg shadow-2xl"
-                  width={512}
-                  height={512}
-                />
-              </div>
-              <div className="flex pt-6 text-cream">
-                <div className="mx-auto">
-                  {currentSupply && totalSupply ? (
-                    <div className="text-l">
-                      {BigNumber.from(currentSupply)?.toNumber()} /{" "}
-                      {BigNumber.from(totalSupply)?.toNumber()}
-                    </div>
-                  ) : (
-                    <div className="text-l">-/-</div>
-                  )}
-                </div>
-                {mintCost ? (
-                  <div className="mx-auto">
-                    {ethers.utils.formatEther(BigNumber.from(mintCost))}{" "}
-                    {props.deploy.currency}
+    <section className="border-boldorange border-[8px] rounded-lg mx-2 z-10 relative">
+      <div className="bg-[#98161D] mx-auto   text-[#F5DFB3] py-4 text-lg  text-center font-bold">
+        <p className="md:text-9xl text-6xl font-jost uppercase text-[#F5DFB3] py-12">
+          Mint A Night Sky
+        </p>
+      </div>
+      <div className="border-4 border-boldorange"></div>
+      <div className="pb-12 bg-niceblack">
+        hi
+        <div className="grid grid-cols-1 gap-8 pt-12 md:grid-cols-2 md:pt-20">
+          <div className="mx-4 ">
+            <div className="border-boldorange border-[2px] rounded-lg max-w-[512px] mx-auto">
+              <Image
+                alt="minting"
+                src={
+                  isImageLoading || preview == ""
+                    ? placeholder
+                    : "data:image/svg+xml;base64," + preview
+                }
+                className="mx-auto rounded-lg shadow-2xl"
+                width={512}
+                height={512}
+              />
+            </div>
+            <div className="flex pt-6 text-cream">
+              <div className="mx-auto">
+                {currentSupply && totalSupply ? (
+                  <div className="text-l">
+                    {BigNumber.from(currentSupply)?.toNumber()} /{" "}
+                    {BigNumber.from(totalSupply)?.toNumber()}
                   </div>
                 ) : (
-                  <div className="mx-auto">
-                    {"Loading "}
-                    {props.deploy.currency}
-                  </div>
+                  <div className="text-l">-/-</div>
                 )}
-                <div className="mx-auto ">
-                  <Switch
-                    onChange={dayNightToggle}
-                    checked={isDay}
-                    onColor="#EA8F21"
-                    uncheckedIcon={
-                      <Image
-                        className="pt-1 ml-1"
-                        src={moonIcon}
-                        alt={"night"}
-                        width={20}
-                        height={20}
-                      />
-                    }
-                    checkedIcon={
-                      <Image
-                        className="pt-1 ml-1"
-                        src={sunIcon}
-                        alt={"night"}
-                        width={20}
-                        height={20}
-                      />
-                    }
-                  />
-                </div>
               </div>
-              <div className="flex mx-auto max-w-[512px] pt-6">
-                <div
-                  className=" border-boldorange border-[2px] mr-4"
-                  onClick={() => {
-                    resetFirstColor();
+              {mintCost ? (
+                <div className="mx-auto">
+                  {ethers.utils.formatEther(BigNumber.from(mintCost))}{" "}
+                  {props.deploy.currency}
+                </div>
+              ) : (
+                <div className="mx-auto">
+                  {"Loading "}
+                  {props.deploy.currency}
+                </div>
+              )}
+              <div className="mx-auto ">
+                <Switch
+                  onChange={dayNightToggle}
+                  checked={isDay}
+                  onColor="#EA8F21"
+                  uncheckedIcon={
+                    <Image
+                      className="pt-1 ml-1"
+                      src={moonIcon}
+                      alt={"night"}
+                      width={20}
+                      height={20}
+                    />
+                  }
+                  checkedIcon={
+                    <Image
+                      className="pt-1 ml-1"
+                      src={sunIcon}
+                      alt={"night"}
+                      width={20}
+                      height={20}
+                    />
+                  }
+                />
+              </div>
+            </div>
+            <div className="flex mx-auto max-w-[512px] pt-6">
+              <div
+                className=" border-boldorange border-[2px] mr-4"
+                onClick={() => {
+                  resetFirstColor();
+                }}
+              >
+                <Image width={40} height={40} src={iconrefresh} alt="logo" />
+              </div>
+
+              <div className="flex-auto  p-3 border-boldorange border-[2px] mx-auto">
+                <Hue
+                  hue={hsva.primary.h}
+                  onChange={(newHue) => {
+                    changeComplete(newHue, null);
                   }}
-                >
-                  <Image width={40} height={40} src={iconrefresh} alt="logo" />
-                </div>
-
-                <div className="flex-auto  p-3 border-boldorange border-[2px] mx-auto">
-                  <Hue
-                    hue={hsva.primary.h}
-                    onChange={(newHue) => {
-                      changeComplete(newHue, null);
-                    }}
-                  />
-                </div>
+                />
               </div>
-              <div className="flex mx-auto max-w-[512px] pt-6">
-                <div
-                  className=" border-boldorange border-[2px] mr-4"
-                  onClick={() => {
-                    resetSecondColor();
+            </div>
+            <div className="flex mx-auto max-w-[512px] pt-6">
+              <div
+                className=" border-boldorange border-[2px] mr-4"
+                onClick={() => {
+                  resetSecondColor();
+                }}
+              >
+                <Image width={40} height={40} src={iconrefresh} alt="logo" />
+              </div>
+
+              <div className="flex-auto  p-3 border-boldorange border-[2px] mx-auto">
+                <Hue
+                  hue={hsva.secondary.h}
+                  onChange={(newHue) => {
+                    changeComplete(null, newHue);
                   }}
-                >
-                  <Image width={40} height={40} src={iconrefresh} alt="logo" />
-                </div>
-
-                <div className="flex-auto  p-3 border-boldorange border-[2px] mx-auto">
-                  <Hue
-                    hue={hsva.secondary.h}
-                    onChange={(newHue) => {
-                      changeComplete(null, newHue);
-                    }}
-                  />
-                </div>
+                />
               </div>
+            </div>
 
-              <div className="flex pt-6 text-cream">
-                {/* <div className="border-boldorange border-[2px] mx-auto flex">
+            <div className="flex pt-6 text-cream">
+              {/* <div className="border-boldorange border-[2px] mx-auto flex">
                 <div
                   className="flex-auto p-3 px-4 bg-boldred"
                   onClick={() => {
@@ -342,49 +341,48 @@ export default function NightSkyMint(props: MintProps) {
                   +
                 </div>
               </div> */}
-                <button
-                  className="mx-auto border-boldorange border-[2px] px-8 py-3 bg-boldred"
-                  onClick={async () => {
-                    // write?.();
-                    try {
-                      const { hash } = await writeContract(config);
-                      // console.log("hash: " + hash);
-                      const data = await waitForTransaction({
-                        confirmations: 1,
-                        hash,
-                      });
-                      // console.log("data: " + data);
-                      refetchSupply();
-                      refetchImage();
-                      console.log("refetched");
-                    } catch (e) {
-                      console.log("errorx: " + e);
-                      setErr("insufficient funds");
-                    }
-                  }}
-                >
-                  mint
-                </button>
-              </div>
-            </div>
-            <div className="p-4 text-xl text-offwhite">
-              <p className="pb-8 text-4xl text-boldorange">Night Skies</p>
-              <p>
-                Each minted NFT is uniquely yours forever, as all art is
-                generated on-chain.
-              </p>
-              <p className="pt-6 ">
-                Your NFT will have a sky that changes based on the timezone it
-                was minted in.
-              </p>
-              <p className="pt-6 ">
-                You&apos;ll have the opportunity to discover the secrets of the
-                universe by stargazing at night.
-              </p>
+              <button
+                className="mx-auto border-boldorange border-[2px] px-8 py-3 bg-boldred"
+                onClick={async () => {
+                  // write?.();
+                  try {
+                    const { hash } = await writeContract(config);
+                    // console.log("hash: " + hash);
+                    const data = await waitForTransaction({
+                      confirmations: 1,
+                      hash,
+                    });
+                    // console.log("data: " + data);
+                    refetchSupply();
+                    refetchImage();
+                    console.log("refetched");
+                  } catch (e) {
+                    console.log("errorx: " + e);
+                    setErr("insufficient funds");
+                  }
+                }}
+              >
+                mint
+              </button>
             </div>
           </div>
+          <div className="p-4 text-xl text-offwhite">
+            <p className="pb-8 text-4xl text-boldorange">Night Skies</p>
+            <p>
+              Each minted NFT is uniquely yours forever, as all art is generated
+              on-chain.
+            </p>
+            <p className="pt-6 ">
+              Your NFT will have a sky that changes based on the timezone it was
+              minted in.
+            </p>
+            <p className="pt-6 ">
+              You&apos;ll have the opportunity to discover the secrets of the
+              universe by stargazing at night.
+            </p>
+          </div>
         </div>
-      </section>
-    </ClientOnly>
+      </div>
+    </section>
   );
 }

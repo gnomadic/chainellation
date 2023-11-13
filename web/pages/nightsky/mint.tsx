@@ -4,15 +4,18 @@ import NightSkyMint from "../../components/NightSky/NightSkyMint";
 import Held from "../../components/NightSky/NightSkyHeld";
 import { useAccount } from "wagmi";
 import ConnectWallet from "../../components/ConnectWallet";
+import useDeployment from "../../hooks/useDeployment";
 
 const Mint: NextPage = (props: any) => {
   console.log("props: " + JSON.stringify(props));
 
   const { address } = useAccount();
+  const { deploy } = useDeployment();
 
+  console.log("mint page deploy: " + JSON.stringify(deploy));
   return (
     <>
-      {address ? (
+      {address && deploy ? (
         <section>
           <main className="relative background ">
             <section
@@ -26,7 +29,7 @@ const Mint: NextPage = (props: any) => {
                 width="4160"
                 height="6240"
               />
-              <NightSkyMint deploy={props.activeDeployment} />
+              <NightSkyMint deploy={deploy} />
               <div
                 aria-hidden="true"
                 className="relative inset-0 z-0 pt-24 min-w-max bg-gradient-to-b from-clearslate/0 via-clearslate/50 to-clearslate"

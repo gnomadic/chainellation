@@ -25,9 +25,9 @@ export default function NightSkyHeld(props: HeldProps) {
   });
 
   return (
-    <section className="relative z-10 pt-32 bg-clearslate font-roboto">
+    <section className="relative z-10 pt-18 bg-clearslate font-roboto">
       <div className="relative">
-        <div className="text-4xl font-normal leading-normal text-center text-offwhite font-arb">
+        <div className="text-6xl font-normal leading-normal text-center text-offwhite font-arb">
           Your Skies
         </div>
         <div className="w-20 mx-auto h-[0px] border-2 border-boldorange mb-12"></div>

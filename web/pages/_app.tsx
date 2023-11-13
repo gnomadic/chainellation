@@ -97,16 +97,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     decoAddress: "0x0",
     chain: "none",
   });
-  // useEffect(() => {
-  //   console.log("index effect: " + chain?.name);
-  //   chain?.name &&
-  //   chain.name.toLowerCase() != abi.chainellationAddress &&
-  //   Deployments.hasOwnProperty(chain.name.toLowerCase())
-  //     ? setAbi(Deployments[chain.name.toLowerCase()])
-  //     : setAbi(Deployments["chainellation"]);
-  // }, [chain, abi?.chainellationAddress]);
 
-  (pageProps as CustomProps).activeDeployment = Deployments["sepolia"];
+  // (pageProps as CustomProps).activeDeployment =
+  //   Deployments[chain ? chain.name : "chainellation"];
 
   return (
     <WagmiConfig config={wagmiConfig}>
@@ -116,7 +109,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         })}
         chains={chains}
       >
-        <Header deploy={(pageProps as CustomProps).activeDeployment} />
+        <Header />
         <Component {...pageProps} />
         <Footer />
         <Analytics />

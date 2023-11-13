@@ -1,21 +1,22 @@
 import type { NextPage } from "next";
 import Image from "next/future/image";
 import NightSkyMint from "../components/NightSky/NightSkyMint";
-
+import Held from "../components/NightSky/NightSkyHeld";
 import { useAccount } from "wagmi";
 import ConnectWallet from "../components/ConnectWallet";
-import { useEffect } from "react";
+import useDeployment from "../hooks/useDeployment";
 import ClientOnly from "../components/ClientOnly";
 
-const Index: NextPage = (props: any) => {
-  console.log("night sky props: " + JSON.stringify(props));
+const Mint: NextPage = (props: any) => {
+  console.log("props: " + JSON.stringify(props));
 
   const { address } = useAccount();
+  const { deploy } = useDeployment();
 
   return (
     <ClientOnly>
-      <section>
-        {address ? (
+      {address ? (
+        <section>
           <main className="relative background ">
             <section
               id="nightsky"
@@ -28,15 +29,24 @@ const Index: NextPage = (props: any) => {
                 width="4160"
                 height="6240"
               />
-              <NightSkyMint deploy={props.activeDeployment} />
+              <NightSkyMint deploy={deploy} />
+              <div
+                aria-hidden="true"
+                className="relative inset-0 z-0 pt-24 min-w-max bg-gradient-to-b from-clearslate/0 via-clearslate/50 to-clearslate"
+              />
+              {/* <Held address={address} deploy={props.activeDeployment} /> */}
+              <div
+                aria-hidden="true"
+                className="pt-24 relative min-w-max inset-0 z-[1] bg-gradient-to-b from-clearslate via-clearslate/50 to-clearslate/0"
+              />
             </section>
           </main>
-        ) : (
-          <ConnectWallet />
-        )}
-      </section>
+        </section>
+      ) : (
+        <ConnectWallet />
+      )}
     </ClientOnly>
   );
 };
 
-export default Index;
+export default Mint;
