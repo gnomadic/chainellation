@@ -25,14 +25,14 @@ export default function NightSkyHeld(props: HeldProps) {
   });
 
   return (
-    <section className="mx-2 z-10 relative">
+    <section className=" z-10 relative">
       <div
         aria-hidden="true"
         className="relative inset-0 z-0 pt-24 min-w-max bg-gradient-to-b from-clearslate/0 via-clearslate/50 to-clearslate"
       />
       <div className="relative z-10 bg-clearslate font-roboto py-16">
-        <section className="text-offwhite text-xl px-36">
-          <div className="text-6xl font-normal uppercase leading-normal text-center text-offwhite font-arb ">
+        <section className="text-offwhite text-xl md:px-36">
+          <div className="text-2xl md:text-6xl font-normal uppercase leading-normal text-center text-offwhite font-arb ">
             Your Held night skies
           </div>
           <div className="w-20 mx-auto h-[0px] border-2 border-boldorange"></div>
@@ -99,6 +99,10 @@ export default function NightSkyHeld(props: HeldProps) {
       ) : (
         <></>
       )}
+      <div
+        aria-hidden="true"
+        className="pt-24 relative min-w-max inset-0 z-[1] bg-gradient-to-b from-clearslate via-clearslate/50 to-clearslate/0"
+      />
     </section>
   );
 }

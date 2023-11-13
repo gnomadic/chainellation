@@ -37,12 +37,12 @@ export default function Index() {
             {/* <div className="text-6xl font-normal uppercase leading-normal text-center text-offwhite font-arb">
               Chainellations
             </div> */}
-            <div className="text-6xl font-normal uppercase leading-normal text-center text-offwhite font-arb">
+            <div className="text-3xl md:text-6xl font-normal uppercase leading-normal text-center text-offwhite font-arb">
               Explore the Cosmos
             </div>
             <div className="w-20 mx-auto h-[0px] border-2 border-boldorange"></div>
-            <section className="text-offwhite text-xl px-36">
-              <div className="pt-12 ">
+            <section className="text-offwhite text-xl px-4 md:px-36">
+              <div className="pt-12">
                 Unveil the beauty of the night sky like never before with
                 Chainellations, the groundbreaking generative art experiment on
                 the blockchain.
@@ -127,7 +127,7 @@ export default function Index() {
                 unique customizations. Witness these elements evolve over time,
                 creating a universe that&apos;s as dynamic as it is beautiful.
               </div> */}
-              <div className="text-6xl font-normal uppercase leading-normal text-center text-offwhite font-arb pt-28">
+              <div className="text-2xl md:text-6xl font-normal uppercase leading-normal text-center text-offwhite font-arb pt-28">
                 Join the Cosmic Community
               </div>
               <div className="w-20 mx-auto h-[0px] border-2 border-boldorange"></div>

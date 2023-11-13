@@ -6,7 +6,7 @@ import ConnectWallet from "../components/ConnectWallet";
 import ClientOnly from "../components/ClientOnly";
 import useDeployment from "../hooks/useDeployment";
 
-const Held: NextPage = (props: any) => {
+const Compose: NextPage = (props: any) => {
   console.log("props: " + JSON.stringify(props));
   const { address } = useAccount();
   const { deploy } = useDeployment();
@@ -45,4 +45,4 @@ const Held: NextPage = (props: any) => {
   );
 };
 
-export default Held;
+export default Compose;
