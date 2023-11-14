@@ -17,12 +17,12 @@ export default function Header() {
   };
 
   return (
-    <header className="absolute top-0 z-50 w-full font-roboto">
+    <header className="absolute top-0 z-50 w-full font-kdam">
       <nav className="px-6 pt-4 pb-12 mx-auto md:pt-8 lg:px-12 xl:px-6">
         <div className="flex items-center justify-between text-offwhite">
           <div className="items-center flex-shrink-0 gap-3 p-2 ">
             <Link href="/">
-              <div className="text-3xl font-normal leading-loose text-white cursor-pointer uppercase font-arb">
+              <div className="text-3xl font-bold leading-loose text-white cursor-pointer uppercase">
                 {deploy.displayName}
               </div>
             </Link>

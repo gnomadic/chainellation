@@ -150,10 +150,7 @@ export default function StarCard(props: StarCardProps) {
             stargaze
           </button>
           <div className="px-12 py-4 mx-auto mt-2 border-2 rounded cursor-pointer border-boldorange">
-            <Link
-              href="/nightsky/compose/[id]"
-              as={`/nightsky/compose/${props.index}`}
-            >
+            <Link href="/compose/[id]" as={`/compose/${props.index}`}>
               <div className="relative cursor-pointer">Compose</div>
             </Link>
           </div>

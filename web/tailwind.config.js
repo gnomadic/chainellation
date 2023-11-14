@@ -26,11 +26,8 @@ module.exports = {
       clearslate: "#00101Cbf",
     },
     fontFamily: {
-      bungee: ['"Bungee Shade"', "sans-serif"],
-      custom2: ["Jost", "sans-serif"],
       roboto: ["Roboto Condensed", "sans-serif"],
-      geo: ["Geologica", "sans-serif"],
-      arb: ["arb66", "sans-serif"],
+      kdam: ['"Kdam Thmor Pro"', "sans-serif"],
     },
   },
   plugins: [],

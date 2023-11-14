@@ -9,15 +9,16 @@ type NightSkyComposeProps = {
 
 export default function NightSkyCompose(props: NightSkyComposeProps) {
   return (
-    <section>
-      <div className="border-boldorange border-[8px] rounded-lg mx-2 z-10 relative">
-        <div className="bg-[#98161D] mx-auto   text-[#F5DFB3] py-4 text-lg  text-center font-bold">
-          <p className="md:text-9xl text-6xl font-jost uppercase text-[#F5DFB3] py-12">
+    <section className=" z-10 relative">
+      <div className="relative z-10 bg-clearslate font-roboto md:py-16">
+        <section className="text-offwhite text-xl md:px-36">
+          <div className="text-2xl md:text-6xl font-normal uppercase leading-normal text-center text-offwhite font-kdam ">
             Compose
-          </p>
-        </div>
-        <div className="border-4 border-boldorange"></div>
-        <div className="pb-12 bg-niceblack">
+          </div>
+          <div className="w-20 mx-auto h-[0px] border-2 mt-8 border-boldorange"></div>
+        </section>
+
+        <div className="pb-12 ">
           <div className="p-4 px-12 pt-12 text-xl text-offwhite md:pt-20">
             <div>Each Individual NFT has multiple customization layers</div>
             <div className="pt-6 ">
@@ -32,7 +33,7 @@ export default function NightSkyCompose(props: NightSkyComposeProps) {
           </div>
         </div>
       </div>
-      <div className="relative z-10 mx-4">
+      <div className="relative z-10  bg-clearslate">
         <ComposeCard
           deploy={props.deploy}
           index={props.index}

@@ -7,7 +7,7 @@ import { NavItems } from "../domain/Nav";
 
 export default function Footer() {
   return (
-    <footer className="relative font-roboto ">
+    <footer className="relative font-kdam ">
       <div className="px-6 pb-12 mx-auto py-36 max-w-7xl lg:px-12 xl:px-6 2xl:px-0">
         <div className="space-y-8 md:space-y-12">
           <nav>

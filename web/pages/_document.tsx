@@ -8,7 +8,6 @@ class MyDocument extends Document {
   }
 
   render() {
-
     return (
       <Html className="scroll-smooth">
         <Head>
@@ -74,23 +73,13 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap"
-            rel="stylesheet"
-          />
-
-          <link
             href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap"
             rel="stylesheet"
           />
-
           <link
-            href="https://fonts.googleapis.com/css2?family=Geologica:wght@800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap"
             rel="stylesheet"
-          />
+          ></link>
         </Head>
         <body>
           <Main />

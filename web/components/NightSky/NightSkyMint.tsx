@@ -85,7 +85,7 @@ export default function NightSkyMint(props: MintProps) {
       props.deploy.chainellationAddress !== "0x0" &&
       currentSupply !== undefined,
     args: [
-      currentSupply ? BigNumber.from(currentSupply).toNumber() : 0,
+      currentSupply ? BigNumber.from(currentSupply).toNumber() + 1 : 0,
       0,
       0,
       isDay,
@@ -207,16 +207,12 @@ export default function NightSkyMint(props: MintProps) {
 
   return (
     <section className=" z-10 relative">
-      <div
-        aria-hidden="true"
-        className="relative inset-0 z-0 pt-24 min-w-max bg-gradient-to-b from-clearslate/0 via-clearslate/50 to-clearslate"
-      />
       <div className="relative z-10 bg-clearslate font-roboto md:py-16">
         <section className="text-offwhite text-xl md:px-36">
-          <div className="text-2xl md:text-6xl font-normal uppercase leading-normal text-center text-offwhite font-arb ">
+          <div className="text-2xl md:text-6xl font-normal uppercase leading-normal text-center text-offwhite font-kdam ">
             Mint your night sky
           </div>
-          <div className="w-20 mx-auto h-[0px] border-2 border-boldorange"></div>
+          <div className="w-20 mx-auto mt-8 h-[0px] border-2 border-boldorange"></div>
         </section>
 
         <div className="grid grid-cols-1 gap-8 pt-12 md:grid-cols-2 md:pt-20">
@@ -387,10 +383,6 @@ export default function NightSkyMint(props: MintProps) {
           </div>
         </div>
       </div>
-      <div
-        aria-hidden="true"
-        className="pt-24 relative min-w-max inset-0 z-[1] bg-gradient-to-b from-clearslate via-clearslate/50 to-clearslate/0"
-      />
     </section>
   );
 }

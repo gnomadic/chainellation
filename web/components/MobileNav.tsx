@@ -22,7 +22,7 @@ export default function MobileNav(props: MobileNavProps) {
             <Image width={45} height={45} src={logo} alt="logo" />
           </span>
         </Link>
-        <ul className="gap-8 tracking-wider uppercase b-32 font-roboto">
+        <ul className="gap-8 tracking-wider uppercase b-32 font-kdam">
           {NavItems.map((element, i) => {
             return (
               <>

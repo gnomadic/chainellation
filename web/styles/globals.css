@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    font-family: "Jost", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     @apply overflow-x-hidden;
 }
 
@@ -13,20 +13,10 @@ body {
 .text-stroke-1 {
   text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
 }
-
-@font-face {
-    font-family: "Jost";
-    src: url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
-  }
   
-  @font-face {
-    font-family: "Bungee Shade";
-    src: url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
-  }
-
-  @font-face {
-    font-family: "arb66";
-    src: url("../public/arb66/arb66block.otf");
+@font-face {
+    font-family: "Kdam Thmor Pro";
+    src: url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
   }
 
   

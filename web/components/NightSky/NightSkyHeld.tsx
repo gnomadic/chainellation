@@ -26,24 +26,18 @@ export default function NightSkyHeld(props: HeldProps) {
 
   return (
     <section className=" z-10 relative">
-      <div
-        aria-hidden="true"
-        className="relative inset-0 z-0 pt-24 min-w-max bg-gradient-to-b from-clearslate/0 via-clearslate/50 to-clearslate"
-      />
       <div className="relative z-10 bg-clearslate font-roboto md:py-16">
         <section className="text-offwhite text-xl md:px-36">
-          <div className="text-2xl md:text-6xl font-normal uppercase leading-normal text-center text-offwhite font-arb ">
+          <div className="text-2xl md:text-6xl font-normal uppercase leading-normal text-center text-offwhite font-kdam ">
             Your Held night skies
           </div>
-          <div className="w-20 mx-auto h-[0px] border-2 border-boldorange"></div>
+          <div className="w-20 mx-auto h-[0px] border-2 mt-8 border-boldorange"></div>
         </section>
         <h1 className="text-lg text-center text-offwhite pt-12">
           you hold {chainellations} unique constellations
         </h1>
         <div className="p-4 mx-4 md:mx-20">
-          {/* <div className="grid grid-cols-1 grid-rows-1 gap-16 mt-12 p-12 md:grid-cols-2 lg:grid-cols-3 font-roboto border-[#EA8F21] rounded-lg border-[8px] bg-slate mx-4 md:mx-20"> */}
           <div className="text-offwhite">
-            {/* <div className="border-boldorange text-offwhite text-lg bg-boldred mx-20 md:mx-20 rounded-lg border-[4px] py-4 text-center font-arb"> Stargaze All </div> */}
             {chainellations > 0 ? (
               <div className="grid grid-cols-1 gap-8 pt-8 text-lg font-semibold tracking-tight md:grid-cols-2 lg:grid-cols-3">
                 {Array.from({ length: chainellations }).map((object, i) => {
@@ -99,10 +93,6 @@ export default function NightSkyHeld(props: HeldProps) {
       ) : (
         <></>
       )}
-      <div
-        aria-hidden="true"
-        className="pt-24 relative min-w-max inset-0 z-[1] bg-gradient-to-b from-clearslate via-clearslate/50 to-clearslate/0"
-      />
     </section>
   );
 }

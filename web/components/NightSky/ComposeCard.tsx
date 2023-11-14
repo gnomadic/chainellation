@@ -121,7 +121,7 @@ export default function ComposeCard(props: ComposeCardProps) {
   return (
     <div className="text-xl font-roboto ">
       <div>
-        <h1 className="pt-12 pb-3 text-3xl text-center text-offwhite font-arb">
+        <h1 className="pt-12 pb-3 text-3xl text-center text-offwhite font-kdam">
           constellation #{BigNumber.from(NFTID)?.toNumber()}
         </h1>
         <div className="grid grid-cols-1 xl:grid-cols-2">
@@ -204,18 +204,6 @@ export default function ComposeCard(props: ComposeCardProps) {
               filterOn={3}
               layerName="deco"
               title="Decoration Layer"
-              chain={props.deploy.chain}
-            />
-
-            <DecoType
-              chainellationId={NFTID}
-              decoIds={availableIds}
-              decos={available}
-              walletAddress={props.walletAddress}
-              setFunction={setImageLayer}
-              filterOn={4}
-              layerName="focus"
-              title="Focus Layer"
               chain={props.deploy.chain}
             />
           </div>
