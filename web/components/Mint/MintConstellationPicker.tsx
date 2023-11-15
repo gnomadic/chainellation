@@ -70,6 +70,7 @@ export default function MintConstellationPicker(
       </div>
       <div className=" max-w-[512px] mx-5">
         <div className="border-boldorange border-[2px] p-4 ">
+          <p className="mb-3">{constellation?.stars}</p>
           <Circle
             colors={availableConstellations.map((current, index) => {
               return current.color;
@@ -83,10 +84,6 @@ export default function MintConstellationPicker(
               setConstellation(selected!);
             }}
           />
-        </div>
-
-        <div className="  p-3 border-boldorange border-[2px] mx-auto mt-4">
-          <p>{constellation?.stars}</p>
         </div>
       </div>
     </section>

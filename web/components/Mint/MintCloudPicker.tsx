@@ -70,7 +70,7 @@ export default function MintCloudPicker(props: MintCloudPickerProps) {
           0.005 eth
         </p>
       </div>
-      <div className="flex mx-auto max-w-[512px] mx-5">
+      <div className="flex max-w-[512px] mx-5">
         <div className="flex-auto p-3 border-boldorange border-[2px] mx-auto">
           <Slider
             color={cloudSwitch}

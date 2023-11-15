@@ -237,14 +237,6 @@ export default function NightSkyMint(props: MintProps) {
             </div>
           </div>
           <div className="mx-4 text-xl text-offwhite max-w-[512px]">
-            <section id="colors">
-              <div className="flex ">
-                <p className="pb-2 basis-1/2 font-kdam ">Colors</p>
-                <p className="pb-2 text-base text-right basis-1/2 font-kdam">
-                  0.005 eth
-                </p>
-              </div>
-            </section>
             <MintColorPicker
               preview={preview}
               colorChoice={colorChoice}
@@ -255,7 +247,7 @@ export default function NightSkyMint(props: MintProps) {
             <MintCloudPicker preview={preview} setPreview={setPreview} />
 
             <button
-              className="mx-auto border-boldorange border-[2px] mt-8 px-8 py-3 bg-boldred min-w-[512px]"
+              className="mx-auto border-boldorange border-[2px] mt-8 px-8 py-3 bg-boldred min-w-full"
               onClick={async () => {
                 // write?.();
                 try {

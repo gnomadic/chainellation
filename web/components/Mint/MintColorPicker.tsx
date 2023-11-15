@@ -132,44 +132,52 @@ export default function MintColorPicker(props: MintColorPickerProps) {
 
   return (
     <section id="colors">
-      <p className="py-2 font-kdam">Primary Colorz</p>
-      <div className="flex mx-auto max-w-[512px] ">
-        <div
-          className=" border-boldorange border-[2px] mr-4"
-          onClick={() => {
-            resetFirstColor();
-          }}
-        >
-          <Image width={40} height={40} src={iconrefresh} alt="logo" />
-        </div>
-
-        <div className="flex-auto p-3 border-boldorange border-[2px] mx-auto">
-          <Hue
-            hue={hsva.primary.h}
-            onChange={(newHue) => {
-              changeComplete(newHue, null);
-            }}
-          />
-        </div>
+      <div className="flex ">
+        <p className="pb-2 basis-1/2 font-kdam ">Colors</p>
+        <p className="pb-2 text-base text-right basis-1/2 font-kdam">
+          0.005 eth
+        </p>
       </div>
-      <p className="pt-6 pb-2 font-kdam">Secondary Color</p>
-      <div className="flex mx-auto max-w-[512px]">
-        <div
-          className=" border-boldorange border-[2px] mr-4"
-          onClick={() => {
-            resetSecondColor();
-          }}
-        >
-          <Image width={40} height={40} src={iconrefresh} alt="logo" />
-        </div>
-
-        <div className="flex-auto  p-3 border-boldorange border-[2px] mx-auto">
-          <Hue
-            hue={hsva.secondary.h}
-            onChange={(newHue) => {
-              changeComplete(null, newHue);
+      <div className="mx-5 ">
+        <p className="py-2 font-kdam">Primary Color</p>
+        <div className="flex mx-auto max-w-[512px] ">
+          <div
+            className=" border-boldorange border-[2px] mr-4"
+            onClick={() => {
+              resetFirstColor();
             }}
-          />
+          >
+            <Image width={40} height={40} src={iconrefresh} alt="logo" />
+          </div>
+
+          <div className="flex-auto p-3 border-boldorange border-[2px] mx-auto">
+            <Hue
+              hue={hsva.primary.h}
+              onChange={(newHue) => {
+                changeComplete(newHue, null);
+              }}
+            />
+          </div>
+        </div>
+        <p className="pt-6 pb-2 font-kdam">Secondary Color</p>
+        <div className="flex mx-auto max-w-[512px]">
+          <div
+            className=" border-boldorange border-[2px] mr-4"
+            onClick={() => {
+              resetSecondColor();
+            }}
+          >
+            <Image width={40} height={40} src={iconrefresh} alt="logo" />
+          </div>
+
+          <div className="flex-auto  p-3 border-boldorange border-[2px] mx-auto">
+            <Hue
+              hue={hsva.secondary.h}
+              onChange={(newHue) => {
+                changeComplete(null, newHue);
+              }}
+            />
+          </div>
         </div>
       </div>
     </section>
