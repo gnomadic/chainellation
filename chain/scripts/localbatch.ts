@@ -11,11 +11,13 @@ async function main() {
   let contract = await getContract("Chainellation");
   console.log("connected");
 
-  for (let i = 0; i <= 1000; i++) {
-    let svg = await contract.generateSVG(i, 30, 2, false);
+  const amount_to_generate = 20;
+
+  for (let i = 0; i <= amount_to_generate; i++) {
+    let svg = await contract.generateSVG(i, 30, false);
     let filename = "./gen/" + i + ".svg";
     await fs.writeFileSync(filename, svg);
-    console.log("generated: " + i + "/5");
+    console.log("generated: " + i + "/" + amount_to_generate);
   }
 }
 

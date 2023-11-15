@@ -8,7 +8,6 @@ interface IChainellationRenderer {
         Color.DNA memory dna,
         uint256 gazes,
         bool daytime,
-        uint8 cloudDays,
         address decorator
     ) external view returns (string memory);
 

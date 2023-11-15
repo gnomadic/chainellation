@@ -26,37 +26,39 @@ export default function Index() {
             aria-hidden="true"
             className="relative inset-0 z-0 pt-24 min-w-max bg-gradient-to-b from-clearslate/0 via-clearslate/50 to-clearslate"
           />
-          <div className="relative z-10 md:pt-18 bg-clearslate  py-16">
-            <div className="text-xl md:text-3xl font-normal uppercase leading-normal text-center text-offwhite font-kdam">
+          <div className="relative z-10 py-16 md:pt-18 bg-clearslate">
+            <div className="text-xl font-normal leading-normal text-center uppercase md:text-3xl text-offwhite font-kdam">
               An on-chain, customizable, and Generative Art NFT
             </div>
             <div className="w-20 mx-auto h-[0px] mt-8 border-2 border-boldorange"></div>
             <section></section>
-            <section className="text-offwhite text-xl px-4 md:px-36 font-roboto">
+            <section className="px-4 text-xl text-offwhite md:px-36 font-roboto">
               <div className="grid grid-cols-1 gap-16 pt-28 md:grid-cols-2 font-roboto ">
                 <FeatureCard
-                  title="🌌 Mint Your Unique Night Sky"
-                  description="Dive into the cosmos by minting your own Chainellation. The process is simple, and each NFT is a one-of-a-kind view.  You can choose to customize your creation or roll for a randomly generated sky."
+                  title="🌌 Your Night Sky is your canvas"
+                  description="When you mint your Night Sky you can choose to customize your creation or roll for a randomly generated sky.  This acts as the canvas and backdrop for your Chainellation."
+                  // description="Dive into the cosmos by minting your own Chainellation. The process is simple, and each NFT is a one-of-a-kind view.  You can choose to customize your creation or roll for a randomly generated sky."
                 />
                 <FeatureCard
                   title="🕰️ Your Timezone shapes Your Experience"
-                  description="Your Chainellation responds to the rhythm of the Earth.  When you mint your NFT knows your timezone, so you can watch as the artwork dynamically shifts between day and night. During the day, bask in the warmth of the sun, and as night falls, the stars come alive, creating a personalized celestial canvas just for you."
+                  description="Each NFT tracks what timezone it was minted in.  The sun and stars will shift to reflect the time of day, and you can only interact with your Chainellation after the sun sets."
+                  // description="Your Chainellation responds to the rhythm of the Earth.  When you mint your NFT knows your timezone, so you can watch as the artwork dynamically shifts between day and night. During the day, bask in the warmth of the sun, and as night falls, the stars come alive, creating a personalized celestial canvas just for you."
                 />
                 <FeatureCard
                   title="🌟 Stargaze Nightly, Reveal Your Universe"
-                  description="Unveil the secrets of your night sky by stargazing once a day when the sun is down where ever you are in the world.  As you stargaze new stars are revealed, bringing you one step closer to discovering your hidden zodiac constellation."
+                  description="Unveil the secrets of your night sky by stargazing once a day when the sun is down whereever you are in the world.  As you stargaze new stars are revealed, bringing you one step closer to discovering your hidden constellation."
                 />
                 <FeatureCard
                   title="🎨 Customize and Witness Evolution"
-                  description="Tailor your Chainellation with unique customizations of three places in your image. Watch as these elements evolve over time, reflecting the dynamic nature of the cosmos and creating a universe that's as unique as you are."
+                  description="Personalize your Chainellation with unique customizations of three places in your image. Watch as these elements evolve over time, reflecting the dynamic nature of the cosmos and creating a universe that's as unique as you are."
                 />
               </div>
-              <div className="text-2xl md:text-6xl font-normal uppercase leading-normal text-center text-offwhite font-kdam pt-28">
+              <div className="text-2xl font-normal leading-normal text-center uppercase md:text-6xl text-offwhite font-kdam pt-28">
                 Join the Cosmic Community
               </div>
               <div className="w-20 mx-auto h-[0px] border-2 mt-8 border-boldorange"></div>
 
-              <div className=" flex justify-center pt-24">
+              <div className="flex justify-center pt-24 ">
                 <ConnectButton
                   chainStatus="icon"
                   accountStatus="address"

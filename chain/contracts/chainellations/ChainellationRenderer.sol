@@ -13,7 +13,6 @@ contract ChainellationRenderer is IChainellationRenderer {
         Color.DNA memory dna,
         uint256 gazes,
         bool daytime,
-        uint8 cloudDays,
         address decorator
     ) public view returns (string memory) {
         Color.HSL memory primary = Color.HSL(dna.primaryHue, 100, 30);
@@ -21,7 +20,7 @@ contract ChainellationRenderer is IChainellationRenderer {
         // console.log("Colors are %s and %s ", primary.H, secondary.H);
         string memory svg = string.concat(
             '<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><clipPath id="box"><path d="M0 0h512v512H0z"/></clipPath><defs>',
-            getGradients(dna.starSeed, primary, secondary, cloudDays),
+            getGradients(dna.starSeed, primary, secondary, dna.cloudsAt),
             getFilters(dna.funkSeed),
             '</defs><svg viewBox="0 0 512 512" clip-path="url(#box)">',
             getBackgrounds(daytime),
@@ -32,7 +31,7 @@ contract ChainellationRenderer is IChainellationRenderer {
             // '<path d="M250 80 h 180 v 180 h -180 v-180" stroke="white" fill="none"/>',
 
             // buildStars(dna.starSeed, dna.constellationSeed, gazes, daytime),
-            getStars(dna.starSeed, gazes, daytime),
+            getStars(dna.starSeed, dna.constellation, gazes, daytime),
             getDecos(decorator, dna, gazes, daytime),
             // getFocus(decorator, dna, gazes, daytime),
             // getSkyMath(decorator, dna, gazes, daytime),
@@ -154,6 +153,7 @@ contract ChainellationRenderer is IChainellationRenderer {
 
     function getStars(
         uint256 starSeed,
+        uint8 constellationId,
         uint256 gazes,
         bool daytime
     ) public pure returns (string memory) {
@@ -162,25 +162,96 @@ contract ChainellationRenderer is IChainellationRenderer {
         }
         uint8 count;
 
-        if (gazes > 30) {
-            count = 30;
+        if (gazes > 50) {
+            count = 50;
         } else {
             count = (uint8)(gazes);
         }
 
-        string memory stars = '<g fill="white">';
+        uint8 constellationCount = 0;
+
+        string memory stars = "";
+
+        (string memory constellation, uint8 leftovers) = drawConstellation(
+            constellationId,
+            count
+        );
+
+        stars = string.concat(stars, constellation);
+        stars = string.concat(stars, drawStars(starSeed, count - leftovers));
+        return stars;
+        // uint8 starCount = count - ;
+
+        // string memory stars = '<g fill="#fff">';
+        // string memory x = "";
+        // string memory y = "";
+        // uint8 seed = 0;
+        // for (uint8 i = 0; i < count; i++) {
+        //     seed = (uint8)(Color.psuedorandom(starSeed, i) % 3);
+        //     x = Color.toString(
+        //         (uint16)(Color.psuedorandom(starSeed, i) % 462) + 25
+        //     );
+
+        //     y = Color.toString(
+        //         (uint16)(Color.psuedorandom(starSeed + seed, i) % 462) + 25
+        //     );
+        //     if (seed == 0) {
+        //         stars = string.concat(
+        //             stars,
+        //             '<circle r="1" cx="',
+        //             x,
+        //             '" cy="',
+        //             y,
+        //             '" fill="#fff"  opacity="1">',
+        //             '<animate attributeName="r" values="0;3;1" dur="1s"/></circle>'
+        //         );
+        //     } else if (seed == 1) {
+        //         stars = string.concat(
+        //             stars,
+        //             '<path d="M ',
+        //             x,
+        //             ",",
+        //             y,
+        //             'c 7,0 7,0 7,-7 c 0,7 0,7 7,7 c -7,0 -7,0 -7,7 c 0,-7 0,-7 -7,-7">',
+        //             "</path>"
+        //             // '<animateTransform attributeName="transform" type="scale" from="0 0" to="1 1" begin="0s" dur="0.5s" repeatCount="1"/></path>'
+        //         );
+        //     } else if (seed == 2) {
+        //         stars = string.concat(
+        //             stars,
+        //             '<circle r="3" cx="',
+        //             x,
+        //             '" cy="',
+        //             y,
+        //             '" opacity="0.3"><animate attributeName="r" values="0;5;3" dur="1s"/></circle>',
+        //             '<circle r="1" cx="',
+        //             x,
+        //             '" cy="',
+        //             y,
+        //             '"><animate attributeName="r" values="0;3;1" dur="1s"/></circle>'
+        //         );
+        //     }
+        // }
+        // return string.concat(stars, "</g>");
+    }
+
+    function drawStars(
+        uint256 starSeed,
+        uint8 toShow
+    ) private pure returns (string memory) {
+        string memory stars = '<g fill="#fff">';
         string memory x = "";
         string memory y = "";
         uint8 seed = 0;
-        for (uint8 i = 0; i < count; i++) {
+        for (uint8 i = 0; i < toShow; i++) {
+            seed = (uint8)(Color.psuedorandom(starSeed, i) % 3);
             x = Color.toString(
                 (uint16)(Color.psuedorandom(starSeed, i) % 462) + 25
             );
 
             y = Color.toString(
-                (uint16)(Color.psuedorandom(starSeed, i) % 255) + 25
+                (uint16)(Color.psuedorandom(starSeed + seed, i) % 462) + 25
             );
-            seed = (uint8)(Color.psuedorandom(starSeed, i) % 3);
             if (seed == 0) {
                 stars = string.concat(
                     stars,
@@ -188,7 +259,7 @@ contract ChainellationRenderer is IChainellationRenderer {
                     x,
                     '" cy="',
                     y,
-                    '" fill="white"  opacity="1">',
+                    '" fill="#fff"  opacity="1">',
                     '<animate attributeName="r" values="0;3;1" dur="1s"/></circle>'
                 );
             } else if (seed == 1) {
@@ -199,7 +270,8 @@ contract ChainellationRenderer is IChainellationRenderer {
                     ",",
                     y,
                     'c 7,0 7,0 7,-7 c 0,7 0,7 7,7 c -7,0 -7,0 -7,7 c 0,-7 0,-7 -7,-7">',
-                    '<animateTransform attributeName="transform" type="scale" from="0 0" to="1 1" begin="0s" dur="0.5s" repeatCount="1"/></path>'
+                    "</path>"
+                    // '<animateTransform attributeName="transform" type="scale" from="0 0" to="1 1" begin="0s" dur="0.5s" repeatCount="1"/></path>'
                 );
             } else if (seed == 2) {
                 stars = string.concat(
@@ -218,6 +290,18 @@ contract ChainellationRenderer is IChainellationRenderer {
             }
         }
         return string.concat(stars, "</g>");
+    }
+
+    function drawConstellation(
+        uint8 constellationID,
+        uint8 toShow
+    ) private pure returns (string memory, uint8 leftovers) {
+        (string memory constellation, uint8 count) = Constellations
+            .getConstellation(constellationID, toShow);
+        return (
+            string.concat('<g id="constellation">', constellation, "</g>"),
+            count
+        );
     }
 
     function psuedorandom(
@@ -239,37 +323,10 @@ contract ChainellationRenderer is IChainellationRenderer {
     ) private view returns (string memory) {
         return
             string.concat(
-                getFocus(dna, gazes, daytime),
+                // getFocus(dna, gazes, daytime),
                 getSkyMath(decorator, dna, gazes, daytime),
                 getDecorationOne(decorator, dna, gazes, daytime),
                 getSilhouette(decorator, dna, gazes, daytime)
-            );
-    }
-
-    function getFocus(
-        Color.DNA memory dna,
-        uint256 gazes,
-        bool daytime
-    ) private view returns (string memory) {
-        if (daytime) {
-            return "";
-        }
-        uint8 starCount;
-
-        if (starCount > 30) {
-            starCount = 30;
-        } else {
-            starCount = (uint8)(gazes);
-        }
-
-        return
-            string.concat(
-                '<g id="focus">',
-                Constellations.getConstellation(
-                    dna.constellationSeed,
-                    starCount
-                ),
-                "</g>"
             );
     }
 

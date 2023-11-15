@@ -6,10 +6,9 @@ library Constellations {
     using Strings for uint256;
 
     function getConstellation(
-        uint256 constellationSeed,
+        uint256 seed,
         uint8 gazed
-    ) public view returns (string memory) {
-        uint8 seed = (uint8)(constellationSeed % 15);
+    ) public pure returns (string memory, uint8 leftovers) {
         if (seed == 0) {
             return Aries(gazed);
         } else if (seed == 1) {
@@ -48,9 +47,11 @@ library Constellations {
         string memory open,
         string memory close,
         uint8 show
-    ) public pure returns (string memory) {
+    ) public pure returns (string memory, uint8 leftovers) {
+        uint8 overflow = 0;
         if (show > stars.length) {
             show = (uint8)(stars.length);
+            overflow = show - (uint8)(stars.length);
         }
 
         string memory constellation = "";
@@ -64,10 +65,12 @@ library Constellations {
             constellation = string.concat(constellation, "</g>");
         }
         // return (constellation, ((uint8)(stars.length) - show));
-        return (constellation);
+        return (constellation, overflow);
     }
 
-    function Aries(uint8 show) public view returns (string memory) {
+    function Aries(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](6);
 
         string
@@ -85,7 +88,9 @@ library Constellations {
         return buildStar(stars, open, close, show);
     }
 
-    function Sagittarius(uint8 show) public view returns (string memory) {
+    function Sagittarius(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string
             memory open = '<g transform="translate(234,-290), rotate(0)" fill="#fff" opacity="0.8">';
         string[] memory stars = new string[](20);
@@ -117,7 +122,9 @@ library Constellations {
         return buildStar(stars, open, close, show);
     }
 
-    function Capricorn(uint8 show) public view returns (string memory) {
+    function Capricorn(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](11);
 
         string
@@ -138,7 +145,9 @@ library Constellations {
         return buildStar(stars, open, close, show);
     }
 
-    function Aquarius(uint8 show) public view returns (string memory) {
+    function Aquarius(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](13);
         string
             memory open = '<g transform="translate(-6,-300), rotate(0)" fill="#fff" opacity="0.8">';
@@ -160,7 +169,9 @@ library Constellations {
         return buildStar(stars, open, close, show);
     }
 
-    function Pisces(uint8 show) public view returns (string memory) {
+    function Pisces(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](17);
 
         string
@@ -187,7 +198,9 @@ library Constellations {
         return buildStar(stars, open, close, show);
     }
 
-    function Scorpio(uint8 show) public view returns (string memory) {
+    function Scorpio(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](15);
 
         string
@@ -212,7 +225,9 @@ library Constellations {
         return buildStar(stars, open, close, show);
     }
 
-    function Libra(uint8 show) public view returns (string memory) {
+    function Libra(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](8);
         string
             memory open = '<g transform="translate(4,-120), rotate(0)" fill="#fff" opacity="0.8">';
@@ -229,7 +244,9 @@ library Constellations {
         return buildStar(stars, open, close, show);
     }
 
-    function Virgo(uint8 show) public view returns (string memory) {
+    function Virgo(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](12);
         string
             memory open = '<g transform="translate(114,-114), rotate(0)" fill="#fff" opacity="0.8">';
@@ -250,7 +267,9 @@ library Constellations {
         return buildStar(stars, open, close, show);
     }
 
-    function Leo(uint8 show) public view returns (string memory) {
+    function Leo(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](9);
 
         string
@@ -269,7 +288,9 @@ library Constellations {
         return buildStar(stars, open, close, show);
     }
 
-    function Cancer(uint8 show) public view returns (string memory) {
+    function Cancer(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](5);
 
         string
@@ -284,7 +305,9 @@ library Constellations {
         return buildStar(stars, open, close, show);
     }
 
-    function Gemini(uint8 show) public view returns (string memory) {
+    function Gemini(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](13);
 
         string
@@ -307,7 +330,9 @@ library Constellations {
         return buildStar(stars, open, close, show);
     }
 
-    function Taurus(uint8 show) public view returns (string memory) {
+    function Taurus(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](12);
 
         string
@@ -329,7 +354,9 @@ library Constellations {
         return buildStar(stars, open, close, show);
     }
 
-    function Pegasus(uint8 show) public view returns (string memory) {
+    function Pegasus(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](12);
 
         string
@@ -353,7 +380,9 @@ library Constellations {
         return buildStar(stars, open, close, show);
     }
 
-    function UrsaMinor(uint8 show) public view returns (string memory) {
+    function UrsaMinor(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](7);
 
         string
@@ -370,7 +399,9 @@ library Constellations {
         return buildStar(stars, open, close, show);
     }
 
-    function Cygnus(uint8 show) public view returns (string memory) {
+    function Cygnus(
+        uint8 show
+    ) public pure returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](6);
         string
             memory open = '<g transform="translate(134, -70) scale(3)" fill="#fff" opacity="0.8">';

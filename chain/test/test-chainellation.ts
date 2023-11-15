@@ -42,8 +42,8 @@ describe("chainellation", function () {
 
       let mint = await chainellation.mint("0", { value: mintPrice });
       await mint.wait();
-      var meta = await chainellation.generateSVG(1, 40, 0, false);
-      console.log("meta: ", meta);
+      var meta = await chainellation.generateSVG(1, 40, false);
+      console.log("", meta);
     });
 
     it("Should generate unique metadata ", async function () {

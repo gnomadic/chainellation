@@ -9,11 +9,13 @@ library Color {
         uint256 tokenId;
         uint16 primaryHue;
         uint16 secondaryHue;
+        uint8 constellation;
+        uint8 cloudsAt;
         uint256 starSeed;
         uint256 funkSeed;
         uint256 circleSeed;
         uint256 groundSeed;
-        uint256 constellationSeed;
+        // uint256 constellationSeed;
     }
 
     struct HSL {
@@ -121,7 +123,9 @@ library Color {
 
     function genDNA(
         uint256 tokenId,
-        uint32 colors
+        uint32 colors,
+        uint8 clouds,
+        uint8 constellation
     ) public pure returns (DNA memory) {
         DNA memory dna;
         dna.tokenId = tokenId;
@@ -131,7 +135,8 @@ library Color {
         dna.funkSeed = psuedorandom(tokenId, 234);
         dna.circleSeed = psuedorandom(tokenId, 345);
         dna.groundSeed = psuedorandom(tokenId, 456);
-        dna.constellationSeed = tokenId;
+        dna.constellation = constellation;
+        dna.cloudsAt = clouds;
 
         return dna;
     }

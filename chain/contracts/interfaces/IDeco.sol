@@ -45,7 +45,9 @@ abstract contract IDeco {
     ) public view returns (string memory) {
         Color.DNA memory dna = Color.genDNA(
             tokenId,
-            Color.defaultColors(tokenId)
+            Color.defaultColors(tokenId),
+            0,
+            0
         );
         bytes memory svg = abi.encodePacked(
             packageAsSVG(tokenId, dna, 0, true)

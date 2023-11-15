@@ -8,6 +8,7 @@ import "@openzeppelin/contracts/utils/Base64.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "../interfaces/IChainellationRenderer.sol";
 import "../Color.sol";
+import "../interfaces/ITwoMoonsEvent.sol";
 
 contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     using Strings for uint256;
@@ -25,9 +26,12 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     mapping(uint256 => uint16) public gazes;
     mapping(uint256 => uint256) public lastGaze;
     mapping(uint256 => uint32) public colors;
+    mapping(uint256 => uint8) public constellation;
+    mapping(uint256 => uint8) public cloudsAt;
 
     address private _decorator;
     IChainellationRenderer private _chainellationRenderer;
+    ITwoMoonsEvent private _twoMoonsEvent;
 
     constructor(address renderer) ERC721("chainellation", "STARS") {
         _chainellationRenderer = IChainellationRenderer(renderer);
@@ -81,53 +85,74 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     function mint(uint32 timezoneOffset) public payable {
         if (msg.value < mintCost) revert Cost();
 
-        _mint(timezoneOffset, 0, msg.sender);
+        _mint(timezoneOffset, 0, 0, 0, msg.sender);
     }
 
     function mintCustom(
         uint32 timezoneOffset,
         uint16 firstH,
-        uint16 secondH
+        uint16 secondH,
+        uint8 _constellation,
+        uint8 _cloudsAt
     ) public payable {
         if (msg.value < (mintCost + customizeCost)) revert Cost();
         _mint(
             timezoneOffset,
             (uint32(firstH) << 16) | uint32(secondH),
+            _constellation,
+            _cloudsAt,
             msg.sender
         );
     }
 
-    function mintBatch(uint32 timezoneOffset, uint8 count) public payable {
-        for (uint8 i = 0; i < count; i++) {
-            mint(timezoneOffset);
-        }
-    }
-
     function freeMint(uint32 timezoneOffset) public onlyOwner {
-        _mint(timezoneOffset, 0, msg.sender);
+        _mint(timezoneOffset, 0, 0, 0, msg.sender);
     }
 
     // if the timezone offset is negative, we're gonna pretend like it's a day in the future
     // this doesn't matter because the timezone offset is only used to determine the time of day
     // and not the actual day.
     function _mint(
-        uint32 timezoneOffset,
-        uint32 colorData,
+        uint32 _timezoneOffset,
+        uint32 _colorData,
+        uint8 _constellation,
+        uint8 _cloudsAt,
         address _to
     ) private {
         if (currentSupply >= maxSupply) revert MaxSupplyReached();
         currentSupply++;
-        timeZoneOffset[currentSupply] = timezoneOffset;
+        timeZoneOffset[currentSupply] = _timezoneOffset;
 
-        if (colorData == 0) {
+        if (_colorData == 0) {
             uint16 primary = uint16((currentSupply % 16) * 10);
             uint16 secondary = Color
                 .rotateColor(Color.HSL(primary, 0, 0), 60)
                 .H;
-            colorData = (uint32(primary) << 16) | uint32(secondary);
+            _colorData = (uint32(primary) << 16) | uint32(secondary);
         }
 
-        colors[currentSupply] = colorData;
+        colors[currentSupply] = _colorData;
+
+        if (_constellation == 0) {
+            _constellation = uint8(
+                _chainellationRenderer.psuedorandom(currentSupply, 123) % 15
+            );
+        }
+        if (_constellation > 15) {
+            _constellation = 0;
+        }
+
+        if (_cloudsAt == 0) {
+            _constellation = uint8(
+                _chainellationRenderer.psuedorandom(currentSupply, 321) % 5
+            );
+        }
+        if (_cloudsAt > 5) {
+            _cloudsAt = 0;
+        }
+
+        constellation[currentSupply] = _constellation;
+        cloudsAt[currentSupply] = _cloudsAt;
         _safeMint(_to, currentSupply);
     }
 
@@ -135,7 +160,7 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
         uint256 tokenId
     ) public view returns (string memory) {
         bytes memory svg = abi.encodePacked(
-            generateSVG(tokenId, gazes[tokenId], 1, !isNight(tokenId))
+            generateSVG(tokenId, gazes[tokenId], !isNight(tokenId))
         );
 
         return
@@ -159,18 +184,38 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
         }
     }
 
+    function getConstellation(uint256 tokenId) public view returns (uint8) {
+        if (constellation[tokenId] == 0) {
+            return
+                uint8(_chainellationRenderer.psuedorandom(tokenId, 123) % 15);
+        } else {
+            return constellation[tokenId];
+        }
+    }
+
+    function getCloudsAt(uint256 tokenId) public view returns (uint8) {
+        if (cloudsAt[tokenId] == 0) {
+            return uint8(_chainellationRenderer.psuedorandom(tokenId, 321) % 5);
+        } else {
+            return cloudsAt[tokenId];
+        }
+    }
+
     function generateSVG(
-        uint256 tokenId,
-        uint256 gazed,
-        uint8 cloudsAt,
-        bool sunUp
+        uint256 _tokenId,
+        uint256 _gazed,
+        bool _sunUp
     ) public view returns (string memory) {
         return
             _chainellationRenderer.generateSVG(
-                Color.genDNA(tokenId, getColors(tokenId)),
-                gazed,
-                sunUp,
-                cloudsAt,
+                Color.genDNA(
+                    _tokenId,
+                    getColors(_tokenId),
+                    getCloudsAt(_tokenId),
+                    getConstellation(_tokenId)
+                ),
+                _gazed,
+                _sunUp,
                 _decorator
             );
     }
@@ -182,6 +227,9 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
             revert NotEnoughTimePassed();
         gazes[tokenId] = gazes[tokenId] + 1;
         lastGaze[tokenId] = systemTimeOffsetWithUser(tokenId);
+        if (address(_twoMoonsEvent) != address(0)) {
+            ITwoMoonsEvent(_twoMoonsEvent).onStargaze(tokenId, gazes[tokenId]);
+        }
     }
 
     function gazeBatch(uint256[] calldata tokenIds) public {
@@ -209,6 +257,10 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
 
     function setDecorator(address decorator) public onlyOwner {
         _decorator = decorator;
+    }
+
+    function setTwoMoonsEvent(address twoMoonsEvent) public onlyOwner {
+        _twoMoonsEvent = ITwoMoonsEvent(twoMoonsEvent);
     }
 
     function setRenderer(address renderer) public onlyOwner {

@@ -28,6 +28,7 @@ type MintConstellationPickerProps = {
 type Constellation = {
   stars: string;
   color: string;
+  index: number;
 };
 
 export default function MintConstellationPicker(
@@ -36,26 +37,27 @@ export default function MintConstellationPicker(
   const [constellation, setConstellation] = useState<Constellation>({
     stars: "Random",
     color: "#b5b5b5",
+    index: 0,
   });
   const [hex, setHex] = useState("#F44E3B");
 
   const availableConstellations = [
-    { stars: "Random", color: "#b5b5b5" },
-    { stars: "Aries", color: "#ff0800" },
-    { stars: "Sagittarius", color: "#6600ff" },
-    { stars: "Capricorn", color: "#6a6a6f" },
-    { stars: "Aquarius", color: "#c4f4eb" },
-    { stars: "Pisces", color: "#8d5eb7" },
-    { stars: "Scorpio", color: "#800020" },
-    { stars: "Libra", color: "#f62681" },
-    { stars: "Virgo", color: "#f8a39d" },
-    { stars: "Leo", color: "#ffdf01" },
-    { stars: "Cancer", color: "#14a3c7" },
-    { stars: "Gemini", color: "#ff9932" },
-    { stars: "Taurus", color: "#05480d" },
-    { stars: "Pegasus", color: "#ffffff" },
-    { stars: "Ursa Minor", color: "#808080" },
-    { stars: "Cygnus", color: "#000000" },
+    { stars: "Random", color: "#b5b5b5", index: 1 },
+    { stars: "Aries", color: "#ff0800", index: 2 },
+    { stars: "Sagittarius", color: "#6600ff", index: 3 },
+    { stars: "Capricorn", color: "#6a6a6f", index: 4 },
+    { stars: "Aquarius", color: "#c4f4eb", index: 5 },
+    { stars: "Pisces", color: "#8d5eb7", index: 6 },
+    { stars: "Scorpio", color: "#800020", index: 7 },
+    { stars: "Libra", color: "#f62681", index: 8 },
+    { stars: "Virgo", color: "#f8a39d", index: 9 },
+    { stars: "Leo", color: "#ffdf01", index: 10 },
+    { stars: "Cancer", color: "#14a3c7", index: 11 },
+    { stars: "Gemini", color: "#ff9932", index: 12 },
+    { stars: "Taurus", color: "#05480d", index: 13 },
+    { stars: "Pegasus", color: "#ffffff", index: 14 },
+    { stars: "Ursa Minor", color: "#808080", index: 15 },
+    { stars: "Cygnus", color: "#000000", index: 16 },
   ];
 
   //-----
