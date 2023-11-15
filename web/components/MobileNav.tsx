@@ -4,6 +4,7 @@ import logo from "../images/logo-unopt.svg";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import { NavItems } from "../domain/Nav";
+import { Fragment } from "react";
 
 type MobileNavProps = {
   onClick: () => void;
@@ -25,7 +26,7 @@ export default function MobileNav(props: MobileNavProps) {
         <ul className="gap-8 tracking-wider uppercase b-32 font-kdam">
           {NavItems.map((element, i) => {
             return (
-              <>
+              <Fragment key={i}>
                 <li key={i}>
                   <Link href={element.href}>
                     <div className="relative pb-8 cursor-pointer">
@@ -33,7 +34,7 @@ export default function MobileNav(props: MobileNavProps) {
                     </div>
                   </Link>
                 </li>
-              </>
+              </Fragment>
             );
           })}
 
