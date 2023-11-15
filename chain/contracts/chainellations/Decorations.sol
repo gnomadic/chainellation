@@ -121,39 +121,6 @@ contract Decorations is Ownable, IDecorations {
         }
     }
 
-    function getFocus(
-        Color.DNA memory dna,
-        uint256 gazes,
-        bool daytime
-    ) public view returns (string memory) {
-        if (_decorations[dna.tokenId].focus == address(0)) {
-            uint8 starCount;
-
-            if (starCount > 30) {
-                starCount = 30;
-            } else {
-                starCount = (uint8)(gazes);
-            }
-
-            return
-                string.concat(
-                    '<g id="focus">',
-                    Constellations.getConstellation(
-                        dna.constellationSeed,
-                        starCount
-                    ),
-                    "</g>"
-                );
-        }
-        return
-            IDeco(_decorations[dna.tokenId].focus).getDeco(
-                dna.tokenId,
-                dna,
-                gazes,
-                daytime
-            );
-    }
-
     function getSilhouette(
         Color.DNA memory dna,
         uint256 gazes,

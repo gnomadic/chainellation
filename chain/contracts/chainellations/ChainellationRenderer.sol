@@ -117,7 +117,7 @@ contract ChainellationRenderer is IChainellationRenderer {
             '<path fill="url(#skyGradient)"  d="M0 0h512v512H0z" opacity=".',
             Color.toString(day ? 0 : 7),
             '"/>',
-            '<path fill="url(#cloudGradient)" filter="url(#clouds)" d="M0 0h565v512H0z"/>'
+            '<path fill="url(#cloudGradient)" filter="url(#clouds)" d="M-512-512h1536v1536h-2048z"><animateTransform attributeName="transform" attributeType="XML" type="translate" from="0" to="512 512" dur="25s" repeatCount="indefinite"/></path>'
         );
 
         return bg;

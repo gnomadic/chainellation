@@ -19,7 +19,7 @@ module.exports = async (hre: any) => {
     from: deployer,
     libraries: {
       Color: color.address,
-      // Constellations: constellation.address,
+      Constellations: constellation.address,
     },
     log: true,
   });

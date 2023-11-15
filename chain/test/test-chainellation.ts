@@ -67,6 +67,7 @@ describe("chainellation", function () {
       expect(meta1).to.not.be.equal(meta2);
       expect(meta1).to.not.be.equal(meta3);
       expect(meta2).to.not.be.equal(meta3);
+      console.log(meta1);
     });
   });
 
