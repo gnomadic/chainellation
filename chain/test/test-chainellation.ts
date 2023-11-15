@@ -42,8 +42,8 @@ describe("chainellation", function () {
 
       let mint = await chainellation.mint("0", { value: mintPrice });
       await mint.wait();
-      // var meta = await chainellation.generateSVG(1, 0, 0, true);
-      // console.log("meta: ", meta);
+      var meta = await chainellation.generateSVG(1, 40, 0, false);
+      console.log("meta: ", meta);
     });
 
     it("Should generate unique metadata ", async function () {
@@ -67,7 +67,6 @@ describe("chainellation", function () {
       expect(meta1).to.not.be.equal(meta2);
       expect(meta1).to.not.be.equal(meta3);
       expect(meta2).to.not.be.equal(meta3);
-      console.log(meta1);
     });
   });
 

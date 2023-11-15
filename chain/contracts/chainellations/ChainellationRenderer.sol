@@ -117,7 +117,7 @@ contract ChainellationRenderer is IChainellationRenderer {
             '<path fill="url(#skyGradient)"  d="M0 0h512v512H0z" opacity=".',
             Color.toString(day ? 0 : 7),
             '"/>',
-            '<path fill="url(#cloudGradient)" filter="url(#clouds)" d="M-512-512h1536v1536h-2048z"><animateTransform attributeName="transform" attributeType="XML" type="translate" from="0" to="512 512" dur="25s" repeatCount="indefinite"/></path>'
+            '<path fill="url(#cloudGradient)" filter="url(#clouds)" d="M-512-512h1536v1536h-2048z"><animateTransform attributeName="transform" attributeType="XML" type="translate" from="0" to="512 512" dur="50s" repeatCount="indefinite"/></path>'
         );
 
         return bg;
@@ -239,7 +239,7 @@ contract ChainellationRenderer is IChainellationRenderer {
     ) private view returns (string memory) {
         return
             string.concat(
-                getFocus(decorator, dna, gazes, daytime),
+                getFocus(dna, gazes, daytime),
                 getSkyMath(decorator, dna, gazes, daytime),
                 getDecorationOne(decorator, dna, gazes, daytime),
                 getSilhouette(decorator, dna, gazes, daytime)
@@ -247,11 +247,13 @@ contract ChainellationRenderer is IChainellationRenderer {
     }
 
     function getFocus(
-        address decorator,
         Color.DNA memory dna,
         uint256 gazes,
         bool daytime
     ) private view returns (string memory) {
+        if (daytime) {
+            return "";
+        }
         uint8 starCount;
 
         if (starCount > 30) {
