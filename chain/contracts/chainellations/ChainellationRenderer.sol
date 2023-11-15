@@ -2,7 +2,7 @@
 pragma solidity 0.8.18;
 
 import "../Color.sol";
-// import "./Constellations.sol";
+import "./Constellations.sol";
 import "../interfaces/IDecorations.sol";
 import "../interfaces/IChainellationRenderer.sol";
 
@@ -252,9 +252,23 @@ contract ChainellationRenderer is IChainellationRenderer {
         uint256 gazes,
         bool daytime
     ) private view returns (string memory) {
-        if (decorator == address(0)) return "";
-        IDecorations deco = IDecorations(decorator);
-        return deco.getDecorationOne(dna, gazes, daytime);
+        uint8 starCount;
+
+        if (starCount > 30) {
+            starCount = 30;
+        } else {
+            starCount = (uint8)(gazes);
+        }
+
+        return
+            string.concat(
+                '<g id="focus">',
+                Constellations.getConstellation(
+                    dna.constellationSeed,
+                    starCount
+                ),
+                "</g>"
+            );
     }
 
     function getSilhouette(

@@ -11,12 +11,11 @@ contract Decorations is Ownable, IDecorations {
         address silhouette;
         address skyMath;
         address decorationOne;
-        address focus;
     }
+
     uint8 public constant SILHOUTTE = 1;
     uint8 public constant SKY_MATH = 2;
     uint8 public constant DECORATION_ONE = 3;
-    uint8 public constant FOCUS = 4;
 
     address private _chainellation;
 
@@ -117,8 +116,6 @@ contract Decorations is Ownable, IDecorations {
             _decorations[tokenId].skyMath = deco;
         } else if (decoType == DECORATION_ONE) {
             _decorations[tokenId].decorationOne = deco;
-        } else if (decoType == FOCUS) {
-            _decorations[tokenId].focus = deco;
         } else {
             revert InvalidDecoType();
         }

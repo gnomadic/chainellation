@@ -38,6 +38,7 @@ export default function NightSkyMint(props: MintProps) {
     second: -1,
   });
   const [isDay, setIsDay] = useState(false);
+  const [isGazed, setIsGazed] = useState(false);
 
   type Constellation = {
     stars: string;
@@ -117,7 +118,8 @@ export default function NightSkyMint(props: MintProps) {
       currentSupply !== undefined,
     args: [
       currentSupply ? BigNumber.from(currentSupply).toNumber() + 1 : 0,
-      0,
+      // 0,
+      isGazed ? 40 : 0,
       0,
       isDay,
     ],
@@ -211,6 +213,11 @@ export default function NightSkyMint(props: MintProps) {
     setIsDay(!isDay);
   };
 
+  const gazedToggle = function (toggled: any) {
+    console.log("toggled gazes: ", toggled);
+    setIsGazed(!isGazed);
+  };
+
   useEffect(() => {
     console.log("mounted");
 
@@ -290,8 +297,8 @@ export default function NightSkyMint(props: MintProps) {
               <div className="mx-auto ">
                 <Switch
                   className="mr-4"
-                  onChange={dayNightToggle}
-                  checked={isDay}
+                  onChange={gazedToggle}
+                  checked={isGazed}
                   onColor="#EA8F21"
                   uncheckedIcon={
                     <Image
