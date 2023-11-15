@@ -14,6 +14,7 @@ import Slider from "@uiw/react-color-slider";
 import {
   extractFirstColor,
   extractSecondColor,
+  replaceClouds,
   replaceGradients,
 } from "../../utils/svgcombiner";
 import Switch from "react-switch";
@@ -125,9 +126,7 @@ export default function NightSkyMint(props: MintProps) {
       currentSupply ? BigNumber.from(currentSupply).toNumber() + 1 : 0,
       // 0,
       isGazed ? 40 : 0,
-      availableClouds.find((element) => {
-        return element.r === clouds;
-      })?.density,
+      0,
       isDay,
     ],
     onError(error) {
@@ -252,6 +251,23 @@ export default function NightSkyMint(props: MintProps) {
     console.log("minutesOffset: " + minutesOffset);
     setTzOffset(minutesOffset * 60);
   }, []);
+
+  useEffect(() => {
+    if (preview == "") {
+      return;
+    }
+    console.log("clouds: " + clouds);
+    let updated = preview;
+
+    let cloudLevel = availableClouds.find((element) => {
+      return element.r === clouds;
+    })?.density;
+    console.log("cloud level: " + cloudLevel);
+
+    updated = replaceClouds(preview, cloudLevel!);
+
+    setPreview(window.btoa(updated));
+  }, [clouds, preview]);
 
   return (
     <section className=" z-10 relative">

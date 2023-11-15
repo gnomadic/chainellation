@@ -144,6 +144,22 @@ export function rotateColor(hue: number, rotate: number) {
   return (hue + rotate) % 360;
 }
 
+export function replaceClouds(svg: string, density: number) {
+  const parsed = extractSVG(svg);
+  const doc = new DOMParser().parseFromString(parsed, "text/xml");
+
+  const clouds = doc.getElementById("cloudGradient");
+  console.log("clouds svg children: " + clouds?.childNodes.length);
+
+  const newClouds = 'stop stop-opacity=".' + density + '" offset="15%"';
+  const newClouds2 = 'stop stop-opacity=".' + density + '" offset="50%"';
+
+  clouds?.replaceChild(doc.createElement(newClouds), clouds.childNodes[0]);
+  clouds?.replaceChild(doc.createElement(newClouds2), clouds.childNodes[2]);
+
+  return new XMLSerializer().serializeToString(doc);
+}
+
 // Replace the <g> tag with a new <rect> tag
 // const newRectTag = svgDoc.createElementNS("http://www.w3.org/2000/svg", "rect");
 // newRectTag.setAttribute("width", "100");
