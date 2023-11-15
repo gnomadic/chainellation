@@ -9,14 +9,14 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "../interfaces/IChainellationRenderer.sol";
 import "../Color.sol";
 import "../interfaces/ITwoMoonsEvent.sol";
+import "hardhat/console.sol";
 
 contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     using Strings for uint256;
 
     uint256 public currentSupply;
     uint256 public maxSupply = 15000;
-    // uint256 public mintCost = 75 * 10 ** 15; // ETH
-    // uint256 public mintCost = 20 * 10 ** 18; // POLYGON
+
     uint256 public mintCost = 0;
     uint256 public customizeCost = 0; // 5 * 10 ** 15;
 
@@ -95,7 +95,24 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
         uint8 _constellation,
         uint8 _cloudsAt
     ) public payable {
-        if (msg.value < (mintCost + customizeCost)) revert Cost();
+        uint256 rollingCost = mintCost;
+        //370 is not a valid Hue
+        if (firstH != 370 || secondH != 370) {
+            rollingCost += customizeCost;
+        }
+        if (_constellation != 0) {
+            rollingCost += customizeCost;
+        }
+
+        if (_cloudsAt != 0) {
+            rollingCost += customizeCost;
+        }
+
+        if (msg.value < rollingCost) revert Cost();
+
+        console.log("packed zero test", (uint32(0) << 16) | uint32(0));
+        console.log("packed 370 test", (uint32(370) << 16) | uint32(370));
+
         _mint(
             timezoneOffset,
             (uint32(firstH) << 16) | uint32(secondH),
@@ -123,7 +140,8 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
         currentSupply++;
         timeZoneOffset[currentSupply] = _timezoneOffset;
 
-        if (_colorData == 0) {
+        // 24248690 is a byte packed 370 + 370, which are the default colors
+        if (_colorData == 24248690) {
             uint16 primary = uint16((currentSupply % 16) * 10);
             uint16 secondary = Color
                 .rotateColor(Color.HSL(primary, 0, 0), 60)
@@ -160,7 +178,7 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
         uint256 tokenId
     ) public view returns (string memory) {
         bytes memory svg = abi.encodePacked(
-            generateSVG(tokenId, gazes[tokenId], !isNight(tokenId))
+            generateSVG(tokenId, gazes[tokenId], !isNight(tokenId), 0)
         );
 
         return
@@ -204,7 +222,8 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     function generateSVG(
         uint256 _tokenId,
         uint256 _gazed,
-        bool _sunUp
+        bool _sunUp,
+        uint8 testConstellation
     ) public view returns (string memory) {
         return
             _chainellationRenderer.generateSVG(
@@ -212,7 +231,9 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
                     _tokenId,
                     getColors(_tokenId),
                     getCloudsAt(_tokenId),
-                    getConstellation(_tokenId)
+                    testConstellation == 0
+                        ? getConstellation(_tokenId)
+                        : testConstellation
                 ),
                 _gazed,
                 _sunUp,

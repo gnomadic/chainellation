@@ -42,7 +42,7 @@ describe("chainellation", function () {
 
       let mint = await chainellation.mint("0", { value: mintPrice });
       await mint.wait();
-      var meta = await chainellation.generateSVG(1, 40, false);
+      var meta = await chainellation.generateSVG(1, 30, false, 0);
       console.log("", meta);
     });
 

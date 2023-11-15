@@ -19,6 +19,8 @@ abstract contract IDeco {
     ) public view virtual returns (string memory);
 
     function ownerOf(uint256 tokenId) public view virtual returns (address) {
+        //TODO this is rough - the msg.sender is the Decoration contract but I need check with the EOA
+        //breaks support for gas stations and contract owners.
         return tx.origin;
     }
 

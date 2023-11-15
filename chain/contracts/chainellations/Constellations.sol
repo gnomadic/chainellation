@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.18;
 import "@openzeppelin/contracts/utils/Strings.sol";
+import "hardhat/console.sol";
 
 library Constellations {
     using Strings for uint256;
@@ -8,7 +9,7 @@ library Constellations {
     function getConstellation(
         uint256 seed,
         uint8 gazed
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         if (seed == 0) {
             return Aries(gazed);
         } else if (seed == 1) {
@@ -47,13 +48,16 @@ library Constellations {
         string memory open,
         string memory close,
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         uint8 overflow = 0;
+        console.log("show from buildStar: ", show);
+        console.log("stars length from buildStar: ", stars.length);
         if (show > stars.length) {
-            show = (uint8)(stars.length);
             overflow = show - (uint8)(stars.length);
+            show = (uint8)(stars.length);
         }
 
+        console.log("overflow from buildStar: ", overflow);
         string memory constellation = "";
         constellation = string.concat(constellation, open);
         for (uint8 i = 0; i < show; i++) {
@@ -70,7 +74,7 @@ library Constellations {
 
     function Aries(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](6);
 
         string
@@ -90,7 +94,7 @@ library Constellations {
 
     function Sagittarius(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string
             memory open = '<g transform="translate(234,-290), rotate(0)" fill="#fff" opacity="0.8">';
         string[] memory stars = new string[](20);
@@ -124,7 +128,7 @@ library Constellations {
 
     function Capricorn(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](11);
 
         string
@@ -147,7 +151,7 @@ library Constellations {
 
     function Aquarius(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](13);
         string
             memory open = '<g transform="translate(-6,-300), rotate(0)" fill="#fff" opacity="0.8">';
@@ -171,7 +175,7 @@ library Constellations {
 
     function Pisces(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](17);
 
         string
@@ -200,7 +204,7 @@ library Constellations {
 
     function Scorpio(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](15);
 
         string
@@ -227,7 +231,7 @@ library Constellations {
 
     function Libra(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](8);
         string
             memory open = '<g transform="translate(4,-120), rotate(0)" fill="#fff" opacity="0.8">';
@@ -246,7 +250,7 @@ library Constellations {
 
     function Virgo(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](12);
         string
             memory open = '<g transform="translate(114,-114), rotate(0)" fill="#fff" opacity="0.8">';
@@ -269,7 +273,7 @@ library Constellations {
 
     function Leo(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](9);
 
         string
@@ -290,7 +294,7 @@ library Constellations {
 
     function Cancer(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](5);
 
         string
@@ -307,7 +311,7 @@ library Constellations {
 
     function Gemini(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](13);
 
         string
@@ -332,7 +336,7 @@ library Constellations {
 
     function Taurus(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](12);
 
         string
@@ -356,7 +360,7 @@ library Constellations {
 
     function Pegasus(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](12);
 
         string
@@ -382,7 +386,7 @@ library Constellations {
 
     function UrsaMinor(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](7);
 
         string
@@ -401,7 +405,7 @@ library Constellations {
 
     function Cygnus(
         uint8 show
-    ) public pure returns (string memory, uint8 leftovers) {
+    ) public view returns (string memory, uint8 leftovers) {
         string[] memory stars = new string[](6);
         string
             memory open = '<g transform="translate(134, -70) scale(3)" fill="#fff" opacity="0.8">';

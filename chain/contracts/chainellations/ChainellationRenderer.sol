@@ -6,7 +6,7 @@ import "./Constellations.sol";
 import "../interfaces/IDecorations.sol";
 import "../interfaces/IChainellationRenderer.sol";
 
-// import "hardhat/console.sol";
+import "hardhat/console.sol";
 
 contract ChainellationRenderer is IChainellationRenderer {
     function generateSVG(
@@ -156,83 +156,41 @@ contract ChainellationRenderer is IChainellationRenderer {
         uint8 constellationId,
         uint256 gazes,
         bool daytime
-    ) public pure returns (string memory) {
+    ) public view returns (string memory) {
         if (daytime) {
             return "";
         }
-        uint8 count;
 
+        uint8 starCount = 0;
+        uint8 constCount = 0;
         if (gazes > 50) {
-            count = 50;
-        } else {
-            count = (uint8)(gazes);
+            constCount = 20;
+            starCount = 30;
+            gazes = 50;
         }
-
-        uint8 constellationCount = 0;
-
-        string memory stars = "";
+        while (starCount + constCount < gazes) {
+            if (Color.psuedorandom(starSeed, constCount + starCount) % 3 == 1) {
+                constCount++;
+            } else {
+                starCount++;
+            }
+        }
 
         (string memory constellation, uint8 leftovers) = drawConstellation(
             constellationId,
-            count
+            constCount
         );
+        string memory stars = "";
 
+        console.log("constCount ", constCount);
+        console.log("starCount ", starCount);
+        console.log("leftovers ", leftovers);
         stars = string.concat(stars, constellation);
-        stars = string.concat(stars, drawStars(starSeed, count - leftovers));
+        stars = string.concat(
+            stars,
+            drawStars(starSeed, starCount + leftovers)
+        );
         return stars;
-        // uint8 starCount = count - ;
-
-        // string memory stars = '<g fill="#fff">';
-        // string memory x = "";
-        // string memory y = "";
-        // uint8 seed = 0;
-        // for (uint8 i = 0; i < count; i++) {
-        //     seed = (uint8)(Color.psuedorandom(starSeed, i) % 3);
-        //     x = Color.toString(
-        //         (uint16)(Color.psuedorandom(starSeed, i) % 462) + 25
-        //     );
-
-        //     y = Color.toString(
-        //         (uint16)(Color.psuedorandom(starSeed + seed, i) % 462) + 25
-        //     );
-        //     if (seed == 0) {
-        //         stars = string.concat(
-        //             stars,
-        //             '<circle r="1" cx="',
-        //             x,
-        //             '" cy="',
-        //             y,
-        //             '" fill="#fff"  opacity="1">',
-        //             '<animate attributeName="r" values="0;3;1" dur="1s"/></circle>'
-        //         );
-        //     } else if (seed == 1) {
-        //         stars = string.concat(
-        //             stars,
-        //             '<path d="M ',
-        //             x,
-        //             ",",
-        //             y,
-        //             'c 7,0 7,0 7,-7 c 0,7 0,7 7,7 c -7,0 -7,0 -7,7 c 0,-7 0,-7 -7,-7">',
-        //             "</path>"
-        //             // '<animateTransform attributeName="transform" type="scale" from="0 0" to="1 1" begin="0s" dur="0.5s" repeatCount="1"/></path>'
-        //         );
-        //     } else if (seed == 2) {
-        //         stars = string.concat(
-        //             stars,
-        //             '<circle r="3" cx="',
-        //             x,
-        //             '" cy="',
-        //             y,
-        //             '" opacity="0.3"><animate attributeName="r" values="0;5;3" dur="1s"/></circle>',
-        //             '<circle r="1" cx="',
-        //             x,
-        //             '" cy="',
-        //             y,
-        //             '"><animate attributeName="r" values="0;3;1" dur="1s"/></circle>'
-        //         );
-        //     }
-        // }
-        // return string.concat(stars, "</g>");
     }
 
     function drawStars(
@@ -295,7 +253,7 @@ contract ChainellationRenderer is IChainellationRenderer {
     function drawConstellation(
         uint8 constellationID,
         uint8 toShow
-    ) private pure returns (string memory, uint8 leftovers) {
+    ) private view returns (string memory, uint8 leftovers) {
         (string memory constellation, uint8 count) = Constellations
             .getConstellation(constellationID, toShow);
         return (

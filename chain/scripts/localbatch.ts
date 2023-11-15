@@ -14,7 +14,7 @@ async function main() {
   const amount_to_generate = 20;
 
   for (let i = 0; i <= amount_to_generate; i++) {
-    let svg = await contract.generateSVG(i, 30, false);
+    let svg = await contract.generateSVG(i, 10, false);
     let filename = "./gen/" + i + ".svg";
     await fs.writeFileSync(filename, svg);
     console.log("generated: " + i + "/" + amount_to_generate);
