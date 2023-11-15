@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Image from "next/future/image";
-import NightSkyHeld from "../components/NightSky/NightSkyHeld";
+import NightSkyHeld from "../components/Held/NightSkyHeld";
 import { useAccount } from "wagmi";
 import ConnectWallet from "../components/ConnectWallet";
 import ClientOnly from "../components/ClientOnly";

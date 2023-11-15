@@ -4,6 +4,7 @@ import blueshadow from "../images/new/blueshadow.svg";
 import Link from "next/link";
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import { NavItems } from "../domain/Nav";
+import { Fragment } from "react";
 
 export default function Footer() {
   return (
@@ -21,8 +22,8 @@ export default function Footer() {
 
               {NavItems.map((element, i) => {
                 return (
-                  <>
-                    <li key={i}>
+                  <Fragment key={i}>
+                    <li>
                       <Link href={element.href}>
                         <div className="relative cursor-pointer">
                           {element.label}
@@ -34,7 +35,7 @@ export default function Footer() {
                     ) : (
                       <div className="border-r-2" />
                     )}
-                  </>
+                  </Fragment>
                 );
               })}
               <div className="border-r-2 border-offwhite hidden md:block" />

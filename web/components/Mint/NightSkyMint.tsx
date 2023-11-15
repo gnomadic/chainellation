@@ -1,9 +1,7 @@
 import Image from "next/future/image";
-// import placeholder from "../../images/512x512.png";
 import placeholder from "../../images/cardback.png";
 import { useContractRead, usePrepareContractWrite } from "wagmi";
 import { Deployment } from "../../domain/Domain";
-// import { ChainellationABI } from "../../abi/ChainellationABI";
 import { useEffect, useState } from "react";
 import { BigNumber, ethers } from "ethers";
 import { waitForTransaction, writeContract } from "@wagmi/core";
@@ -12,6 +10,7 @@ import useMaxSupply from "../../hooks/useMaxSupply";
 import useMintCost from "../../hooks/useMintCost";
 import Hue from "@uiw/react-color-hue";
 import iconrefresh from "../../images/social/icon-refresh.svg";
+import Slider from "@uiw/react-color-slider";
 import {
   extractFirstColor,
   extractSecondColor,
@@ -20,7 +19,8 @@ import {
 import Switch from "react-switch";
 import sunIcon from "../../images/social/sun.svg";
 import moonIcon from "../../images/social/moon.svg";
-import ClientOnly from "../ClientOnly";
+import Circle from "@uiw/react-color-circle";
+// import MintColorPicker from "./MintColorPicker";
 
 type MintProps = {
   deploy: Deployment;
@@ -29,12 +29,6 @@ type MintProps = {
 export default function NightSkyMint(props: MintProps) {
   const [tzOffset, setTzOffset] = useState<number>(0);
   const [timeZone, setTimeZone] = useState<string>("");
-  const [mountainLine, setMountainLine] = useState<boolean>(false);
-  const [skyMath, setSkyMath] = useState<boolean>(true);
-  const [err, setErr] = useState<string>("");
-  const [mintCount, setMintCount] = useState<number>(1);
-  const [primaryHue, setPrimaryHue] = useState<number>(0);
-  const [secondaryHue, setSecondaryHue] = useState<number>(0);
   const [hsva, setHsva] = useState({
     primary: { h: 0, s: 100, v: 30, a: 1 },
     secondary: { h: 0, s: 100, v: 30, a: 1 },
@@ -45,6 +39,43 @@ export default function NightSkyMint(props: MintProps) {
   });
   const [isDay, setIsDay] = useState(false);
 
+  type Constellation = {
+    stars: string;
+    color: string;
+  };
+
+  const [constellation, setConstellation] = useState<Constellation>({
+    stars: "Random",
+    color: "#b5b5b5",
+  });
+  const [hex, setHex] = useState("#F44E3B");
+
+  const availableConstellations = [
+    { stars: "Random", color: "#b5b5b5" },
+    { stars: "Aries", color: "#ff0800" },
+    { stars: "Sagittarius", color: "#6600ff" },
+    { stars: "Capricorn", color: "#6a6a6f" },
+    { stars: "Aquarius", color: "#c4f4eb" },
+    { stars: "Pisces", color: "#8d5eb7" },
+    { stars: "Scorpio", color: "#800020" },
+    { stars: "Libra", color: "#f62681" },
+    { stars: "Virgo", color: "#f8a39d" },
+    { stars: "Leo", color: "#ffdf01" },
+    { stars: "Cancer", color: "#14a3c7" },
+    { stars: "Gemini", color: "#ff9932" },
+    { stars: "Taurus", color: "#05480d" },
+    { stars: "Pegasus", color: "#ffffff" },
+    { stars: "Ursa Minor", color: "#808080" },
+    { stars: "Cygnus", color: "#000000" },
+  ];
+
+  const [clouds, setClouds] = useState({
+    primary: { h: 30, s: 100, v: 30, a: 1 },
+    secondary: { h: 90, s: 100, v: 30, a: 1 },
+    h: 0,
+    s: 66.66666666666666,
+    v: 30,
+  });
   const [preview, setPreview] = useState("");
 
   const {
@@ -189,7 +220,10 @@ export default function NightSkyMint(props: MintProps) {
     }
 
     setTimeZone(
-      Intl.DateTimeFormat().resolvedOptions().timeZone.replace("/", " / ")
+      Intl.DateTimeFormat()
+        .resolvedOptions()
+        .timeZone.replace("/", " / ")
+        .replace("_", " ")
     );
     let minutesOffset = new Date().getTimezoneOffset();
     console.log("inital minutesOffset: " + minutesOffset);
@@ -243,8 +277,9 @@ export default function NightSkyMint(props: MintProps) {
               </div>
               {mintCost ? (
                 <div className="mx-auto">
-                  {ethers.utils.formatEther(BigNumber.from(mintCost))}{" "}
-                  {props.deploy.currency}
+                  {/* {ethers.utils.formatEther(BigNumber.from(mintCost))}{" "}
+                  {props.deploy.currency} */}
+                  {timeZone}
                 </div>
               ) : (
                 <div className="mx-auto">
@@ -253,6 +288,30 @@ export default function NightSkyMint(props: MintProps) {
                 </div>
               )}
               <div className="mx-auto ">
+                <Switch
+                  className="mr-4"
+                  onChange={dayNightToggle}
+                  checked={isDay}
+                  onColor="#EA8F21"
+                  uncheckedIcon={
+                    <Image
+                      className="pt-1 ml-1"
+                      src={moonIcon}
+                      alt={"night"}
+                      width={20}
+                      height={20}
+                    />
+                  }
+                  checkedIcon={
+                    <Image
+                      className="pt-1 ml-1"
+                      src={sunIcon}
+                      alt={"night"}
+                      width={20}
+                      height={20}
+                    />
+                  }
+                />
                 <Switch
                   onChange={dayNightToggle}
                   checked={isDay}
@@ -278,108 +337,145 @@ export default function NightSkyMint(props: MintProps) {
                 />
               </div>
             </div>
-            <div className="flex mx-auto max-w-[512px] pt-6">
-              <div
-                className=" border-boldorange border-[2px] mr-4"
-                onClick={() => {
-                  resetFirstColor();
-                }}
-              >
-                <Image width={40} height={40} src={iconrefresh} alt="logo" />
-              </div>
-
-              <div className="flex-auto  p-3 border-boldorange border-[2px] mx-auto">
-                <Hue
-                  hue={hsva.primary.h}
-                  onChange={(newHue) => {
-                    changeComplete(newHue, null);
-                  }}
-                />
-              </div>
-            </div>
-            <div className="flex mx-auto max-w-[512px] pt-6">
-              <div
-                className=" border-boldorange border-[2px] mr-4"
-                onClick={() => {
-                  resetSecondColor();
-                }}
-              >
-                <Image width={40} height={40} src={iconrefresh} alt="logo" />
-              </div>
-
-              <div className="flex-auto  p-3 border-boldorange border-[2px] mx-auto">
-                <Hue
-                  hue={hsva.secondary.h}
-                  onChange={(newHue) => {
-                    changeComplete(null, newHue);
-                  }}
-                />
-              </div>
-            </div>
-
-            <div className="flex pt-6 text-cream">
-              {/* <div className="border-boldorange border-[2px] mx-auto flex">
-                <div
-                  className="flex-auto p-3 px-4 bg-boldred"
-                  onClick={() => {
-                    if (mintCount > 1) {
-                      setMintCount(mintCount - 1);
-                    }
-                  }}
-                >
-                  -
-                </div>
-                <div className="flex-auto px-10 py-3">{mintCount}</div>
-                <div
-                  className="flex-auto p-3 px-4 bg-boldred"
-                  onClick={() => {
-                    if (mintCount < 5) {
-                      setMintCount(mintCount + 1);
-                    }
-                  }}
-                >
-                  +
-                </div>
-              </div> */}
-              <button
-                className="mx-auto border-boldorange border-[2px] px-8 py-3 bg-boldred"
-                onClick={async () => {
-                  // write?.();
-                  try {
-                    const { hash } = await writeContract(config);
-                    // console.log("hash: " + hash);
-                    const data = await waitForTransaction({
-                      confirmations: 1,
-                      hash,
-                    });
-                    // console.log("data: " + data);
-                    refetchSupply();
-                    refetchImage();
-                    console.log("refetched");
-                  } catch (e) {
-                    console.log("errorx: " + e);
-                    setErr("insufficient funds");
-                  }
-                }}
-              >
-                mint
-              </button>
-            </div>
           </div>
-          <div className="p-4 text-xl text-offwhite">
-            <p className="pb-8 text-4xl text-boldorange">Night Skies</p>
-            <p>
-              Each minted NFT is uniquely yours forever, as all art is generated
-              on-chain.
-            </p>
-            <p className="pt-6 ">
-              Your NFT will have a sky that changes based on the timezone it was
-              minted in.
-            </p>
-            <p className="pt-6 ">
-              You&apos;ll have the opportunity to discover the secrets of the
-              universe by stargazing at night.
-            </p>
+          <div className="mx-4 text-xl text-offwhite max-w-[512px]">
+            {/* <div className="p-4 text-xl text-offwhite border-boldorange border-[2px] rounded-lg max-w-[512px]"> */}
+            <section id="colors">
+              <div className="flex ">
+                <p className="basis-1/2 pb-2 font-kdam ">Colors</p>
+                <p className="basis-1/2 pb-2 text-base font-kdam text-right">
+                  0.005 eth
+                </p>
+              </div>
+              <div className="mx-5">
+                <p className="py-2">Primary Color</p>
+                <div className="flex mx-auto max-w-[512px] ">
+                  <div
+                    className=" border-boldorange border-[2px] mr-4"
+                    onClick={() => {
+                      resetFirstColor();
+                    }}
+                  >
+                    <Image
+                      width={40}
+                      height={40}
+                      src={iconrefresh}
+                      alt="logo"
+                    />
+                  </div>
+
+                  <div className="flex-auto p-3 border-boldorange border-[2px] mx-auto">
+                    <Hue
+                      hue={hsva.primary.h}
+                      onChange={(newHue) => {
+                        changeComplete(newHue, null);
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="mx-5">
+                <p className="pb-2 pt-6">Secondary Color</p>
+                <div className="flex mx-auto max-w-[512px]">
+                  <div
+                    className=" border-boldorange border-[2px] mr-4"
+                    onClick={() => {
+                      resetSecondColor();
+                    }}
+                  >
+                    <Image
+                      width={40}
+                      height={40}
+                      src={iconrefresh}
+                      alt="logo"
+                    />
+                  </div>
+
+                  <div className="flex-auto  p-3 border-boldorange border-[2px] mx-auto">
+                    <Hue
+                      hue={hsva.secondary.h}
+                      onChange={(newHue) => {
+                        changeComplete(null, newHue);
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="constellation">
+              <div className="flex ">
+                <p className="basis-1/2 pb-2 pt-6 font-kdam ">Constellation</p>
+                <p className="basis-1/2 pb-2 pt-6 text-base font-kdam text-right">
+                  0.005 eth
+                </p>
+              </div>
+              <div className=" max-w-[512px] mx-5">
+                <div className="border-boldorange border-[2px] p-4 ">
+                  {/* <div className="flex mx-auto max-w-[512px] border-boldorange border-[2px] p-4 "> */}
+                  <Circle
+                    colors={availableConstellations.map((current, index) => {
+                      return current.color;
+                    }, [])}
+                    color={hex}
+                    onChange={(color: any) => {
+                      setHex(color.hex);
+                      let selected = availableConstellations.find((element) => {
+                        return element.color === color.hex;
+                      });
+                      setConstellation(selected!);
+                    }}
+                  />
+                </div>
+
+                <div className="  p-3 border-boldorange border-[2px] mx-auto mt-4">
+                  {/* <div className="flex-auto  p-3 border-boldorange border-[2px] mx-auto"> */}
+                  <p>{constellation?.stars}</p>
+                </div>
+              </div>
+
+              <div className="flex ">
+                <p className="basis-1/2 pb-2 pt-6 font-kdam ">Clouds</p>
+                <p className="basis-1/2 pb-2 pt-6 text-base font-kdam text-right">
+                  0.005 eth
+                </p>
+              </div>
+              <div className="flex mx-auto max-w-[512px] mx-5">
+                <div className="flex-auto p-3 border-boldorange border-[2px] mx-auto">
+                  <Slider
+                    color={clouds}
+                    onChange={(color: any) => {
+                      setClouds({ ...hsva, ...color.hsv });
+                      console.log("clouds: " + JSON.stringify(clouds));
+                    }}
+                  />
+                </div>
+              </div>
+            </section>
+
+            <button
+              className="mx-auto border-boldorange border-[2px] mt-8 px-8 py-3 bg-boldred min-w-[512px]"
+              onClick={async () => {
+                // write?.();
+                try {
+                  const { hash } = await writeContract(config);
+                  // console.log("hash: " + hash);
+                  const data = await waitForTransaction({
+                    confirmations: 1,
+                    hash,
+                  });
+                  // console.log("data: " + data);
+                  refetchSupply();
+                  refetchImage();
+                  console.log("refetched");
+                } catch (e) {
+                  console.log("errorx: " + e);
+                  setErr("insufficient funds");
+                }
+              }}
+            >
+              mint
+            </button>
           </div>
         </div>
       </div>

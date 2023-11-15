@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
 import Image from "next/future/image";
-import NightSkyMint from "../../components/NightSky/NightSkyMint";
-import Held from "../../components/NightSky/NightSkyHeld";
+import NightSkyMint from "../../components/Mint/NightSkyMint";
+import Held from "../../components/Held/NightSkyHeld";
 import { useAccount } from "wagmi";
 import ConnectWallet from "../../components/ConnectWallet";
 import useOwnerOf from "../../hooks/useOwnerOf";
 import { Router, useRouter } from "next/router";
-import NightSkyCompose from "../../components/NightSky/NightSkyCompose";
+import NightSkyCompose from "../../components/Compose/NightSkyCompose";
 import { useEffect, useState } from "react";
 import ClientOnly from "../../components/ClientOnly";
 import useDeployment from "../../hooks/useDeployment";

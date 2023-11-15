@@ -26,18 +26,6 @@ export default function Index() {
             </div>
             <div className="w-20 mx-auto h-[0px] mt-8 border-2 border-boldorange"></div>
             <section className="text-offwhite text-xl px-4 md:px-36 font-roboto">
-              <div className="pt-12">
-                Unveil the beauty of the night sky like never before with
-                Chainellations, the groundbreaking generative art experiment on
-                the blockchain.
-              </div>
-              <div className="pt-12">
-                Chainellations is not just an NFT; it&apos;s a celestial
-                experience tailored just for you. When you mint your unique
-                night sky, the magic begins. Based on your timezone, the NFT
-                dynamically renders either a starry night or a sunlit sky.
-              </div>
-
               <div className="grid grid-cols-1 gap-16 pt-28 md:grid-cols-2 font-roboto ">
                 <FeatureCard
                   title="🌌 Mint Your Unique Night Sky"
@@ -53,7 +41,7 @@ export default function Index() {
                 />
                 <FeatureCard
                   title="🎨 Customize and Witness Evolution"
-                  description="Tailor your Chainellation with three unique customizations. Watch as these elements evolve over time, reflecting the dynamic nature of the cosmos and creating a universe that's as unique as you are."
+                  description="Tailor your Chainellation with unique customizations of three places in your image. Watch as these elements evolve over time, reflecting the dynamic nature of the cosmos and creating a universe that's as unique as you are."
                 />
               </div>
               <div className="text-2xl md:text-6xl font-normal uppercase leading-normal text-center text-offwhite font-kdam pt-28">

@@ -22,7 +22,7 @@ export default function ConnectWallet() {
           />
           <div className="relative z-10 md:pt-18 bg-clearslate font-kdam py-16">
             <section className="text-offwhite text-xl md:px-36">
-              <div className="text-2xl md:text-6xl  uppercase leading-normal text-center text-offwhite md:pt-28">
+              <div className="text-2xl md:text-6xl  uppercase leading-normal text-center text-offwhite px-8 md:pt-28">
                 Connect your wallet to Join the Cosmic Community
               </div>
               <div className="w-20 mx-auto h-[0px] border-2 mt-8 border-boldorange"></div>

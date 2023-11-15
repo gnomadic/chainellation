@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Image from "next/future/image";
-import NightSkyMint from "../components/NightSky/NightSkyMint";
-import Held from "../components/NightSky/NightSkyHeld";
+import NightSkyMint from "../components/Mint/NightSkyMint";
+import Held from "../components/Held/NightSkyHeld";
 import { useAccount } from "wagmi";
 import ConnectWallet from "../components/ConnectWallet";
 import useDeployment from "../hooks/useDeployment";

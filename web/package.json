@@ -13,6 +13,7 @@
     "@heroicons/react": "^2.0.18",
     "@rainbow-me/rainbowkit": "^1.0.11",
     "@uiw/react-color-hue": "^1.4.2",
+    "@uiw/react-color-circle": "^1.4.2",
     "@vercel/analytics": "^1.0.1",
     "@xmldom/xmldom": "^0.8.10",
     "ethers": "^5.0.0",

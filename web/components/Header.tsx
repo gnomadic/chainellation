@@ -1,6 +1,6 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import MobileNav from "./MobileNav";
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import { NavItems } from "../domain/Nav";
@@ -32,7 +32,7 @@ export default function Header() {
             <ul className="hidden tracking-wider uppercase lg:gap-8 lg:flex-wrap lg:flex text-md text-offwhite">
               {NavItems.map((element, i) => {
                 return (
-                  <>
+                  <Fragment key={i}>
                     <li key={i}>
                       <Link href={element.href}>
                         <div className="relative cursor-pointer">
@@ -45,7 +45,7 @@ export default function Header() {
                     ) : (
                       <div className="border-r-2" />
                     )}
-                  </>
+                  </Fragment>
                 );
               })}
 
