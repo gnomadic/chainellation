@@ -70,13 +70,18 @@ export default function NightSkyMint(props: MintProps) {
     { stars: "Cygnus", color: "#000000" },
   ];
 
-  const [clouds, setClouds] = useState({
-    primary: { h: 30, s: 100, v: 30, a: 1 },
-    secondary: { h: 90, s: 100, v: 30, a: 1 },
-    h: 0,
-    s: 66.66666666666666,
-    v: 30,
-  });
+  const availableClouds = [
+    { r: 179, density: 1 },
+    { r: 121, density: 2 },
+    { r: 64, density: 3 },
+    { r: 45, density: 4 },
+    { r: 26, density: 5 },
+  ];
+
+  const [cloudSwitch, setCloudSwitch] = useState({ h: 197, s: 3, v: 88, a: 1 });
+  const [clouds, setClouds] = useState(179);
+
+  // {"r":230,"g":179,"b":179}
   const [preview, setPreview] = useState("");
 
   const {
@@ -120,7 +125,9 @@ export default function NightSkyMint(props: MintProps) {
       currentSupply ? BigNumber.from(currentSupply).toNumber() + 1 : 0,
       // 0,
       isGazed ? 40 : 0,
-      0,
+      availableClouds.find((element) => {
+        return element.r === clouds;
+      })?.density,
       isDay,
     ],
     onError(error) {
@@ -450,10 +457,11 @@ export default function NightSkyMint(props: MintProps) {
               <div className="flex mx-auto max-w-[512px] mx-5">
                 <div className="flex-auto p-3 border-boldorange border-[2px] mx-auto">
                   <Slider
-                    color={clouds}
+                    color={cloudSwitch}
                     onChange={(color: any) => {
-                      setClouds({ ...hsva, ...color.hsv });
-                      console.log("clouds: " + JSON.stringify(clouds));
+                      setCloudSwitch({ ...cloudSwitch, ...color.hsv });
+                      setClouds(color.rgb.r);
+                      console.log("clouds: " + JSON.stringify(cloudSwitch));
                     }}
                   />
                 </div>

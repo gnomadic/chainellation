@@ -14,3 +14,4 @@ artifacts
 gen
 gen_bk
 .DS_Store
+.vscode
