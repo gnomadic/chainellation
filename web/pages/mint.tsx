@@ -6,6 +6,7 @@ import { useAccount } from "wagmi";
 import ConnectWallet from "../components/ConnectWallet";
 import useDeployment from "../hooks/useDeployment";
 import ClientOnly from "../components/ClientOnly";
+import Head from "next/head";
 
 const Mint: NextPage = (props: any) => {
   console.log("props: " + JSON.stringify(props));
@@ -15,6 +16,9 @@ const Mint: NextPage = (props: any) => {
 
   return (
     <ClientOnly>
+      <Head>
+        <title>Chainellation - Mint</title>
+      </Head>
       {address ? (
         <section>
           <main className="relative background ">

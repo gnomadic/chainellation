@@ -5,6 +5,7 @@ import { useAccount } from "wagmi";
 import ConnectWallet from "../components/ConnectWallet";
 import ClientOnly from "../components/ClientOnly";
 import useDeployment from "../hooks/useDeployment";
+import Head from "next/head";
 
 const Compose: NextPage = (props: any) => {
   console.log("props: " + JSON.stringify(props));
@@ -12,6 +13,9 @@ const Compose: NextPage = (props: any) => {
   const { deploy } = useDeployment();
   return (
     <ClientOnly>
+      <Head>
+        <title>Chainellation - Compose</title>
+      </Head>
       {address ? (
         <section>
           <main className="relative background ">

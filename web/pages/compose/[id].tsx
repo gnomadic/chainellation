@@ -10,6 +10,7 @@ import NightSkyCompose from "../../components/Compose/NightSkyCompose";
 import { useEffect, useState } from "react";
 import ClientOnly from "../../components/ClientOnly";
 import useDeployment from "../../hooks/useDeployment";
+import Head from "next/head";
 
 const Compose: NextPage = (props: any) => {
   console.log("props: " + JSON.stringify(props));
@@ -26,6 +27,9 @@ const Compose: NextPage = (props: any) => {
 
   return (
     <ClientOnly>
+      <Head>
+        <title>Chainellation - Compose</title>
+      </Head>
       {address ? (
         // TODO add check useing ownerOf but need a new error screen
         <section>

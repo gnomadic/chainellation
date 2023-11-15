@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@uiw/react-color-circle": "^2.0.2",
+    "@uiw/react-color-slider": "^2.0.2"
+  }
+}

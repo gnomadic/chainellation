@@ -470,7 +470,7 @@ export default function NightSkyMint(props: MintProps) {
                   console.log("refetched");
                 } catch (e) {
                   console.log("errorx: " + e);
-                  setErr("insufficient funds");
+                  console.log("insufficient funds");
                 }
               }}
             >

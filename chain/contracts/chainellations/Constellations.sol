@@ -9,7 +9,7 @@ library Constellations {
         uint256 constellationSeed,
         uint8 gazed
     ) public view returns (string memory) {
-        uint8 seed = (uint8)(constellationSeed % 13);
+        uint8 seed = (uint8)(constellationSeed % 15);
         if (seed == 0) {
             return Aries(gazed);
         } else if (seed == 1) {

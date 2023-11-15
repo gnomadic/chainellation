@@ -1,9 +1,14 @@
 import Image from "next/future/image";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import Head from "next/head";
+import Hero from "../components/Hero";
 
 export default function Index() {
   return (
     <section>
+      <Head>
+        <title>Chainellation</title>
+      </Head>
       <main className="relative background ">
         <section
           id="connect"
@@ -16,15 +21,17 @@ export default function Index() {
             width="4160"
             height="6240"
           />
+          <Hero />
           <div
             aria-hidden="true"
             className="relative inset-0 z-0 pt-24 min-w-max bg-gradient-to-b from-clearslate/0 via-clearslate/50 to-clearslate"
           />
           <div className="relative z-10 md:pt-18 bg-clearslate  py-16">
-            <div className="text-3xl md:text-6xl font-normal uppercase leading-normal text-center text-offwhite font-kdam">
-              Explore the Cosmos
+            <div className="text-xl md:text-3xl font-normal uppercase leading-normal text-center text-offwhite font-kdam">
+              An on-chain, customizable, and Generative Art NFT
             </div>
             <div className="w-20 mx-auto h-[0px] mt-8 border-2 border-boldorange"></div>
+            <section></section>
             <section className="text-offwhite text-xl px-4 md:px-36 font-roboto">
               <div className="grid grid-cols-1 gap-16 pt-28 md:grid-cols-2 font-roboto ">
                 <FeatureCard

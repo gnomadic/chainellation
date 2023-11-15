@@ -11,27 +11,12 @@ class MyDocument extends Document {
     return (
       <Html className="scroll-smooth">
         <Head>
-          <title>TWO MOONS</title>
           <meta
-            content="Two Moons is a unique blockchain based RPG gaming experience."
-            name="Two Moons"
+            content="Chainellation is a generative art project on the blockchain."
+            name="Chainellation"
           />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="TWO MOONS" />
-          <meta
-            name="twitter:description"
-            content="Two Moons is a unique on-chain RPG gaming experience."
-          />
-          <meta
-            name="twitter:image"
-            content="http://twomoons.app/images/preview.png"
-          />
-          <link href="/favicon.ico" rel="icon" />
 
-          <link
-            href="https://fonts.googleapis.com/css2?family=Krona+One&family=Poppins:wght@400;500;600;700&display=swap"
-            rel="stylesheet"
-          />
+          <link href="/favicon.ico" rel="icon" />
 
           <meta charSet="UTF-8" />
           <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -39,32 +24,35 @@ class MyDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          {/* <title>[[TWO MOONS]]</title> */}
           <meta
             name="description"
-            content="Two Moons is a unique blockchain based gaming experience."
+            content="Chainellation is a generative art project on the blockchain."
           />
 
           {/* <!-- Facebook Meta Tags --> */}
           <meta property="og:url" content="" />
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="Unnamed template" />
+          <meta property="og:title" content="Chainellation" />
           <meta
             property="og:description"
-            content="Two Moons is a unique blockchain based gaming experience."
+            content="Chainellation is a generative art project on the blockchain."
           />
-          <meta property="og:image" content="" />
+          <meta
+            property="og:image"
+            content="http://www.chainellation.com/images/preview.png"
+          />
 
           {/* <!-- Twitter Meta Tags --> */}
           <meta name="twitter:card" content="summary_large_image" />
-          <meta property="twitter:domain" content="unnamed.com" />
-          <meta property="twitter:url" content="" />
-          <meta name="twitter:title" content="Unnamed template" />
+          <meta name="twitter:title" content="Chainellation" />
           <meta
             name="twitter:description"
-            content="Two Moons is a unique blockchain based gaming experience."
+            content="Chainellation is a generative art project on the blockchain."
           />
-          <meta name="twitter:image" content="" />
+          <meta
+            name="twitter:image"
+            content="http://www.chainellation.com/images/preview.png"
+          />
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
