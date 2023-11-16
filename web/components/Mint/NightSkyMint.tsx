@@ -75,9 +75,7 @@ export default function NightSkyMint(props: MintProps) {
       currentSupply !== undefined,
     args: [
       currentSupply ? BigNumber.from(currentSupply).toNumber() + 1 : 0,
-      // 0,
       isGazed ? 51 : 0,
-
       isDay,
       constellation, // TODO test constellation
     ],
@@ -86,6 +84,8 @@ export default function NightSkyMint(props: MintProps) {
     },
     onSuccess(data) {
       console.log("got image");
+      console.log(data);
+      setColorChoice({ primary: 100, secondary: 100 });
 
       setPreview(window.btoa(String(data)));
     },
@@ -268,7 +268,12 @@ export default function NightSkyMint(props: MintProps) {
               selected={constellation}
               setSelected={setConstellation}
             />
-            <MintCloudPicker preview={preview} setPreview={setPreview} />
+            <MintCloudPicker
+              preview={preview}
+              setPreview={setPreview}
+              clouds={clouds}
+              setClouds={setClouds}
+            />
 
             <button
               className="mx-auto border-boldorange border-[2px] mt-8 px-8 py-3 bg-boldred min-w-full"

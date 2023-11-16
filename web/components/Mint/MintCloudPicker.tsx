@@ -10,12 +10,14 @@ import useMintCost from "../../hooks/useMintCost";
 import Hue from "@uiw/react-color-hue";
 import Slider from "@uiw/react-color-slider";
 import {
+  extractClouds,
   extractFirstColor,
   extractSecondColor,
   replaceClouds,
   replaceGradients,
 } from "../../utils/svgcombiner";
 import Switch from "react-switch";
+import iconrefresh from "../../images/social/icon-refresh.svg";
 
 import ClientOnly from "../ClientOnly";
 import Circle from "@uiw/react-color-circle";
@@ -25,9 +27,12 @@ type MintCloudPickerProps = {
   // changeComplete: (primaryHue: any, secondaryHue: any) => void;
   setPreview: (svg: string) => void;
   preview: string;
+  clouds: number;
+  setClouds: (clouds: number) => void;
 };
 
 const availableClouds = [
+  { r: 230, density: 0 },
   { r: 179, density: 1 },
   { r: 121, density: 2 },
   { r: 64, density: 3 },
@@ -36,29 +41,40 @@ const availableClouds = [
 ];
 
 export default function MintCloudPicker(props: MintCloudPickerProps) {
-  const [cloudSwitch, setCloudSwitch] = useState({ h: 197, s: 3, v: 88, a: 1 });
-  const [clouds, setClouds] = useState(179);
+  const [cloudSwitch, setCloudSwitch] = useState({ h: 179, s: 3, v: 88, a: 1 });
+  const [clouds, setClouds] = useState(230);
+  const [originalClouds, setOriginalClouds] = useState(-1);
 
   useEffect(() => {
+    console.log("MintCloudPicker: useEffect");
     if (props.preview == "") {
       return;
     }
-
-    if (clouds == cloudSwitch.h) {
+    if (clouds == props.clouds) {
       return;
     }
-    console.log("clouds: " + clouds);
-    let updated = props.preview;
+    if (originalClouds == -1) {
+      console.log("MintCloudPicker: setting original clouds");
+      setOriginalClouds(Number(extractClouds(props.preview)));
+      props.setClouds(originalClouds);
+      return;
+    }
 
+    let updated = props.preview;
     let cloudLevel = availableClouds.find((element) => {
       return element.r === clouds;
     })?.density;
-    console.log("cloud level: " + cloudLevel);
-
+    console.log("MintCloudPicker: replacing clouds");
+    props.setClouds(cloudLevel!);
     updated = replaceClouds(props.preview, cloudLevel!);
-
     props.setPreview(window.btoa(updated));
   }, [clouds, props, cloudSwitch]);
+
+  const resetClouds = function () {
+    // setHsva1({ h: originalColors.first, s: 100, v: 30, a: 1 });
+    setClouds(230);
+    setCloudSwitch({ h: 179, s: 3, v: 88, a: 1 });
+  };
 
   //-----
 
@@ -71,13 +87,21 @@ export default function MintCloudPicker(props: MintCloudPickerProps) {
         </p>
       </div>
       <div className="flex max-w-[512px] mx-5">
+        <div
+          className=" border-boldorange border-[2px] mr-4"
+          onClick={() => {
+            resetClouds();
+          }}
+        >
+          <Image width={40} height={40} src={iconrefresh} alt="logo" />
+        </div>
         <div className="flex-auto p-3 border-boldorange border-[2px] mx-auto">
           <Slider
             color={cloudSwitch}
             onChange={(color: any) => {
               setCloudSwitch({ ...cloudSwitch, ...color.hsv });
               setClouds(color.rgb.r);
-              console.log("clouds: " + JSON.stringify(cloudSwitch));
+              // console.log("clouds: " + JSON.stringify(cloudSwitch));
             }}
           />
         </div>

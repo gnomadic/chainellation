@@ -10,33 +10,33 @@ library Constellations {
         uint256 seed,
         uint8 gazed
     ) public view returns (string memory, uint8 leftovers) {
-        if (seed == 0) {
+        if (seed == 1) {
             return Aries(gazed);
-        } else if (seed == 1) {
-            return Sagittarius(gazed);
         } else if (seed == 2) {
-            return Capricorn(gazed);
+            return Sagittarius(gazed);
         } else if (seed == 3) {
-            return Aquarius(gazed);
+            return Capricorn(gazed);
         } else if (seed == 4) {
-            return Pisces(gazed);
+            return Aquarius(gazed);
         } else if (seed == 5) {
-            return Scorpio(gazed);
+            return Pisces(gazed);
         } else if (seed == 6) {
-            return Libra(gazed);
+            return Scorpio(gazed);
         } else if (seed == 7) {
-            return Virgo(gazed);
+            return Libra(gazed);
         } else if (seed == 8) {
-            return Leo(gazed);
+            return Virgo(gazed);
         } else if (seed == 9) {
-            return Cancer(gazed);
+            return Leo(gazed);
         } else if (seed == 10) {
-            return Gemini(gazed);
+            return Cancer(gazed);
         } else if (seed == 11) {
-            return Taurus(gazed);
+            return Gemini(gazed);
         } else if (seed == 12) {
-            return Pegasus(gazed);
+            return Taurus(gazed);
         } else if (seed == 13) {
+            return Pegasus(gazed);
+        } else if (seed == 14) {
             return UrsaMinor(gazed);
         } else {
             return Cygnus(gazed);

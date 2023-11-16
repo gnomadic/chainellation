@@ -150,23 +150,26 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
         }
 
         colors[currentSupply] = _colorData;
+        if (_constellation > 16) {
+            _constellation = 0;
+        }
 
         if (_constellation == 0) {
             _constellation = uint8(
-                _chainellationRenderer.psuedorandom(currentSupply, 123) % 15
+                (_chainellationRenderer.psuedorandom(currentSupply, 123) % 15) +
+                    1
             );
         }
-        if (_constellation > 15) {
-            _constellation = 0;
+
+        if (_cloudsAt > 5) {
+            _cloudsAt = 0;
         }
 
         if (_cloudsAt == 0) {
             _constellation = uint8(
-                _chainellationRenderer.psuedorandom(currentSupply, 321) % 5
+                (_chainellationRenderer.psuedorandom(currentSupply, 321) % 4) +
+                    1
             );
-        }
-        if (_cloudsAt > 5) {
-            _cloudsAt = 0;
         }
 
         constellation[currentSupply] = _constellation;
@@ -205,7 +208,8 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     function getConstellation(uint256 tokenId) public view returns (uint8) {
         if (constellation[tokenId] == 0) {
             return
-                uint8(_chainellationRenderer.psuedorandom(tokenId, 123) % 15);
+                uint8(_chainellationRenderer.psuedorandom(tokenId, 123) % 15) +
+                1;
         } else {
             return constellation[tokenId];
         }
@@ -213,7 +217,9 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
 
     function getCloudsAt(uint256 tokenId) public view returns (uint8) {
         if (cloudsAt[tokenId] == 0) {
-            return uint8(_chainellationRenderer.psuedorandom(tokenId, 321) % 5);
+            return
+                uint8(_chainellationRenderer.psuedorandom(tokenId, 321) % 4) +
+                1;
         } else {
             return cloudsAt[tokenId];
         }

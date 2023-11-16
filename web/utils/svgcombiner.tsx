@@ -56,49 +56,21 @@ export function extractSecondColor(svg: string) {
   return value;
 }
 
-// export function replaceGradientOne(svg: string, newColor: number) {
-//   const parsed = extractSVG(svg);
-//   const doc = new DOMParser().parseFromString(parsed, "text/xml");
+export function extractClouds(svg: string) {
+  const parsed = extractSVG(svg);
+  const doc = new DOMParser().parseFromString(parsed, "text/xml");
 
-//   const night = doc.getElementById("skyGradient");
+  const gradient = doc.getElementById("cloudGradient");
+  // // gradient?.childNodes[0].
+  const first = new XMLSerializer().serializeToString(gradient!.childNodes[0]);
 
-//   const nightColor =
-//     'stop offset="0%" stop-color="hsl(' + newColor + ',100%,30%)"';
-
-//   night?.replaceChild(doc.createElement(nightColor), night.childNodes[0]);
-
-//   const day = doc.getElementById("dayGradient");
-//   const dayColor =
-//     'stop offset="0%" stop-color="hsl(' +
-//     rotateColor(newColor, 240) +
-//     ',100%,90%)"';
-
-//   day?.replaceChild(doc.createElement(dayColor), day!.childNodes[0]);
-
-//   return new XMLSerializer().serializeToString(doc);
-// }
-
-// export function replaceGradientTwo(svg: string, newColor: number) {
-//   const parsed = extractSVG(svg);
-//   const doc = new DOMParser().parseFromString(parsed, "text/xml");
-
-//   const night = doc.getElementById("skyGradient");
-
-//   const nightColor =
-//     'stop offset="100%" stop-color="hsl(' + newColor + ',100%,30%)"';
-
-//   night?.replaceChild(doc.createElement(nightColor), night.childNodes[1]);
-
-//   const day = doc.getElementById("dayGradient");
-//   const dayColor =
-//     'stop offset="100%" stop-color="hsl(' +
-//     rotateColor(newColor, 180) +
-//     ',100%,30%)"';
-
-//   day?.replaceChild(doc.createElement(dayColor), day!.childNodes[1]);
-
-//   return new XMLSerializer().serializeToString(doc);
-// }
+  const value = first.substring(
+    first.indexOf('stop-opacity=".') + 15,
+    first.indexOf('"') + 3
+  );
+  console.log("pulled cloud: ", value);
+  return value;
+}
 
 export function replaceGradients(
   svg: string,
@@ -149,13 +121,15 @@ export function replaceClouds(svg: string, density: number) {
   const doc = new DOMParser().parseFromString(parsed, "text/xml");
 
   const clouds = doc.getElementById("cloudGradient");
-  console.log("clouds svg children: " + clouds?.childNodes.length);
+  // console.log("clouds svg children: " + clouds);
 
   const newClouds = 'stop stop-opacity=".' + density + '" offset="15%"';
   const newClouds2 = 'stop stop-opacity=".' + density + '" offset="50%"';
 
   clouds?.replaceChild(doc.createElement(newClouds), clouds.childNodes[0]);
   clouds?.replaceChild(doc.createElement(newClouds2), clouds.childNodes[2]);
+
+  // console.log("clouds svg children: " + clouds);
 
   return new XMLSerializer().serializeToString(doc);
 }

@@ -61,18 +61,16 @@ export default function MintColorPicker(props: MintColorPickerProps) {
     let secondary = hsva.secondary;
 
     if (primaryHue) {
-      // updated = replaceGradientOne(preview, primaryHue.h);
       primary = primaryHue;
     }
 
     if (secondaryHue) {
-      // updated = replaceGradientTwo(preview, secondaryHue.h);
       secondary = secondaryHue;
     }
 
+    console.log("MintColorPicker: change complete, replacing gradients");
     updated = replaceGradients(props.preview, primary.h, secondary.h);
 
-    // const n = replaceGradientOne(preview, newHue.h);
     setHsva({ primary: primary, secondary: secondary });
     props.setColorChoice({
       primary: primary.h,
@@ -82,6 +80,7 @@ export default function MintColorPicker(props: MintColorPickerProps) {
   };
 
   useEffect(() => {
+    console.log("MintColorPicker: useEffect");
     if (props.preview == "") {
       return;
     }
@@ -92,8 +91,8 @@ export default function MintColorPicker(props: MintColorPickerProps) {
       return;
     }
     if (props.originalColors.primary == -1) {
+      console.log("MintColorPicker, first load so extracting colors");
       const image = window.atob(props.preview);
-      console.log("first load");
       const color1 = extractFirstColor(String(image));
       const color2 = extractSecondColor(String(image));
 
