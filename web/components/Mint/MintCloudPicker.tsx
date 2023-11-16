@@ -47,12 +47,20 @@ export default function MintCloudPicker(props: MintCloudPickerProps) {
 
   useEffect(() => {
     console.log("MintCloudPicker: useEffect");
+
     if (props.preview == "") {
+      console.log("MintCloudPicker: preload");
       return;
     }
-    if (clouds == props.clouds) {
+    let cloudLevel = availableClouds.find((element) => {
+      return element.r === clouds;
+    })?.density;
+
+    if (cloudLevel == props.clouds) {
+      console.log("MintCloudPicker: no change");
       return;
     }
+
     if (originalClouds == -1) {
       console.log("MintCloudPicker: setting original clouds");
       setOriginalClouds(Number(extractClouds(props.preview)));
@@ -61,9 +69,7 @@ export default function MintCloudPicker(props: MintCloudPickerProps) {
     }
 
     let updated = props.preview;
-    let cloudLevel = availableClouds.find((element) => {
-      return element.r === clouds;
-    })?.density;
+
     if (cloudLevel == 0) {
       cloudLevel = originalClouds;
     }
@@ -71,7 +77,7 @@ export default function MintCloudPicker(props: MintCloudPickerProps) {
     props.setClouds(cloudLevel!);
     updated = replaceClouds(props.preview, cloudLevel!);
     props.setPreview(window.btoa(updated));
-  }, [clouds, props, cloudSwitch]);
+  }, [props]);
 
   const resetClouds = function () {
     // setHsva1({ h: originalColors.first, s: 100, v: 30, a: 1 });
