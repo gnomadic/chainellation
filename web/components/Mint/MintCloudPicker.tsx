@@ -77,12 +77,13 @@ export default function MintCloudPicker(props: MintCloudPickerProps) {
     props.setClouds(cloudLevel!);
     updated = replaceClouds(props.preview, cloudLevel!);
     props.setPreview(window.btoa(updated));
-  }, [props]);
+  }, [props, clouds]);
 
   const resetClouds = function () {
     // setHsva1({ h: originalColors.first, s: 100, v: 30, a: 1 });
     setClouds(230);
     setCloudSwitch({ h: 179, s: 3, v: 88, a: 1 });
+    props.setClouds(originalClouds);
   };
 
   //-----

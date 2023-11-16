@@ -9,7 +9,6 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "../interfaces/IChainellationRenderer.sol";
 import "../Color.sol";
 import "../interfaces/ITwoMoonsEvent.sol";
-import "hardhat/console.sol";
 
 contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     using Strings for uint256;
@@ -109,9 +108,6 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
         }
 
         if (msg.value < rollingCost) revert Cost();
-
-        console.log("packed zero test", (uint32(0) << 16) | uint32(0));
-        console.log("packed 370 test", (uint32(370) << 16) | uint32(370));
 
         _mint(
             timezoneOffset,

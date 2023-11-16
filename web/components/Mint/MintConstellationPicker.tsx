@@ -15,6 +15,7 @@ import {
   replaceGradients,
 } from "../../utils/svgcombiner";
 import Switch from "react-switch";
+import iconrefresh from "../../images/social/icon-refresh.svg";
 
 import ClientOnly from "../ClientOnly";
 import Circle from "@uiw/react-color-circle";
@@ -36,15 +37,12 @@ type Constellation = {
 export default function MintConstellationPicker(
   props: MintConstellationPickerProps
 ) {
-  const [constellation, setConstellation] = useState<Constellation>({
-    stars: "Random",
-    color: "#b5b5b5",
-    index: 0,
-  });
+  const random = { stars: "Random", color: "#b5b5b5", index: 0 };
+
+  const [constellation, setConstellation] = useState<Constellation>(random);
   const [hex, setHex] = useState("#F44E3B");
 
   const availableConstellations = [
-    { stars: "Random", color: "#b5b5b5", index: 0 },
     { stars: "Aries", color: "#ff0800", index: 1 },
     { stars: "Sagittarius", color: "#6600ff", index: 2 },
     { stars: "Capricorn", color: "#6a6a6f", index: 3 },
@@ -62,6 +60,15 @@ export default function MintConstellationPicker(
     { stars: "Cygnus", color: "#000000", index: 15 },
   ];
 
+  const resetConstellation = function () {
+    updateConstellation(random);
+  };
+
+  const updateConstellation = function (selected: Constellation) {
+    setConstellation(selected);
+    props.setSelected(selected.index);
+  };
+
   //-----
 
   return (
@@ -72,23 +79,33 @@ export default function MintConstellationPicker(
           0.005 eth
         </p>
       </div>
-      <div className=" max-w-[512px] mx-5">
-        <div className="border-boldorange border-[2px] p-4 ">
-          <p className="mb-3">{constellation?.stars}</p>
-          <Circle
-            colors={availableConstellations.map((current, index) => {
-              return current.color;
-            }, [])}
-            color={hex}
-            onChange={(color: any) => {
-              setHex(color.hex);
-              let selected = availableConstellations.find((element) => {
-                return element.color === color.hex;
-              });
-              setConstellation(selected!);
-              props.setSelected(selected!.index);
+      <div className="mx-5 ">
+        <p className="py-2 font-roboto text-cream">{constellation?.stars}</p>
+        <div className="flex mx-auto max-w-[512px] ">
+          <div
+            className=" border-boldorange border-[2px] mr-4 min-w-[44px] max-h-[44px]"
+            onClick={() => {
+              resetConstellation();
             }}
-          />
+          >
+            <Image width={40} height={40} src={iconrefresh} alt="logo" />
+          </div>
+
+          <div className="flex-auto p-3 border-boldorange border-[2px] mx-auto">
+            <Circle
+              colors={availableConstellations.map((current, index) => {
+                return current.color;
+              }, [])}
+              color={hex}
+              onChange={(color: any) => {
+                setHex(color.hex);
+                let selected = availableConstellations.find((element) => {
+                  return element.color === color.hex;
+                });
+                updateConstellation(selected!);
+              }}
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -15,7 +15,6 @@ library Color {
         uint256 funkSeed;
         uint256 circleSeed;
         uint256 groundSeed;
-        // uint256 constellationSeed;
     }
 
     struct HSL {
@@ -112,7 +111,6 @@ library Color {
         return Color.HSL(newH, color.S, color.L);
     }
 
-    // TODO this isn't actually the rotate function because it zeros out
     function rotateColor(
         Color.HSL memory color,
         uint16 amount

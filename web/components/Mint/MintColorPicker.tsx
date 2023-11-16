@@ -135,7 +135,7 @@ export default function MintColorPicker(props: MintColorPickerProps) {
         </p>
       </div>
       <div className="mx-5 ">
-        <p className="py-2 font-kdam">Primary Color</p>
+        <p className="py-2 font-roboto text-cream">Primary Color</p>
         <div className="flex mx-auto max-w-[512px] ">
           <div
             className=" border-boldorange border-[2px] mr-4"
@@ -155,7 +155,7 @@ export default function MintColorPicker(props: MintColorPickerProps) {
             />
           </div>
         </div>
-        <p className="pt-6 pb-2 font-kdam">Secondary Color</p>
+        <p className="pt-6 pb-2 font-roboto text-cream">Secondary Color</p>
         <div className="flex mx-auto max-w-[512px]">
           <div
             className=" border-boldorange border-[2px] mr-4"

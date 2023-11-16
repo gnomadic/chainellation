@@ -6,8 +6,6 @@ import "./Constellations.sol";
 import "../interfaces/IDecorations.sol";
 import "../interfaces/IChainellationRenderer.sol";
 
-import "hardhat/console.sol";
-
 contract ChainellationRenderer is IChainellationRenderer {
     function generateSVG(
         Color.DNA memory dna,
@@ -201,6 +199,8 @@ contract ChainellationRenderer is IChainellationRenderer {
         string memory x = "";
         string memory y = "";
         uint8 seed = 0;
+        string memory duration;
+        // string memory delay;
         for (uint8 i = 0; i < toShow; i++) {
             seed = (uint8)(Color.psuedorandom(starSeed, i) % 3);
             x = Color.toString(
@@ -210,6 +210,14 @@ contract ChainellationRenderer is IChainellationRenderer {
             y = Color.toString(
                 (uint16)(Color.psuedorandom(starSeed + seed, i) % 462) + 25
             );
+
+            duration = Color.toString(
+                (uint16)(Color.psuedorandom(starSeed, i) % 4) + 1
+            );
+            // delay = Color.toString(
+            //     (uint16)(Color.psuedorandom(starSeed, i) % 3)
+            // );
+
             if (seed == 0) {
                 stars = string.concat(
                     stars,
@@ -218,7 +226,11 @@ contract ChainellationRenderer is IChainellationRenderer {
                     '" cy="',
                     y,
                     '" fill="#fff"  opacity="1">',
-                    '<animate attributeName="r" values="0;3;1" dur="1s"/></circle>'
+                    '<animate attributeName="r" values="1;0;2;1;1;1;1;1;1;1" dur="',
+                    duration,
+                    's" start="',
+                    duration,
+                    's" repeatCount="indefinite"/></circle>'
                 );
             } else if (seed == 1) {
                 stars = string.concat(
@@ -228,7 +240,11 @@ contract ChainellationRenderer is IChainellationRenderer {
                     ",",
                     y,
                     'c 7,0 7,0 7,-7 c 0,7 0,7 7,7 c -7,0 -7,0 -7,7 c 0,-7 0,-7 -7,-7">',
-                    "</path>"
+                    '<animate attributeName="r" values="1;0;1;1;1;1;1;1;1" dur="',
+                    duration,
+                    's" start="',
+                    duration,
+                    's" repeatCount="indefinite"/></path>'
                     // '<animateTransform attributeName="transform" type="scale" from="0 0" to="1 1" begin="0s" dur="0.5s" repeatCount="1"/></path>'
                 );
             } else if (seed == 2) {
@@ -243,7 +259,11 @@ contract ChainellationRenderer is IChainellationRenderer {
                     x,
                     '" cy="',
                     y,
-                    '"><animate attributeName="r" values="0;3;1" dur="1s"/></circle>'
+                    '"><animate attributeName="r" values="1;0;2;1;1;1;1;1;1;1" dur="',
+                    duration,
+                    's" start="',
+                    duration,
+                    's" repeatCount="indefinite"/></circle>'
                 );
             }
         }

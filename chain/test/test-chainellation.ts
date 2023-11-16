@@ -42,7 +42,7 @@ describe("chainellation", function () {
 
       let mint = await chainellation.mint("0", { value: mintPrice });
       await mint.wait();
-      var meta = await chainellation.generateSVG(1, 30, false, 0);
+      var meta = await chainellation.generateSVG(1, 50, false, 0);
       console.log("", meta);
     });
 
@@ -138,6 +138,61 @@ describe("chainellation", function () {
       expect(systemTime).to.be.equal(time);
       let userTime = await mockellation.systemTimeOffsetWithUser(1);
       expect(userTime).to.be.equal(time + 200);
+    });
+  });
+  describe("minting", function () {
+    it("Should let me customize a mint", async function () {
+      const { renderer, chainellation, mockellation } = await loadFixture(
+        deployChainellation
+      );
+
+      let mint = await chainellation.mintCustom(100, 10, 10, 1, 1, {
+        value: ethers.utils.parseEther("1"),
+      });
+      await mint.wait();
+
+      mint = await chainellation.mintCustom(100, 370, 370, 0, 0);
+      await mint.wait();
+    });
+
+    it("Should price a custom mint properly", async function () {
+      const { renderer, chainellation, mockellation } = await loadFixture(
+        deployChainellation
+      );
+      let setPrice = await chainellation.setCustomizeCost(
+        ethers.utils.parseEther("0.5")
+      );
+      await setPrice.wait();
+
+      let mint = await chainellation.mintCustom(100, 370, 10, 0, 0, {
+        value: ethers.utils.parseEther("0.5"),
+      });
+      await mint.wait();
+      mint = await chainellation.mintCustom(100, 10, 370, 0, 0, {
+        value: ethers.utils.parseEther("0.5"),
+      });
+      await mint.wait();
+      mint = await chainellation.mintCustom(100, 10, 10, 0, 0, {
+        value: ethers.utils.parseEther("0.5"),
+      });
+      await mint.wait();
+      mint = await chainellation.mintCustom(100, 370, 370, 1, 0, {
+        value: ethers.utils.parseEther("0.5"),
+      });
+      await mint.wait();
+
+      mint = await chainellation.mintCustom(100, 370, 370, 0, 1, {
+        value: ethers.utils.parseEther("0.5"),
+      });
+      await mint.wait();
+      mint = await chainellation.mintCustom(100, 370, 370, 1, 1, {
+        value: ethers.utils.parseEther("1"),
+      });
+      await mint.wait();
+      mint = await chainellation.mintCustom(100, 370, 10, 1, 1, {
+        value: ethers.utils.parseEther("1.5"),
+      });
+      await mint.wait();
     });
   });
 });
