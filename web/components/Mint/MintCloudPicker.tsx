@@ -64,7 +64,10 @@ export default function MintCloudPicker(props: MintCloudPickerProps) {
     let cloudLevel = availableClouds.find((element) => {
       return element.r === clouds;
     })?.density;
-    console.log("MintCloudPicker: replacing clouds");
+    if (cloudLevel == 0) {
+      cloudLevel = originalClouds;
+    }
+    console.log("MintCloudPicker: replacing clouds with " + cloudLevel);
     props.setClouds(cloudLevel!);
     updated = replaceClouds(props.preview, cloudLevel!);
     props.setPreview(window.btoa(updated));

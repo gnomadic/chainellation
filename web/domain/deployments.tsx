@@ -23,8 +23,8 @@ export const Deployments: { [key: string]: Deployment } = {
   //   currency: "eth",
   // },
   sepolia: {
-    chainellationAddress: "0x45d45517f1000f188A94b67B74650CD1Dc9190Ad",
-    decoAddress: "0xF132dbB1d18379c0fBb8885bD288afCa120A076a",
+    chainellationAddress: "0x7149c6F0AACAF6c963338432f17C8612339301E0",
+    decoAddress: "0x9B2dcEE7c1686BBF4B91A7088bc01e81f3c3220F",
     displayName: "sepollation",
     currency: "eth",
     chain: "sepolia",
