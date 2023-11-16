@@ -1,7 +1,7 @@
 import Image from "next/future/image";
 import placeholder from "../../images/cardback.png";
 import { useContractRead, usePrepareContractWrite } from "wagmi";
-import { Deployment } from "../../domain/Domain";
+import { ColorSet, Deployment } from "../../domain/Domain";
 import { useEffect, useState } from "react";
 import { BigNumber, ethers } from "ethers";
 import { waitForTransaction, writeContract } from "@wagmi/core";
@@ -27,6 +27,14 @@ export default function NightSkyMint(props: MintProps) {
   const [isGazed, setIsGazed] = useState(false);
 
   const [preview, setPreview] = useState("");
+
+  const [originalColors, setOriginalColors] = useState<ColorSet>({
+    primary: -1,
+    secondary: -1,
+  });
+
+  const [clouds, setClouds] = useState(0);
+  const [constellation, setConstellation] = useState(0);
 
   const {
     data: currentSupply,
@@ -68,9 +76,10 @@ export default function NightSkyMint(props: MintProps) {
     args: [
       currentSupply ? BigNumber.from(currentSupply).toNumber() + 1 : 0,
       // 0,
-      isGazed ? 40 : 0,
-      0,
+      isGazed ? 51 : 0,
+
       isDay,
+      constellation, // TODO test constellation
     ],
     onError(error) {
       console.log("Error", error);
@@ -82,6 +91,7 @@ export default function NightSkyMint(props: MintProps) {
     },
   });
 
+  const [mintReady, setMintReady] = useState(false);
   // const [contractMintCost, setContractMintCost] = useState(BigNumber.from(0));
   const [colorChoice, setColorChoice] = useState({
     primary: 100,
@@ -93,9 +103,18 @@ export default function NightSkyMint(props: MintProps) {
     functionName: "mintCustom",
     args: [
       tzOffset,
-      Math.trunc(colorChoice.primary),
-      Math.trunc(colorChoice.secondary),
+      colorChoice.primary == originalColors.primary
+        ? 370
+        : Math.trunc(colorChoice.primary),
+      // ).Math.trunc(colorChoice.primary), //default to 370 if nothing is selected
+      colorChoice.secondary == originalColors.secondary
+        ? 370
+        : Math.trunc(colorChoice.secondary),
+      // Math.trunc(colorChoice.secondary),
+      constellation, //constellation
+      clouds, // clouds
     ],
+    enabled: mintReady,
     value: mintCost.toBigInt(),
   });
 
@@ -242,8 +261,13 @@ export default function NightSkyMint(props: MintProps) {
               colorChoice={colorChoice}
               setPreview={setPreview}
               setColorChoice={setColorChoice}
+              originalColors={originalColors}
+              setOriginalColors={setOriginalColors}
             />
-            <MintConstellationPicker />
+            <MintConstellationPicker
+              selected={constellation}
+              setSelected={setConstellation}
+            />
             <MintCloudPicker preview={preview} setPreview={setPreview} />
 
             <button
@@ -251,6 +275,7 @@ export default function NightSkyMint(props: MintProps) {
               onClick={async () => {
                 // write?.();
                 try {
+                  setMintReady(true);
                   const { hash } = await writeContract(config);
                   // console.log("hash: " + hash);
                   const data = await waitForTransaction({

@@ -1,7 +1,7 @@
 import Image from "next/future/image";
 import placeholder from "../../images/cardback.png";
 import { useContractRead, usePrepareContractWrite } from "wagmi";
-import { Deployment } from "../../domain/Domain";
+import { ColorSet, Deployment } from "../../domain/Domain";
 import { useEffect, useState } from "react";
 import { BigNumber, ethers } from "ethers";
 import { waitForTransaction, writeContract } from "@wagmi/core";
@@ -16,30 +16,21 @@ import {
   extractSecondColor,
   replaceGradients,
 } from "../../utils/svgcombiner";
-import Switch from "react-switch";
-import sunIcon from "../../images/social/sun.svg";
-import moonIcon from "../../images/social/moon.svg";
-import ClientOnly from "../ClientOnly";
-import Circle from "@uiw/react-color-circle";
-import { element } from "@rainbow-me/rainbowkit/dist/css/reset.css";
-
-type ColorSet = {
-  primary: number;
-  secondary: number;
-};
 
 type MintColorPickerProps = {
   preview: string;
   colorChoice: ColorSet;
   setPreview: (svg: string) => void;
   setColorChoice: ({ primary, secondary }: ColorSet) => void;
+  originalColors: ColorSet;
+  setOriginalColors: ({ primary, secondary }: ColorSet) => void;
 };
 
 export default function MintColorPicker(props: MintColorPickerProps) {
-  const [originalColors, setOriginalColors] = useState({
-    first: -1,
-    second: -1,
-  });
+  // const [originalColors, setOriginalColors] = useState({
+  //   first: -1,
+  //   second: -1,
+  // });
 
   const [hsva, setHsva] = useState({
     primary: { h: 0, s: 100, v: 30, a: 1 },
@@ -48,13 +39,16 @@ export default function MintColorPicker(props: MintColorPickerProps) {
 
   const resetFirstColor = function () {
     // setHsva1({ h: originalColors.first, s: 100, v: 30, a: 1 });
-    changeComplete({ h: originalColors.first, s: 100, v: 30, a: 1 }, null);
+    changeComplete(
+      { h: props.originalColors.primary, s: 100, v: 30, a: 1 },
+      null
+    );
   };
 
   const resetSecondColor = function () {
     // setHsva2({ h: originalColors.second, s: 100, v: 30, a: 1 });
     changeComplete(null, {
-      h: originalColors.second,
+      h: props.originalColors.secondary,
       s: 100,
       v: 30,
       a: 1,
@@ -97,7 +91,7 @@ export default function MintColorPicker(props: MintColorPickerProps) {
     if (props.colorChoice.secondary == hsva.secondary.h) {
       return;
     }
-    if (originalColors.first == -1) {
+    if (props.originalColors.primary == -1) {
       const image = window.atob(props.preview);
       console.log("first load");
       const color1 = extractFirstColor(String(image));
@@ -112,7 +106,10 @@ export default function MintColorPicker(props: MintColorPickerProps) {
         secondary: Number(color2),
       });
 
-      setOriginalColors({ first: Number(color1), second: Number(color2) });
+      props.setOriginalColors({
+        primary: Number(color1),
+        secondary: Number(color2),
+      });
     } else {
       console.log("toggle it");
       let primaryh = hsva.primary.h;

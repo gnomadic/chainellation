@@ -12,3 +12,8 @@ export type Decoration = {
   address: Address;
   name: string;
 };
+
+export type ColorSet = {
+  primary: number;
+  secondary: number;
+};
