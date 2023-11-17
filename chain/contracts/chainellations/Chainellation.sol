@@ -229,6 +229,7 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     ) public view returns (string memory) {
         return
             _chainellationRenderer.generateSVG(
+                _tokenId,
                 Color.genDNA(
                     _tokenId,
                     getColors(_tokenId),

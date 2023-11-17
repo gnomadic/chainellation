@@ -122,16 +122,17 @@ contract Decorations is Ownable, IDecorations {
     }
 
     function getSilhouette(
+        uint256 tokenId,
         Color.DNA memory dna,
         uint256 gazes,
         bool daytime
     ) public view returns (string memory) {
-        if (_decorations[dna.tokenId].silhouette == address(0)) {
+        if (_decorations[tokenId].silhouette == address(0)) {
             return '<g id="silhouette"></g>';
         }
         return
-            IDeco(_decorations[dna.tokenId].silhouette).getDeco(
-                dna.tokenId,
+            IDeco(_decorations[tokenId].silhouette).getDeco(
+                tokenId,
                 dna,
                 gazes,
                 daytime
@@ -139,16 +140,17 @@ contract Decorations is Ownable, IDecorations {
     }
 
     function getSkyMath(
+        uint256 tokenId,
         Color.DNA memory dna,
         uint256 gazes,
         bool daytime
     ) public view returns (string memory) {
-        if (_decorations[dna.tokenId].skyMath == address(0)) {
+        if (_decorations[tokenId].skyMath == address(0)) {
             return '<g id="skymath"></g>';
         }
         return
-            IDeco(_decorations[dna.tokenId].skyMath).getDeco(
-                dna.tokenId,
+            IDeco(_decorations[tokenId].skyMath).getDeco(
+                tokenId,
                 dna,
                 gazes,
                 daytime
@@ -156,16 +158,17 @@ contract Decorations is Ownable, IDecorations {
     }
 
     function getDecorationOne(
+        uint256 tokenId,
         Color.DNA memory dna,
         uint256 gazes,
         bool daytime
     ) public view returns (string memory) {
-        if (_decorations[dna.tokenId].decorationOne == address(0)) {
+        if (_decorations[tokenId].decorationOne == address(0)) {
             return '<g id="deco"></g>';
         }
         return
-            IDeco(_decorations[dna.tokenId].decorationOne).getDeco(
-                dna.tokenId,
+            IDeco(_decorations[tokenId].decorationOne).getDeco(
+                tokenId,
                 dna,
                 gazes,
                 daytime

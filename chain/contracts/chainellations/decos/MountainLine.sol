@@ -28,10 +28,7 @@ contract MountainLine is IDeco {
             string.concat(
                 '<g id="silhouette">',
                 '<filter id="g"><feDropShadow dy="-5" stdDeviation="5" flood-color="#fff" flood-opacity=".1"/></filter>',
-                buildMountains(
-                    dna.groundSeed,
-                    Color.HSL(dna.primaryHue, 100, 30)
-                ),
+                buildMountains(tokenId, Color.HSL(dna.primaryHue, 100, 30)),
                 "</g>"
             );
     }

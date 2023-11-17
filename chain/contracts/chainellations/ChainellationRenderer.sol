@@ -8,6 +8,7 @@ import "../interfaces/IChainellationRenderer.sol";
 
 contract ChainellationRenderer is IChainellationRenderer {
     function generateSVG(
+        uint256 tokenId,
         Color.DNA memory dna,
         uint256 gazes,
         bool daytime,
@@ -18,8 +19,8 @@ contract ChainellationRenderer is IChainellationRenderer {
         // console.log("Colors are %s and %s ", primary.H, secondary.H);
         string memory svg = string.concat(
             '<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><clipPath id="box"><path d="M0 0h512v512H0z"/></clipPath><defs>',
-            getGradients(dna.starSeed, primary, secondary, dna.cloudsAt),
-            getFilters(dna.funkSeed),
+            getGradients(tokenId, primary, secondary, dna.cloudsAt),
+            getFilters(tokenId),
             '</defs><svg viewBox="0 0 512 512" clip-path="url(#box)">',
             getBackgrounds(daytime),
             // '<path d="M 0, 340 h 512" stroke="white" opacity="0.4"/>',
@@ -29,8 +30,8 @@ contract ChainellationRenderer is IChainellationRenderer {
             // '<path d="M250 80 h 180 v 180 h -180 v-180" stroke="white" fill="none"/>',
 
             // buildStars(dna.starSeed, dna.constellationSeed, gazes, daytime),
-            getStars(dna.starSeed, dna.constellation, gazes, daytime),
-            getDecos(decorator, dna, gazes, daytime),
+            getStars(tokenId, dna.constellation, gazes, daytime),
+            getDecos(decorator, tokenId, dna, gazes, daytime),
             // getFocus(decorator, dna, gazes, daytime),
             // getSkyMath(decorator, dna, gazes, daytime),
             // getDecorationOne(decorator, dna, gazes, daytime),
@@ -45,7 +46,7 @@ contract ChainellationRenderer is IChainellationRenderer {
         uint256 seed,
         Color.HSL memory primary,
         Color.HSL memory secondary,
-        uint8 cloudDays
+        uint16 cloudDays
     ) public pure returns (string memory) {
         string memory rotation = Color.toString(
             (uint16)(Color.psuedorandom(seed, 123) % 45)
@@ -114,7 +115,7 @@ contract ChainellationRenderer is IChainellationRenderer {
             '<path fill="url(#skyGradient)"  d="M0 0h512v512H0z" opacity=".',
             Color.toString(day ? 0 : 7),
             '"/>',
-            '<path fill="url(#cloudGradient)" filter="url(#clouds)" d="M-512-512h1536v1536h-2048z"><animateTransform attributeName="transform" attributeType="XML" type="translate" from="0" to="512 512" dur="50s" repeatCount="indefinite"/></path>'
+            '<path fill="url(#cloudGradient)" filter="url(#clouds)" d="M-512-512h1536v1536h-2048z"><animateTransform attributeName="transform" attributeType="XML" type="translate" from="0" to="512 512" dur="60s" repeatCount="indefinite"/></path>'
         );
 
         return bg;
@@ -151,7 +152,7 @@ contract ChainellationRenderer is IChainellationRenderer {
 
     function getStars(
         uint256 starSeed,
-        uint8 constellationId,
+        uint16 constellationId,
         uint256 gazes,
         bool daytime
     ) public view returns (string memory) {
@@ -271,7 +272,7 @@ contract ChainellationRenderer is IChainellationRenderer {
     }
 
     function drawConstellation(
-        uint8 constellationID,
+        uint16 constellationID,
         uint8 toShow
     ) private view returns (string memory, uint8 leftovers) {
         (string memory constellation, uint8 count) = Constellations
@@ -295,6 +296,7 @@ contract ChainellationRenderer is IChainellationRenderer {
 
     function getDecos(
         address decorator,
+        uint256 tokenId,
         Color.DNA memory dna,
         uint256 gazes,
         bool daytime
@@ -302,42 +304,45 @@ contract ChainellationRenderer is IChainellationRenderer {
         return
             string.concat(
                 // getFocus(dna, gazes, daytime),
-                getSkyMath(decorator, dna, gazes, daytime),
-                getDecorationOne(decorator, dna, gazes, daytime),
-                getSilhouette(decorator, dna, gazes, daytime)
+                getSkyMath(decorator, tokenId, dna, gazes, daytime),
+                getDecorationOne(decorator, tokenId, dna, gazes, daytime),
+                getSilhouette(decorator, tokenId, dna, gazes, daytime)
             );
     }
 
     function getSilhouette(
         address decorator,
+        uint256 tokenId,
         Color.DNA memory dna,
         uint256 gazes,
         bool daytime
     ) private view returns (string memory) {
         if (decorator == address(0)) return "";
         IDecorations deco = IDecorations(decorator);
-        return deco.getSilhouette(dna, gazes, daytime);
+        return deco.getSilhouette(tokenId, dna, gazes, daytime);
     }
 
     function getSkyMath(
         address decorator,
+        uint256 tokenId,
         Color.DNA memory dna,
         uint256 gazes,
         bool daytime
     ) private view returns (string memory) {
         if (decorator == address(0)) return "";
         IDecorations deco = IDecorations(decorator);
-        return deco.getSkyMath(dna, gazes, daytime);
+        return deco.getSkyMath(tokenId, dna, gazes, daytime);
     }
 
     function getDecorationOne(
         address decorator,
+        uint256 tokenId,
         Color.DNA memory dna,
         uint256 gazes,
         bool daytime
     ) private view returns (string memory) {
         if (decorator == address(0)) return "";
         IDecorations deco = IDecorations(decorator);
-        return deco.getDecorationOne(dna, gazes, daytime);
+        return deco.getDecorationOne(tokenId, dna, gazes, daytime);
     }
 }

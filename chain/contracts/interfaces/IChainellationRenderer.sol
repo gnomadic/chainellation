@@ -5,6 +5,7 @@ import "../Color.sol";
 
 interface IChainellationRenderer {
     function generateSVG(
+        uint256 tokenId,
         Color.DNA memory dna,
         uint256 gazes,
         bool daytime,

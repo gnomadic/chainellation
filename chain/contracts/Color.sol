@@ -6,35 +6,16 @@ library Color {
     using Strings for uint256;
 
     struct DNA {
-        uint256 tokenId;
         uint16 primaryHue;
         uint16 secondaryHue;
-        uint8 constellation;
-        uint8 cloudsAt;
-        uint256 starSeed;
-        uint256 funkSeed;
-        uint256 circleSeed;
-        uint256 groundSeed;
+        uint16 constellation;
+        uint16 cloudsAt;
     }
 
     struct HSL {
         uint16 H;
         uint16 S;
         uint16 L;
-    }
-
-    struct Point {
-        uint16 x;
-        uint16 y;
-    }
-
-    struct Circle {
-        uint16 x;
-        uint16 y;
-        uint16 r;
-        uint8 count;
-        uint16 stroke;
-        bool active;
     }
 
     function HSLtoString(HSL memory color) public pure returns (string memory) {
@@ -126,13 +107,13 @@ library Color {
         uint8 constellation
     ) public pure returns (DNA memory) {
         DNA memory dna;
-        dna.tokenId = tokenId;
+        // dna.tokenId = tokenId;
         dna.primaryHue = uint16(colors >> 16);
         dna.secondaryHue = uint16(colors);
-        dna.starSeed = psuedorandom(tokenId, 123);
-        dna.funkSeed = psuedorandom(tokenId, 234);
-        dna.circleSeed = psuedorandom(tokenId, 345);
-        dna.groundSeed = psuedorandom(tokenId, 456);
+        // dna.starSeed = psuedorandom(tokenId, 123);
+        // dna.funkSeed = psuedorandom(tokenId, 234);
+        // dna.circleSeed = psuedorandom(tokenId, 345);
+        // dna.groundSeed = psuedorandom(tokenId, 456);
         dna.constellation = constellation;
         dna.cloudsAt = clouds;
 

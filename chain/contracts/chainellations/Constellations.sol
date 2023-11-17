@@ -7,7 +7,7 @@ library Constellations {
     using Strings for uint256;
 
     function getConstellation(
-        uint256 seed,
+        uint16 seed,
         uint8 gazed
     ) public view returns (string memory, uint8 leftovers) {
         if (seed == 1) {
