@@ -13,6 +13,15 @@ import "../interfaces/ITwoMoonsEvent.sol";
 contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     using Strings for uint256;
 
+    struct Stats {
+        uint32 timeZoneOffset;
+        uint16 gazes;
+        uint48 lastGaze;
+        uint32 colors;
+        uint8 constellation;
+        uint8 cloudsAt;
+    }
+
     uint256 public currentSupply;
     uint256 public maxSupply = 15000;
 
@@ -20,13 +29,14 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     uint256 public customizeCost = 0; // 5 * 10 ** 15;
 
     mapping(uint256 => Color.DNA) public dnas;
+    mapping(uint256 => Stats) public stats;
 
-    mapping(uint256 => uint32) public timeZoneOffset;
-    mapping(uint256 => uint16) public gazes;
-    mapping(uint256 => uint256) public lastGaze;
-    mapping(uint256 => uint32) public colors;
-    mapping(uint256 => uint8) public constellation;
-    mapping(uint256 => uint8) public cloudsAt;
+    // mapping(uint256 => uint32) public timeZoneOffset;
+    // mapping(uint256 => uint16) public gazes;
+    // mapping(uint256 => uint48) public lastGaze;
+    // mapping(uint256 => uint32) public colors;
+    // mapping(uint256 => uint8) public constellation;
+    // mapping(uint256 => uint8) public cloudsAt;
 
     address private _decorator;
     IChainellationRenderer private _chainellationRenderer;
@@ -82,7 +92,7 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     }
 
     function mint(uint32 timezoneOffset) public payable {
-        if (msg.value < mintCost) revert Cost();
+        if (msg.value != mintCost) revert Cost();
 
         _mint(timezoneOffset, 0, 0, 0, msg.sender);
     }
@@ -107,7 +117,7 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
             rollingCost += customizeCost;
         }
 
-        if (msg.value < rollingCost) revert Cost();
+        if (msg.value != rollingCost) revert Cost();
 
         _mint(
             timezoneOffset,
@@ -134,7 +144,10 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     ) private {
         if (currentSupply >= maxSupply) revert MaxSupplyReached();
         currentSupply++;
-        timeZoneOffset[currentSupply] = _timezoneOffset;
+
+        Stats memory current;
+        current.timeZoneOffset = _timezoneOffset;
+        // timeZoneOffset[currentSupply] = _timezoneOffset;
 
         // 24248690 is a byte packed 370 + 370, which are the default colors
         if (_colorData == 24248690) {
@@ -145,7 +158,8 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
             _colorData = (uint32(primary) << 16) | uint32(secondary);
         }
 
-        colors[currentSupply] = _colorData;
+        current.colors = _colorData;
+        // colors[currentSupply] = _colorData;
         if (_constellation > 16) {
             _constellation = 0;
         }
@@ -168,8 +182,11 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
             );
         }
 
-        constellation[currentSupply] = _constellation;
-        cloudsAt[currentSupply] = _cloudsAt;
+        current.constellation = _constellation;
+        current.cloudsAt = _cloudsAt;
+        // constellation[currentSupply] = _constellation;
+        // cloudsAt[currentSupply] = _cloudsAt;
+        stats[currentSupply] = current;
         _safeMint(_to, currentSupply);
     }
 
@@ -177,7 +194,7 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
         uint256 tokenId
     ) public view returns (string memory) {
         bytes memory svg = abi.encodePacked(
-            generateSVG(tokenId, gazes[tokenId], !isNight(tokenId), 0)
+            generateSVG(tokenId, stats[tokenId].gazes, !isNight(tokenId), 0)
         );
 
         return
@@ -190,34 +207,34 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     }
 
     function getColors(uint256 tokenId) public view returns (uint32) {
-        if (colors[tokenId] == 0) {
+        if (stats[tokenId].colors == 0) {
             uint16 primary = uint16((tokenId % 16) * 10);
             uint16 secondary = Color
                 .rotateColor(Color.HSL(primary, 0, 0), 60)
                 .H;
             return (uint32(primary) << 16) | uint32(secondary);
         } else {
-            return colors[tokenId];
+            return stats[tokenId].colors;
         }
     }
 
     function getConstellation(uint256 tokenId) public view returns (uint8) {
-        if (constellation[tokenId] == 0) {
+        if (stats[tokenId].constellation == 0) {
             return
                 uint8(_chainellationRenderer.psuedorandom(tokenId, 123) % 15) +
                 1;
         } else {
-            return constellation[tokenId];
+            return stats[tokenId].constellation;
         }
     }
 
     function getCloudsAt(uint256 tokenId) public view returns (uint8) {
-        if (cloudsAt[tokenId] == 0) {
+        if (stats[tokenId].cloudsAt == 0) {
             return
                 uint8(_chainellationRenderer.psuedorandom(tokenId, 321) % 4) +
                 1;
         } else {
-            return cloudsAt[tokenId];
+            return stats[tokenId].cloudsAt;
         }
     }
 
@@ -247,12 +264,17 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     function starGaze(uint256 tokenId) public {
         if (ownerOf(tokenId) != msg.sender) revert NotTheOwner();
         if (!isNight(tokenId)) revert NotNight();
-        if (systemTimeOffsetWithUser(tokenId) - lastGaze[tokenId] < 14 hours)
-            revert NotEnoughTimePassed();
-        gazes[tokenId] = gazes[tokenId] + 1;
-        lastGaze[tokenId] = systemTimeOffsetWithUser(tokenId);
+        if (
+            systemTimeOffsetWithUser(tokenId) - stats[tokenId].lastGaze <
+            14 hours
+        ) revert NotEnoughTimePassed();
+        stats[tokenId].gazes = stats[tokenId].gazes + 1;
+        stats[tokenId].lastGaze = systemTimeOffsetWithUser(tokenId);
         if (address(_twoMoonsEvent) != address(0)) {
-            ITwoMoonsEvent(_twoMoonsEvent).onStargaze(tokenId, gazes[tokenId]);
+            ITwoMoonsEvent(_twoMoonsEvent).onStargaze(
+                tokenId,
+                stats[tokenId].gazes
+            );
         }
     }
 
@@ -264,7 +286,8 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
 
     function reset(uint256 tokenId) public {
         if (ownerOf(tokenId) != msg.sender) revert NotTheOwner();
-        gazes[tokenId] = 0;
+        stats[tokenId].gazes = 0;
+        // gazes[tokenId] = 0;
     }
 
     function setMaxSupply(uint256 _maxSupply) public onlyOwner {
@@ -293,12 +316,9 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
 
     function systemTimeOffsetWithUser(
         uint256 tokenId
-    ) public view returns (uint256) {
-        return systemTime() + (timeZoneOffset[tokenId]);
-    }
-
-    function systemTime() public view virtual returns (uint256) {
-        return block.timestamp;
+    ) public view virtual returns (uint48) {
+        return (uint48)(block.timestamp + (stats[tokenId].timeZoneOffset));
+        // return (uint48)(block.timestamp + (timeZoneOffset[tokenId]));
     }
 
     function isNight(uint256 tokenId) public view returns (bool) {

@@ -134,10 +134,10 @@ describe("chainellation", function () {
       let mint = await mockellation.mint("200", { value: mintPrice });
       await mint.wait();
 
-      let systemTime = await mockellation.systemTime();
+      let systemTime = await mockellation.systemTimeOffsetWithUser(1);
       expect(systemTime).to.be.equal(time);
       let userTime = await mockellation.systemTimeOffsetWithUser(1);
-      expect(userTime).to.be.equal(time + 200);
+      expect(userTime).to.be.equal(time);
     });
   });
   describe("minting", function () {
@@ -146,8 +146,13 @@ describe("chainellation", function () {
         deployChainellation
       );
 
+      let setPrice = await chainellation.setCustomizeCost(
+        ethers.utils.parseEther("0.5")
+      );
+      await setPrice.wait();
+
       let mint = await chainellation.mintCustom(100, 10, 10, 1, 1, {
-        value: ethers.utils.parseEther("1"),
+        value: ethers.utils.parseEther("1.5"),
       });
       await mint.wait();
 

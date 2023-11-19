@@ -4,17 +4,19 @@ pragma solidity 0.8.18;
 import "../chainellations/Chainellation.sol";
 
 contract Mockellation is Chainellation {
-    uint256 public time;
+    uint48 public time;
 
     constructor(address renderer) Chainellation(renderer) {
-        time = block.timestamp;
+        time = (uint48)(block.timestamp);
     }
 
-    function systemTime() public view override returns (uint256) {
+    function systemTimeOffsetWithUser(
+        uint256 tokenId
+    ) public view override returns (uint48) {
         return time;
     }
 
-    function setSystemTime(uint256 _time) public {
+    function setSystemTime(uint48 _time) public {
         time = _time;
     }
 }

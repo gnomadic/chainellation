@@ -7,10 +7,15 @@ import "../interfaces/IDecorations.sol";
 import "./Constellations.sol";
 
 contract Decorations is Ownable, IDecorations {
-    struct Decoration {
+    struct SetDecoration {
         address silhouette;
         address skyMath;
         address decorationOne;
+    }
+
+    struct Deco {
+        uint8 decoType;
+        uint256 decoId;
     }
 
     uint8 public constant SILHOUTTE = 1;
@@ -20,9 +25,10 @@ contract Decorations is Ownable, IDecorations {
     address private _chainellation;
 
     mapping(address => uint8) private _slot;
+
     address[] public allDecorations;
 
-    mapping(uint256 => Decoration) private _decorations;
+    mapping(uint256 => SetDecoration) private _decorations;
 
     constructor(address chainellation) {
         _chainellation = chainellation;

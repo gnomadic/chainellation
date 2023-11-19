@@ -53,6 +53,8 @@ module.exports = async (hre: any) => {
     decorations
   );
 
+  await deployAndRegister("Waves", 1, deploy, deployer, color, decorations);
+
   await deployAndRegister("SkyCircle", 2, deploy, deployer, color, decorations);
   // ------------------------------------------------------------------- Paid
   await deployAndRegister("Cat", 1, deploy, deployer, color, decorations);

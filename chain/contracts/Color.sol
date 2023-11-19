@@ -5,6 +5,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 library Color {
     using Strings for uint256;
 
+    // TODO bytepack this and unpack it - probably want utility, but based on usage
     struct DNA {
         uint16 primaryHue;
         uint16 secondaryHue;
@@ -103,8 +104,8 @@ library Color {
     function genDNA(
         uint256 tokenId,
         uint32 colors,
-        uint8 clouds,
-        uint8 constellation
+        uint16 clouds,
+        uint16 constellation
     ) public pure returns (DNA memory) {
         DNA memory dna;
         // dna.tokenId = tokenId;
