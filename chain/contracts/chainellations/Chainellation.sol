@@ -14,12 +14,13 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     using Strings for uint256;
 
     struct Stats {
-        uint32 timeZoneOffset;
-        uint16 gazes;
         uint48 lastGaze;
+        uint32 timeZoneOffset;
         uint32 colors;
+        uint16 gazes;
         uint8 constellation;
         uint8 cloudsAt;
+        // uint144 consolidated;
     }
 
     uint256 public currentSupply;
