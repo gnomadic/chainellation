@@ -28,6 +28,7 @@ export default function NightSkyHeld(props: HeldProps) {
   const { NFTids, isHeldIdError } = useNFTTokensOfOwner({
     contractAddress: props.deploy.chainellationAddress,
     walletAddress: props.address,
+    enabled: true,
   });
 
   return (
@@ -52,7 +53,6 @@ export default function NightSkyHeld(props: HeldProps) {
                       {/* <Divider /> */}
                       <StarCard
                         deploy={props.deploy}
-                        index={i}
                         id={NFTids[i]}
                         address={props.address}
                         onClick={(curImage: string | StaticImageData) => {
