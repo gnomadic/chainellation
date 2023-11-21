@@ -3,16 +3,16 @@ import ComposeCard from "./ComposeCard";
 
 type NightSkyComposeProps = {
   deploy: Deployment;
-  index: number;
+  tokenId: number;
   walletAddress: Address;
 };
 
 export default function NightSkyCompose(props: NightSkyComposeProps) {
   return (
-    <section className=" z-10 relative">
+    <section className="relative z-10 ">
       <div className="relative z-10 bg-clearslate font-roboto md:py-16">
-        <section className="text-offwhite text-xl md:px-36">
-          <div className="text-2xl md:text-6xl font-normal uppercase leading-normal text-center text-offwhite font-kdam ">
+        <section className="text-xl text-offwhite md:px-36">
+          <div className="text-2xl font-normal leading-normal text-center uppercase md:text-6xl text-offwhite font-kdam ">
             Compose
           </div>
           <div className="w-20 mx-auto h-[0px] border-2 mt-8 border-boldorange"></div>
@@ -33,10 +33,10 @@ export default function NightSkyCompose(props: NightSkyComposeProps) {
           </div>
         </div>
       </div>
-      <div className="relative z-10  bg-clearslate">
+      <div className="relative z-10 bg-clearslate">
         <ComposeCard
           deploy={props.deploy}
-          index={props.index}
+          tokenId={props.tokenId}
           walletAddress={props.walletAddress}
         />
       </div>

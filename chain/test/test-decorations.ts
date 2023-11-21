@@ -102,6 +102,7 @@ describe("decorations", function () {
       const emptysky = await getContract("Empty_SkyMath");
       const mountainLine = await getContract("MountainLine");
       const skycircle = await getContract("SkyCircle");
+      const waves = await getContract("Waves");
 
       let preview = await emptyDeco.tokenURI(0);
       let sub = preview.substring("data:application/json;base64,".length);
@@ -122,6 +123,11 @@ describe("decorations", function () {
       preview = await skycircle.tokenURI(0);
       sub = preview.substring("data:application/json;base64,".length);
       expect(testJSON(atob(sub))).to.equal(true);
+
+      preview = await waves.tokenURI(0);
+      sub = preview.substring("data:application/json;base64,".length);
+      expect(testJSON(atob(sub))).to.equal(true);
+      console.log(atob);
     });
   });
 

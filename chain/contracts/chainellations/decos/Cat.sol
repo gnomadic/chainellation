@@ -2,10 +2,10 @@
 pragma solidity 0.8.18;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "erc721a/contracts/extensions/ERC721AQueryable.sol";
 import "../../interfaces/IDeco.sol";
 
-contract Cat is ERC721Enumerable, IDeco, Ownable {
+contract Cat is ERC721AQueryable, IDeco, Ownable {
     using Strings for uint256;
 
     uint256 public currentSupply;
@@ -13,7 +13,7 @@ contract Cat is ERC721Enumerable, IDeco, Ownable {
     uint256 public maxSupply = 500;
     uint256 public mintCost = 0; //5 * 10 ** 16;
 
-    constructor() ERC721("Sky Cat", "SkyCat") {}
+    constructor() ERC721A("Sky Cat", "SkyCat") {}
 
     function mint() public payable {
         if (msg.value < mintCost) revert Cost();
@@ -60,24 +60,24 @@ contract Cat is ERC721Enumerable, IDeco, Ownable {
         mintCost = _newMintCost;
     }
 
-    // ----------------------------------------- overrides
+    // // ----------------------------------------- overrides
 
     function ownerOf(
         uint256 tokenId
-    ) public view override(IERC721, ERC721, IDeco) returns (address owner) {
-        return ERC721.ownerOf(tokenId);
+    ) public view override(ERC721A, IERC721A, IDeco) returns (address owner) {
+        return ERC721A.ownerOf(tokenId);
     }
 
     function balanceOf(
         address owner
-    ) public view override(IERC721, ERC721, IDeco) returns (uint256) {
-        return ERC721.balanceOf(owner);
+    ) public view override(ERC721A, IERC721A, IDeco) returns (uint256) {
+        return ERC721A.balanceOf(owner);
     }
 
     function tokenURI(
         uint256 tokenId
-    ) public view override(ERC721, IDeco) returns (string memory) {
-        return IDeco.tokenURI(tokenId);
+    ) public view override(ERC721A, IERC721A, IDeco) returns (string memory) {
+        return ERC721A.tokenURI(tokenId);
     }
 
     // ----------------------------------------- soulbound
@@ -85,18 +85,18 @@ contract Cat is ERC721Enumerable, IDeco, Ownable {
     function approve(
         address to,
         uint256 tokenId
-    ) public override(IERC721, ERC721) {
+    ) public payable override(ERC721A, IERC721A) {
         if (soulbound[tokenId]) revert SoulBound();
-        ERC721.approve(to, tokenId);
+        ERC721A.approve(to, tokenId);
     }
 
-    function _beforeTokenTransfer(
-        address from,
-        address to,
-        uint256 firstTokenId,
-        uint256 batchSize
-    ) internal override {
-        if (soulbound[firstTokenId]) revert SoulBound();
-        super._beforeTokenTransfer(from, to, firstTokenId, batchSize);
-    }
+    // function _beforeTokenTransfer(
+    //     address from,
+    //     address to,
+    //     uint256 firstTokenId,
+    //     uint256 batchSize
+    // ) internal override {
+    //     if (soulbound[firstTokenId]) revert SoulBound();
+    //     super._beforeTokenTransfer(from, to, firstTokenId, batchSize);
+    // }
 }

@@ -37,8 +37,10 @@ abstract contract IDeco {
         return
             string.concat(
                 '<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">',
+                '<clipPath id="box"><path d="M0 0h512v512H0z"/></clipPath>',
+                '<svg viewBox="0 0 512 512" clip-path="url(#box)">',
                 getDeco(tokenId, dna, gazes, daytime),
-                "</svg>"
+                "</svg></svg>"
             );
     }
 

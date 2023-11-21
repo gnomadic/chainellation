@@ -3,27 +3,25 @@ import { usePrepareContractWrite } from "wagmi";
 import { BigNumber } from "ethers";
 import { useEffect, useState } from "react";
 import { Address, Deployment } from "../../domain/Domain";
-import useNFTSVGByIndex from "../../hooks/useNFTSVGByIndex";
-import useNFTHeldIdByIndex from "../../hooks/useNFTHeldId";
 import useAvailableDeco from "../../hooks/useAvailableDeco";
 import { replaceTag } from "../../utils/svgcombiner";
 import DecoType from "./DecoType";
 import placeholder from "../../images/cardback.png";
 import { waitForTransaction, writeContract } from "@wagmi/core";
 import abi from "../../abi/Decorations.json";
+import useNFTSVG from "../../hooks/useNFTSVG";
 
 type ComposeCardProps = {
   deploy: Deployment;
-  index: number;
+  tokenId: number;
   walletAddress: Address;
 };
 
 export default function ComposeCard(props: ComposeCardProps) {
-  const { svg: curImage, isMetaError } = useNFTSVGByIndex({
+  const { svg: curImage, isMetaError } = useNFTSVG({
     contractAddress: props.deploy.chainellationAddress,
     walletAddress: props.walletAddress,
-    index: props.index,
-    enabled: true,
+    tokenId: props.tokenId,
   });
 
   const {
@@ -33,13 +31,6 @@ export default function ComposeCard(props: ComposeCardProps) {
   } = useAvailableDeco({
     contractAddress: props.deploy.decoAddress,
     walletAddress: props.walletAddress,
-  });
-
-  const { NFTID, isHeldIdError } = useNFTHeldIdByIndex({
-    contractAddress: props.deploy.chainellationAddress,
-    walletAddress: props.walletAddress,
-    index: props.index,
-    enabled: true,
   });
 
   const [tokenId, setTokenId] = useState<number>(0);
@@ -73,7 +64,7 @@ export default function ComposeCard(props: ComposeCardProps) {
     if (index === -1) {
       // If decoType doesn't exist, add the values to the arrays
       // console.log("setting tokenid: " + NFTID);
-      setTokenId(NFTID);
+      setTokenId(props.tokenId);
       // console.log("setting decotypes: " + [...decoTypes, decoType]);
       setDecoTypes([...decoTypes, decoType]);
       // console.log("setting decoAddresses: " + [...decoAddresses, decoAddress]);
@@ -122,7 +113,7 @@ export default function ComposeCard(props: ComposeCardProps) {
     <div className="text-xl font-roboto ">
       <div>
         <h1 className="pt-12 pb-3 text-3xl text-center text-offwhite font-kdam">
-          constellation #{BigNumber.from(NFTID)?.toNumber()}
+          constellation #{props.tokenId}
         </h1>
         <div className="grid grid-cols-1 xl:grid-cols-2">
           <div>
@@ -172,7 +163,7 @@ export default function ComposeCard(props: ComposeCardProps) {
           </div>
           <div className="grid grid-cols-1 xl:grid-cols-1">
             <DecoType
-              chainellationId={NFTID}
+              chainellationId={props.tokenId}
               decoIds={availableIds}
               decos={available}
               walletAddress={props.walletAddress}
@@ -184,7 +175,7 @@ export default function ComposeCard(props: ComposeCardProps) {
             />
 
             <DecoType
-              chainellationId={NFTID}
+              chainellationId={props.tokenId}
               decoIds={availableIds}
               decos={available}
               walletAddress={props.walletAddress}
@@ -196,7 +187,7 @@ export default function ComposeCard(props: ComposeCardProps) {
             />
 
             <DecoType
-              chainellationId={NFTID}
+              chainellationId={props.tokenId}
               decoIds={availableIds}
               decos={available}
               walletAddress={props.walletAddress}

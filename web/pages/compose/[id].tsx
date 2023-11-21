@@ -51,11 +51,11 @@ const Compose: NextPage = (props: any) => {
               />
               <NightSkyCompose
                 deploy={deploy}
-                index={Number(router.query.id)}
+                tokenId={Number(router.query.id)}
                 walletAddress={address}
               />
 
-              <Held address={address} deploy={deploy} />
+              {/* <Held address={address} deploy={deploy} /> */}
               <div
                 aria-hidden="true"
                 className="pt-24 relative min-w-max inset-0 z-[1] bg-gradient-to-b from-clearslate via-clearslate/50 to-clearslate/0"

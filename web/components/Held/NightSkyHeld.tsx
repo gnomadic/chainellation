@@ -5,6 +5,7 @@ import { Address, Deployment } from "../../domain/Domain";
 import StarCard from "./StarCard";
 import { useState } from "react";
 import NightSkyViewer from "./NightSkyViewer";
+import useNFTTokensOfOwner from "../../hooks/useNFTTokensOfOwner";
 
 type HeldProps = { deploy: Deployment; address: Address };
 
@@ -24,29 +25,35 @@ export default function NightSkyHeld(props: HeldProps) {
     walletAddress: props.address,
   });
 
+  const { NFTids, isHeldIdError } = useNFTTokensOfOwner({
+    contractAddress: props.deploy.chainellationAddress,
+    walletAddress: props.address,
+  });
+
   return (
-    <section className=" z-10 relative">
+    <section className="relative z-10 ">
       <div className="relative z-10 bg-clearslate font-roboto md:py-16">
-        <section className="text-offwhite text-xl md:px-36">
-          <div className="text-2xl md:text-6xl font-normal uppercase leading-normal text-center text-offwhite font-kdam ">
+        <section className="text-xl text-offwhite md:px-36">
+          <div className="text-2xl font-normal leading-normal text-center uppercase md:text-6xl text-offwhite font-kdam ">
             Your Held night skies
           </div>
           <div className="w-20 mx-auto h-[0px] border-2 mt-8 border-boldorange"></div>
         </section>
-        <h1 className="text-lg text-center text-offwhite pt-12">
-          you hold {chainellations} unique constellations
+        <h1 className="pt-12 text-lg text-center text-offwhite">
+          you hold {NFTids.length} unique constellations
         </h1>
         <div className="p-4 mx-4 md:mx-20">
           <div className="text-offwhite">
-            {chainellations > 0 ? (
+            {NFTids.length > 0 ? (
               <div className="grid grid-cols-1 gap-8 pt-8 text-lg font-semibold tracking-tight md:grid-cols-2 lg:grid-cols-3">
-                {Array.from({ length: chainellations }).map((object, i) => {
+                {Array.from({ length: NFTids.length }).map((object, i) => {
                   return (
                     <div key={i} className="pt-8">
                       {/* <Divider /> */}
                       <StarCard
                         deploy={props.deploy}
                         index={i}
+                        id={NFTids[i]}
                         address={props.address}
                         onClick={(curImage: string | StaticImageData) => {
                           handleViewerClick(curImage);

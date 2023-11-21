@@ -4,14 +4,14 @@ import { Address } from "../../domain/Domain";
 import useNFTBalance from "../../hooks/useNFTBalance";
 import useNFTSVG from "../../hooks/useNFTSVG";
 import placeholder from "../../images/cardback.png";
-import useNFTTokenOfOwnerByIndex from "../../hooks/useNFTTokenOfOwnerByIndex";
 import { FreeDecorations } from "../../domain/deployments";
+import useNFTTokensOfOwner from "../../hooks/useNFTTokensOfOwner";
 
 type DecoCardProp = {
   walletAddress: Address;
   decoAddress: Address;
   chainellationTokenId: number;
-  index: number;
+  decoTokenId: number;
   updateSelection: (svg: string, decoAddress: Address, decoId: number) => void;
   deactivate: boolean;
   chain: string;
@@ -20,19 +20,19 @@ type DecoCardProp = {
 function DecoCard(props: DecoCardProp) {
   const [active, setActive] = useState<boolean>(false);
 
-  const { NFTid, isHeldIdError } = useNFTTokenOfOwnerByIndex({
-    contractAddress: props.decoAddress,
-    walletAddress: props.walletAddress,
-    index: props.index,
-    enabled: !FreeDecorations[props.chain].includes(props.decoAddress, 0),
-  });
+  // const { NFTid, isHeldIdError } = useNFTTokenOfOwnerByIndex({
+  //   contractAddress: props.decoAddress,
+  //   walletAddress: props.walletAddress,
+  //   index: props.index,
+  //   enabled: !FreeDecorations[props.chain].includes(props.decoAddress, 0),
+  // });
 
   const { svg: curImage, isMetaError } = useNFTSVG({
     contractAddress: props.decoAddress,
     walletAddress: props.walletAddress,
     tokenId: FreeDecorations[props.chain].includes(props.decoAddress, 0)
       ? props.chainellationTokenId
-      : NFTid,
+      : props.decoTokenId,
   });
   useEffect(() => {
     if (props.deactivate) {
@@ -60,7 +60,7 @@ function DecoCard(props: DecoCardProp) {
               props.decoAddress,
               FreeDecorations[props.chain].includes(props.decoAddress, 0)
                 ? props.chainellationTokenId
-                : NFTid
+                : props.decoTokenId
             );
           }
           if (active) {
@@ -82,21 +82,38 @@ type DecoSetProps = {
 };
 
 function DecoSet(props: DecoSetProps) {
-  const { NFTBalance: decoBalance, isBalanceError } = useNFTBalance({
+  // const { NFTBalance: decoBalance, isBalanceError } = useNFTBalance({
+  //   contractAddress: props.decoAddress,
+  //   walletAddress: props.user,
+  // });
+
+  const [usableIds, setUsableIds] = useState<number[]>([]);
+
+  const { NFTids, isHeldIdError } = useNFTTokensOfOwner({
     contractAddress: props.decoAddress,
     walletAddress: props.user,
+    enabled: !FreeDecorations[props.chain].includes(props.decoAddress, 0),
   });
+
+  useEffect(() => {
+    if (NFTids.length > 0) {
+      setUsableIds(NFTids);
+    }
+    if (FreeDecorations[props.chain].includes(props.decoAddress, 0)) {
+      setUsableIds([props.chainellationTokenId]);
+    }
+  }, [NFTids, props]);
 
   return (
     <>
-      {Array.from({ length: decoBalance }).map((object, i) => {
+      {Array.from({ length: usableIds.length }).map((object, i) => {
         return (
           <DecoCard
             key={i}
             walletAddress={props.user}
             decoAddress={props.decoAddress}
             chainellationTokenId={props.chainellationTokenId}
-            index={i}
+            decoTokenId={NFTids[i]}
             updateSelection={props.updateSelection}
             deactivate={props.deactivate}
             chain={props.chain}
@@ -124,6 +141,7 @@ export default function DecorationRow(props: DecoRowProps) {
   return (
     <>
       {props.decoIds.map((object, i) => {
+        // console.log("Decortion row: " + i);
         if (object == props.decoType) {
           return (
             <DecoSet

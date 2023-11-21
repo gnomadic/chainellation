@@ -11,10 +11,10 @@ contract Waves is IDeco {
     ) public view override returns (string memory) {
         return
             string.concat(
-                '"name": "chainellation Mountains #',
+                '"name": "chainellation Waves #',
                 tokenId.toString(),
                 '",',
-                '"description": "A mountline Silhouette for your Two Moons Night Sky"'
+                '"description": "A Wave Silhouette for your Two Moons Night Sky"'
             );
     }
 

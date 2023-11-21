@@ -274,9 +274,14 @@ export default function NightSkyMint(props: MintProps) {
               clouds={clouds}
               setClouds={setClouds}
             />
-
+            <div className="flex mt-8">
+              <p className="pt-6 pb-2 basis-1/2 font-kdam ">Total Cost</p>
+              <p className="pt-6 pb-2 text-base text-right basis-1/2 font-kdam">
+                0.000 eth
+              </p>
+            </div>
             <button
-              className="mx-auto border-boldorange border-[2px] mt-8 px-8 py-3 bg-boldred min-w-full"
+              className="mx-auto border-boldorange border-[2px] px-8 py-3 bg-boldred min-w-full"
               onClick={async () => {
                 // write?.();
                 try {

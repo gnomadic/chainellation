@@ -2,6 +2,7 @@ import { BigNumber } from "ethers";
 import { useEffect, useState } from "react";
 import { useContractRead } from "wagmi";
 import { Address } from "../domain/Domain";
+import { isArray } from "util";
 
 const abi = [
   {
@@ -11,18 +12,13 @@ const abi = [
         name: "owner",
         type: "address",
       },
-      {
-        internalType: "uint256",
-        name: "index",
-        type: "uint256",
-      },
     ],
-    name: "tokenOfOwnerByIndex",
+    name: "tokensOfOwner",
     outputs: [
       {
-        internalType: "uint256",
+        internalType: "uint256[]",
         name: "",
-        type: "uint256",
+        type: "uint256[]",
       },
     ],
     stateMutability: "view",
@@ -30,46 +26,45 @@ const abi = [
   },
 ];
 
-const useNFTTokenOfOwnerByIndex = ({
+const useNFTTokensOfOwner = ({
   contractAddress,
   walletAddress,
-  index,
   enabled,
 }: {
   contractAddress: Address;
   walletAddress: Address;
-  index: number;
-  enabled?: boolean | undefined;
+  enabled: boolean;
 }) => {
   const {
-    data: heldId,
+    data: heldIds,
     isError: isHeldIdError,
     isLoading: isHeldIdLoading,
   } = useContractRead({
     address: contractAddress,
     abi: abi,
-    functionName: "tokenOfOwnerByIndex",
-    enabled: enabled != undefined ? enabled : true,
-    args: [walletAddress, index],
+    functionName: "tokensOfOwner",
+    enabled: enabled,
+    args: [walletAddress],
     onError: (error: any) => {
       console.log("error: " + error);
     },
   });
 
-  const [NFTid, setNFTId] = useState(0);
+  const [NFTids, setNFTIds] = useState<number[]>([]);
 
   useEffect(() => {
-    console.log("hook heldid: ", heldId);
-    if (heldId) {
-      setNFTId(BigNumber.from(heldId).toNumber());
+    // console.log("hook heldid: ", JSON.stringify(heldIds));
+    if (isArray(heldIds)) {
+      setNFTIds(heldIds as number[]);
     }
-    console.log("hook nftid: ", NFTid);
-  }, [heldId]);
 
-  return { NFTid, isHeldIdError };
+    // console.log("hook nftid: ", JSON.stringify(NFTids));
+  }, [heldIds]);
+
+  return { NFTids, isHeldIdError };
 };
 
-export default useNFTTokenOfOwnerByIndex;
+export default useNFTTokensOfOwner;
 
 // const {
 //   data: heldId,

@@ -8,44 +8,52 @@ import abi from "../../abi/Chainellation.json";
 // import { ABI } from "../../domain/Domain";
 import { BigNumber } from "ethers";
 import { useState } from "react";
-import useNFTSVGByIndex from "../../hooks/useNFTSVGByIndex";
+// import useNFTSVGByIndex from "../../hooks/useNFTSVGByIndex";
 import { Address, Deployment } from "../../domain/Domain";
 import Link from "next/link";
-import useNFTTokenOfOwnerByIndex from "../../hooks/useNFTTokenOfOwnerByIndex";
+// import useNFTTokenOfOwnerByIndex from "../../hooks/useNFTTokenOfOwnerByIndex";
 import placeholder from "../../images/cardback.png";
+import useNFTSVG from "../../hooks/useNFTSVG";
 
 type StarCardProps = {
   // abi: ABI;
   deploy: Deployment;
   address: Address;
-  index: number;
+  // index: number;
+  id: number;
   onClick: (curImage: string | StaticImageData) => void;
 };
 
 export default function StarCard(props: StarCardProps) {
-  const { svg: curImage, isMetaError } = useNFTSVGByIndex({
+  // const { svg: curImage, isMetaError } = useNFTSVGByIndex({
+  //   contractAddress: props.deploy.chainellationAddress,
+  //   walletAddress: props.address,
+  //   index: props.index,
+  //   enabled: true,
+  // });
+
+  const { svg: curImage, isMetaError } = useNFTSVG({
     contractAddress: props.deploy.chainellationAddress,
     walletAddress: props.address,
-    index: props.index,
-    enabled: true,
+    tokenId: props.id,
   });
 
   const [showGaze, setShowGaze] = useState<boolean>(false);
 
-  const {
-    data: heldId,
-    isError: isHeldIdError,
-    isLoading: isHeldIdLoading,
-  } = useContractRead({
-    address: props.deploy.chainellationAddress,
-    abi: abi.abi,
-    functionName: "tokenOfOwnerByIndex",
-    enabled: props.deploy.chainellationAddress !== "0x0",
-    args: [props.address, props.index],
-    onError: (error: any) => {
-      console.log("error: " + error);
-    },
-  });
+  // const {
+  //   data: heldId,
+  //   isError: isHeldIdError,
+  //   isLoading: isHeldIdLoading,
+  // } = useContractRead({
+  //   address: props.deploy.chainellationAddress,
+  //   abi: abi.abi,
+  //   functionName: "tokenOfOwnerByIndex",
+  //   enabled: props.deploy.chainellationAddress !== "0x0",
+  //   args: [props.address, props.index],
+  //   onError: (error: any) => {
+  //     console.log("error: " + error);
+  //   },
+  // });
 
   // const { NFTid: heldId, isHeldIdError } = useNFTTokenOfOwnerByIndex(
   //   props.deploy.chainellationAddress,
@@ -78,7 +86,7 @@ export default function StarCard(props: StarCardProps) {
     abi: abi.abi,
     functionName: "systemTimeOffsetWithUser",
     enabled: props.deploy.chainellationAddress !== "0x0",
-    args: [heldId],
+    args: [props.id],
     onError: (error: any) => {
       console.log("error: " + error);
     },
@@ -103,7 +111,7 @@ export default function StarCard(props: StarCardProps) {
     abi: abi.abi,
     functionName: "starGaze",
     enabled:
-      props.deploy.chainellationAddress !== "0x0" && heldId !== undefined,
+      props.deploy.chainellationAddress !== "0x0" && props.id !== undefined,
     args: [1],
     onError: (error: any) => {
       console.log("error: " + error);
@@ -118,9 +126,9 @@ export default function StarCard(props: StarCardProps) {
   return (
     <div className="mt-3 text-xl">
       <div>
-        {heldId && Number(heldId.toString()) > 0 ? (
+        {props.id && Number(props.id.toString()) > 0 ? (
           <h1 className="pt-3 pb-3 text-center text-offwhite">
-            constellation #{heldId.toString()}
+            constellation #{props.id.toString()}
           </h1>
         ) : (
           <h1 className="pt-3 pb-3 text-center text-offwhite">Loading...</h1>
@@ -150,7 +158,7 @@ export default function StarCard(props: StarCardProps) {
             stargaze
           </button>
           <div className="px-12 py-4 mx-auto mt-2 border-2 rounded cursor-pointer border-boldorange">
-            <Link href="/compose/[id]" as={`/compose/${props.index}`}>
+            <Link href="/compose/[id]" as={`/compose/${props.id}`}>
               <div className="relative cursor-pointer">Compose</div>
             </Link>
           </div>

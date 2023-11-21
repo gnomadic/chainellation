@@ -5,14 +5,6 @@ import useNFTBalance from "../../hooks/useNFTBalance";
 import { Address } from "../../domain/Domain";
 import { FreeDecorations } from "../../domain/deployments";
 
-type DecoItemProp = {
-  walletAddress: Address;
-  decoAddress: Address;
-  chainellationTokenId: number;
-  updateSelection: (svg: string, decoAddress: Address, decoId: number) => void;
-  chain: string;
-};
-
 type DecoCardProp = {
   walletAddress: Address;
   decoAddress: Address;
@@ -71,6 +63,14 @@ function DecoCard(props: DecoCardProp) {
     </div>
   );
 }
+
+type DecoItemProp = {
+  walletAddress: Address;
+  decoAddress: Address;
+  chainellationTokenId: number;
+  updateSelection: (svg: string, decoAddress: Address, decoId: number) => void;
+  chain: string;
+};
 
 export default function DecoItem(props: DecoItemProp) {
   const { NFTBalance: decoBalance, isBalanceError } = useNFTBalance({

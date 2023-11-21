@@ -1,26 +1,27 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.18;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+// import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+// import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "../interfaces/IChainellationRenderer.sol";
 import "../Color.sol";
 import "../interfaces/ITwoMoonsEvent.sol";
+import "erc721a/contracts/extensions/ERC721AQueryable.sol";
 
-contract Chainellation is ERC721, ERC721Enumerable, Ownable {
+contract Chainellation is ERC721AQueryable, Ownable {
     using Strings for uint256;
 
     struct Stats {
-        uint48 lastGaze;
-        uint32 timeZoneOffset;
-        uint32 colors;
-        uint16 gazes;
         uint8 constellation;
         uint8 cloudsAt;
-        // uint144 consolidated;
+        uint16 gazes;
+        uint32 timeZoneOffset;
+        uint32 colors;
+        uint48 lastGaze;
+        uint144 consolidated;
     }
 
     uint256 public currentSupply;
@@ -32,24 +33,17 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     mapping(uint256 => Color.DNA) public dnas;
     mapping(uint256 => Stats) public stats;
 
-    // mapping(uint256 => uint32) public timeZoneOffset;
-    // mapping(uint256 => uint16) public gazes;
-    // mapping(uint256 => uint48) public lastGaze;
-    // mapping(uint256 => uint32) public colors;
-    // mapping(uint256 => uint8) public constellation;
-    // mapping(uint256 => uint8) public cloudsAt;
-
     address private _decorator;
-    IChainellationRenderer private _chainellationRenderer;
+    IChainellationRenderer private _renderer;
     ITwoMoonsEvent private _twoMoonsEvent;
 
-    constructor(address renderer) ERC721("chainellation", "STARS") {
-        _chainellationRenderer = IChainellationRenderer(renderer);
+    constructor(address renderer) ERC721A("chainellation", "STARS") {
+        _renderer = IChainellationRenderer(renderer);
     }
 
     function tokenURI(
         uint256 tokenId
-    ) public view virtual override returns (string memory) {
+    ) public view virtual override(ERC721A, IERC721A) returns (string memory) {
         if (tokenId > currentSupply) revert NotMinted();
 
         bytes memory dataURI = abi.encodePacked(
@@ -77,7 +71,7 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
             "{",
             '"name": "Two Moons Night Skies",',
             '"description": "Your window into the Night Sky.  Stargaze to reveal your secret constellation, and customize your view with replacable parts of the image."',
-            '"external_url": "https://www.twomoons.app/"',
+            '"external_url": "https://www.chainellation.com/"',
             '"image": "',
             generateCharacter(0),
             '"',
@@ -148,7 +142,6 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
 
         Stats memory current;
         current.timeZoneOffset = _timezoneOffset;
-        // timeZoneOffset[currentSupply] = _timezoneOffset;
 
         // 24248690 is a byte packed 370 + 370, which are the default colors
         if (_colorData == 24248690) {
@@ -160,15 +153,13 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
         }
 
         current.colors = _colorData;
-        // colors[currentSupply] = _colorData;
         if (_constellation > 16) {
             _constellation = 0;
         }
 
         if (_constellation == 0) {
             _constellation = uint8(
-                (_chainellationRenderer.psuedorandom(currentSupply, 123) % 15) +
-                    1
+                (_renderer.psuedorandom(currentSupply, 123) % 15) + 1
             );
         }
 
@@ -178,17 +169,15 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
 
         if (_cloudsAt == 0) {
             _constellation = uint8(
-                (_chainellationRenderer.psuedorandom(currentSupply, 321) % 4) +
-                    1
+                (_renderer.psuedorandom(currentSupply, 321) % 4) + 1
             );
         }
 
         current.constellation = _constellation;
         current.cloudsAt = _cloudsAt;
-        // constellation[currentSupply] = _constellation;
-        // cloudsAt[currentSupply] = _cloudsAt;
+
         stats[currentSupply] = current;
-        _safeMint(_to, currentSupply);
+        _mint(_to, 1);
     }
 
     function generateCharacter(
@@ -221,9 +210,7 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
 
     function getConstellation(uint256 tokenId) public view returns (uint8) {
         if (stats[tokenId].constellation == 0) {
-            return
-                uint8(_chainellationRenderer.psuedorandom(tokenId, 123) % 15) +
-                1;
+            return uint8(_renderer.psuedorandom(tokenId, 123) % 15) + 1;
         } else {
             return stats[tokenId].constellation;
         }
@@ -231,9 +218,7 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
 
     function getCloudsAt(uint256 tokenId) public view returns (uint8) {
         if (stats[tokenId].cloudsAt == 0) {
-            return
-                uint8(_chainellationRenderer.psuedorandom(tokenId, 321) % 4) +
-                1;
+            return uint8(_renderer.psuedorandom(tokenId, 321) % 4) + 1;
         } else {
             return stats[tokenId].cloudsAt;
         }
@@ -246,7 +231,7 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
         uint8 testConstellation
     ) public view returns (string memory) {
         return
-            _chainellationRenderer.generateSVG(
+            _renderer.generateSVG(
                 _tokenId,
                 Color.genDNA(
                     _tokenId,
@@ -312,7 +297,7 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     }
 
     function setRenderer(address renderer) public onlyOwner {
-        _chainellationRenderer = IChainellationRenderer(renderer);
+        _renderer = IChainellationRenderer(renderer);
     }
 
     function systemTimeOffsetWithUser(
@@ -330,7 +315,7 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     }
 
     function withdraw() external onlyOwner {
-        payable(address(_msgSender())).transfer(address(this).balance);
+        payable(address(_msgSenderERC721A())).transfer(address(this).balance);
     }
 
     function withdrawToken(
@@ -338,6 +323,10 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
         uint256 _amount
     ) external onlyOwner {
         IERC20(_tokenContract).transfer(msg.sender, _amount);
+    }
+
+    function _startTokenId() internal view override returns (uint256) {
+        return 1;
     }
 
     error NotTheOwner();
@@ -348,21 +337,21 @@ contract Chainellation is ERC721, ERC721Enumerable, Ownable {
     error TooCloudy();
     error NotMinted();
 
-    //------------------------------------------------------ Solidity Overrides
-    function _beforeTokenTransfer(
-        address from,
-        address to,
-        uint256 tokenId,
-        uint256 batchSize
-    ) internal override(ERC721, ERC721Enumerable) {
-        super._beforeTokenTransfer(from, to, tokenId, batchSize);
-    }
+    // //------------------------------------------------------ Solidity Overrides
+    // function _beforeTokenTransfer(
+    //     address from,
+    //     address to,
+    //     uint256 tokenId,
+    //     uint256 batchSize
+    // ) internal override(ERC721, ERC721Enumerable) {
+    //     super._beforeTokenTransfer(from, to, tokenId, batchSize);
+    // }
 
-    function supportsInterface(
-        bytes4 interfaceId
-    ) public view override(ERC721, ERC721Enumerable) returns (bool) {
-        return super.supportsInterface(interfaceId);
-    }
+    // function supportsInterface(
+    //     bytes4 interfaceId
+    // ) public view override(ERC721, ERC721Enumerable) returns (bool) {
+    //     return super.supportsInterface(interfaceId);
+    // }
 }
 
 interface IERC20 {

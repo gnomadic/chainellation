@@ -23,8 +23,8 @@ export const Deployments: { [key: string]: Deployment } = {
   //   currency: "eth",
   // },
   sepolia: {
-    chainellationAddress: "0x7149c6F0AACAF6c963338432f17C8612339301E0",
-    decoAddress: "0x9B2dcEE7c1686BBF4B91A7088bc01e81f3c3220F",
+    chainellationAddress: "0x4618A9aE90811bB705D8d28D2017393977A1846A",
+    decoAddress: "0x1CD9235af08caDfefdD7284B745174321CdD5cB9",
     displayName: "sepollation",
     currency: "eth",
     chain: "sepolia",
@@ -42,15 +42,17 @@ export const Deployments: { [key: string]: Deployment } = {
 export const FreeDecorations: { [key: string]: Address[] } = {
   sepolia: [
     // name: "empty_silhouette",
-    "0x0f86eEa13791f97A370BD780e0e73754D03f152C",
+    "0x84fA18301a7B6Dd3AB574Bf37e4588Cd291f6A47",
     // name: "empty_skymath",
-    "0x8F9c2a33E45aD479a997D31284d62ce5D43d663A",
+    "0x6Bb7350F71f3387F4c26B9aE0e13060578060aBF",
     // name: "empty_deco",
-    "0x570CF798A9944dE5fDC932A4de7A0579AfC06cBb",
+    "0xE02Fb79c9450a4Bd635a42b618CC7615eD78fcf7",
 
     // name: "mountainLine",
-    "0xF547F45154E398a3ADdD83a73ff4EDAA87f46bb0",
+    "0xa7b902D005B53437127a0699d587C623DebFc9C1",
+    // name: "waves",
+    "0x963cF99215a723DE6f01DE0f0D54A3Af8b7fEF51",
     // name: "skyCircle",
-    "0x4EaD2064aB2C3FAA237818708948FD498Aeed7f2",
+    "0x7B60a4f676F1Bf7A997C497c6368b2FDc41C0c17",
   ],
 };
